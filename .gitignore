@@ -1,81 +1,33 @@
-wordpress
-wp-content/plugins/*
-wp-content/themes/*
-!wp-content/themes/betheme
-!wp-content/themes/deltatheme
-
-node_modules
-.DS_Store
-### JetBrains template
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-
-# Generated files
-.idea/**/contentModel.xml
-
-# Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
-.idea/webServers.xml
-.idea/dataSources.xml
-.idea/deployment.xml
-.idea/discord.xml
-
-# Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
-
-# Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
-# since they will be recreated, and may cause churn.  Uncomment if using
-# auto-import.
-# .idea/artifacts
-# .idea/compiler.xml
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
-# *.iml
-# *.ipr
-
-# CMake
-cmake-build-*/
-
-# Mongo Explorer plugin
-.idea/**/mongoSettings.xml
-
-# File-based project format
-*.iws
-
-# IntelliJ
-out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Cursive Clojure plugin
-.idea/replstate.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-# Editor-based Rest Client
-.idea/httpRequests
-.idea/$CACHE_FILE$
+# This is a template .gitignore file for git-managed WordPress projects.
+#
+# Fact: you don't want WordPress core files, or your server-specific
+# configuration files etc., in your project's repository. You just don't.
+#
+# Solution: stick this file up your repository root (which it assumes is
+# also the WordPress root directory) and add exceptions for any plugins,
+# themes, and other directories that should be under version control.
+#
+# See the comments below for more info on how to add exceptions for your
+# content. Or see git's documentation for more info on .gitignore files:
+# http://kernel.org/pub/software/scm/git/docs/gitignore.html
+ 
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!wp-content/
+ 
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+ 
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+# wp-content/plugins/*
+# !wp-content/plugins/my-directory-plugin/
+ 
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+# wp-content/themes/*
+# !wp-content/themes/my-theme/
