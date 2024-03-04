@@ -21,6 +21,7 @@ get_header(); ?>
 <?php endif ?>
 
 	<div id="primary" <?php astra_primary_class(); ?>>
+        <h1>Project</h1>
 		<?php astra_primary_content_top(); ?>
 
 		<?php astra_content_loop(); ?>
