@@ -1,0 +1,31 @@
+v1.1.0 - 17th January 2024
+- Feature: Made the AI Assistant sidebar accessible outside the editor.
+- Improvement: Added the 'Force Enabled' function to ensure that modules are enabled.
+
+v1.0.9 - 11th January 2024
+- Improvement: Added middleware parameter handling for the plugin slug.
+
+v1.0.8 - 18th December 2023
+- Fix: Added compatibility with PHP version 7.0 and above.
+
+v1.0.7 - 2nd December 2023
+- Improvement: Updated the middleware request and the Zip AI settings that are saved.
+- Fix: Implemented proper multi-setting updation.
+
+v1.0.6 - 30th November 2023
+- Improvement: Added a filter to disable the entire library from loading.
+
+v1.0.5 - 30th November 2023
+- Improvement: Added a new module structure and removed the admin page from Tools.
+
+v1.0.4 - 30th November 2023
+- Updating distignore for composer update compatibility.
+
+v1.0.3 - 11th November 2023
+- Improvement: Added an option to disable Zip Ai Assistant from sidebar.
+
+v1.0.2 - 9th November 2023
+- Improvement: Better one click command.
+
+v1.0.1 - 9th November 2023
+- Initial Commit
