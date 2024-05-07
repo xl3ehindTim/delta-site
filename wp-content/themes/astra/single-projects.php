@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single projects.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -21,7 +21,6 @@ get_header(); ?>
 <?php endif ?>
 
 	<div id="primary" <?php astra_primary_class(); ?>>
-        <h1>Project</h1>
 		<?php astra_primary_content_top(); ?>
 
 		<?php astra_content_loop(); ?>
