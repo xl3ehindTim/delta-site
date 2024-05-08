@@ -27,7 +27,9 @@ wp-config.php
 /wp-content/plugins/hello.php
 
 # Uploads
-# /wp-content/uploads/
+/wp-content/uploads/astra-sites*/
+/wp-content/uploads/astra-docs*/
+/wp-content/uploads/elementor*/
 
 # Log files
 *.log
