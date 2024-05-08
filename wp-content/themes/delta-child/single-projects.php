@@ -59,17 +59,20 @@ $images = get_field('images', $project_id);
 
                     <?php if ($website):
                         ?>
-                        <a href="<?php echo $website ?>" target="_blank">
+                        <a href="<?php echo $website ?>" target="_blank" style="text-decoration: none;">
                             <button>
                                 View Website
+                                <i class="arrow right" style="margin-left: 5px; margin-bottom: 1px;"></i>
                             </button>
                         </a>
                     <?php endif; ?>
                 </div>
 
-                <div class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0">
-                    <img src="<?php echo esc_url($logo['url']) ?>"></img>
-                </div>
+                <?php if ($logo): ?>
+                    <div class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0">
+                        <img src="<?php echo esc_url($logo['url']) ?>"></img>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -146,12 +149,12 @@ $images = get_field('images', $project_id);
     <?php endif; ?>
 
     <!-- Previous and next -->
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between mt-5">
         <div>
-            <?php echo previous_post_link('%link', '<button><i class="arrow left"></i>' . get_the_title(get_previous_post()) . '</button>'); ?>
+            <?php echo previous_post_link('%link', '<button><i class="arrow left" style="margin-right: 5px; margin-bottom: 1px;"></i>' . get_the_title(get_previous_post()) . '</button>'); ?>
         </div>
         <div>
-            <?php echo next_post_link('%link', '<button>' . get_the_title(get_next_post()) . '<i class="arrow right"></i></button>'); ?>
+            <?php echo next_post_link('%link', '<button>' . get_the_title(get_next_post()) . '<i class="arrow right" style="margin-left: 5px; margin-bottom: 1px;"></i></button>'); ?>
         </div>
     </div>
 </div>
