@@ -163,17 +163,30 @@ Template: astra
 
 .arrow {
     border: solid #E5007D;
-    border-width: 0 3px 3px 0;
+    border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 3px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    margin-left: 5px;
 }
 
 .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    margin-right: 5px;
+}
+
+a:hover .right {
+    transform: translateX(5px) rotate(-45deg);
+    /* Move right and rotate for top-right */
+}
+
+a:hover .left {
+    transform: translateX(-5px) rotate(135deg);
+    /* Move right and rotate for top-right */
 }

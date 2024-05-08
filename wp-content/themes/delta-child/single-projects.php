@@ -62,7 +62,7 @@ $images = get_field('images', $project_id);
                         <a href="<?php echo $website ?>" target="_blank" style="text-decoration: none;">
                             <button>
                                 View Website
-                                <i class="arrow right" style="margin-left: 5px; margin-bottom: 1px;"></i>
+                                <i class="arrow right"></i>
                             </button>
                         </a>
                     <?php endif; ?>
@@ -151,10 +151,10 @@ $images = get_field('images', $project_id);
     <!-- Previous and next -->
     <div class="d-flex justify-content-between mt-5">
         <div>
-            <?php echo previous_post_link('%link', '<button><i class="arrow left" style="margin-right: 5px; margin-bottom: 1px;"></i>' . get_the_title(get_previous_post()) . '</button>'); ?>
+            <?php echo previous_post_link('%link', '<button><i class="arrow left"></i>' . get_the_title(get_previous_post()) . '</button>'); ?>
         </div>
         <div>
-            <?php echo next_post_link('%link', '<button>' . get_the_title(get_next_post()) . '<i class="arrow right" style="margin-left: 5px; margin-bottom: 1px;"></i></button>'); ?>
+            <?php echo next_post_link('%link', '<button>' . get_the_title(get_next_post()) . '<i class="arrow right"></i></button>'); ?>
         </div>
     </div>
 </div>
