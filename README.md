@@ -9,3 +9,4 @@ To setup the website a clean wordpress install should be used. Download this fro
 4. Sign in to localhost/{project folder}/wp-admin.
 5. Activate the child-theme under 'Appearence' -> 'Delta'.
 6. Import the database for the remainder of the data.
+7. Flush the permalinks by opening 'Settings' -> 'Permalinks' -> 'Save changes'.
