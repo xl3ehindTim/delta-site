@@ -32,6 +32,7 @@ $images = get_field('images', $project_id);
 </head>
 
 <div id="primary" <?php astra_primary_class(); ?>>
+    <!-- Hero -->
     <div class="hero-image"
         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo esc_url($heroImage['url']) ?>);">
         <div class="hero-text">
@@ -45,6 +46,7 @@ $images = get_field('images', $project_id);
 
     <div style="height: 100vh;"></div>
 
+    <!-- Project info -->
     <section id="project-information">
         <div class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
             <div class="row gx-5">
@@ -53,9 +55,7 @@ $images = get_field('images', $project_id);
                         <?php echo get_field('subtitle') ?>
                     </h2>
 
-                    <p>
-                        <?php echo get_field('description') ?>
-                    </p>
+                    <?php echo get_field('description') ?>
 
                     <?php if ($website):
                         ?>
@@ -74,69 +74,109 @@ $images = get_field('images', $project_id);
         </div>
     </section>
 
+    <!-- Images -->
     <?php if ($images):
-                        ?>
-    <section id="images">
-        <div class="container">
-            <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 5%; height: 500px;">
-                <div class="swiper" style="height: 500px; cursor: grab;">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($images as $image_id):
-                            $url = get_permalink($image_id);
-                            ?>
-                            <div class="swiper-slide" style="height: 500px; width: auto;">
-                                <img src="<?php echo $url ?>"></img>
-                            </div>
-                        <?php endforeach; ?>
+        ?>
+        <section id="images">
+            <div class="container">
+                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 5%; height: 500px;">
+                    <div class="swiper" style="height: 500px;">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($images as $image_id):
+                                $url = get_permalink($image_id);
+                                ?>
+                                <div class="swiper-slide" style="height: 500px; width: auto;">
+                                    <img src="<?php echo $url ?>"></img>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-images-pagination"
+                        style="position: absolute; left: -5%; margin-bottom: -5vh;">
                     </div>
                 </div>
-                <div class="swiper-pagination" style="position: absolute; left: -5%; margin-bottom: -5vh;">
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div style="height: 600px;"></div>
+        <div style="height: 600px;"></div>
     <?php endif; ?>
 
-    <section id="technical" class="mt-5  mb-5">
-        <div class="container">
-            <h3 class="mb-2">
-                Going in depth
-            </h3>
+    <!-- Technical description -->
+    <?php if ($technicalDescription): ?>
+        <section id="technical" class="mt-5 mb-5">
+            <div class="container">
+                <h3 class="mb-2">
+                    Going in depth
+                </h3>
 
-            <p>
                 <?php echo $technicalDescription ?>
-            </p>
-        </div>
-    </section>
-
-    <section id="team" class="mt-5">
-        <div class="container">
-            <div class="d-flex justify-content-center mt-5">
-                <h3>Meet the team!</h3>
             </div>
+        </section>
+    <?php endif; ?>
 
-            <?php foreach ($students as $student_id):
-                $student = get_post($student_id);
-                $student_name = get_the_title($student_id);
-                ?>
-                <div>
-                    <?php echo $student_name ?>
+    <!-- Team -->
+    <?php if ($students):
+        ?>
+        <section id="team">
+            <div class="container">
+                <div class="d-flex justify-content-center mt-5">
+                    <h3>Meet the team!</h3>
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 5%; height: 225px;">
+                    <div class="swiper-team" style="margin-left: 5%; height: 225px;">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($students as $student_id):
+                                $photo = get_field('photo', $student_id);
+                                $student_name = get_the_title($student_id);
+                                ?>
+                                <div class="swiper-slide" style="height: 225px; width: auto;">
+                                    <img src="<?php echo esc_url($photo['url']) ?>"></img>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-team-pagination d-flex justify-content-center"
+                        style="position: absolute; left: -5%; margin-bottom: -5vh;">
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <div style="height: 300px;"></div>
+    <?php endif; ?>
+
+    <!-- Previous and next -->
+    <div class="d-flex justify-content-between">
+        <div>
+            <?php echo previous_post_link('%link', '<button><i class="arrow left"></i>' . get_the_title(get_previous_post()) . '</button>'); ?>
+        </div>
+        <div>
+            <?php echo next_post_link('%link', '<button>' . get_the_title(get_next_post()) . '<i class="arrow right"></i></button>'); ?>
+        </div>
+    </div>
 </div>
+
+<?php get_footer() ?>
 
 <script>
     var swiper = new Swiper(".swiper", {
         slidesPerView: "auto",
         paginationClickable: true,
+        // centeredSlides: true,
         spaceBetween: 20,
         pagination: {
-            el: ".swiper-pagination",
+            el: ".swiper-images-pagination",
+            clickable: true,
+        },
+    });
+
+    var swiper = new Swiper(".swiper-team", {
+        slidesPerView: "auto",
+        paginationClickable: true,
+        // centeredSlides: true,
+        spaceBetween: 20,
+        pagination: {
+            el: ".swiper-team-pagination",
             clickable: true,
         },
     });

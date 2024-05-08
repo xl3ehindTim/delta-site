@@ -145,7 +145,7 @@ Template: astra
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .4s ease;        
+    transition: all .4s ease;
 }
 
 .swiper-slide img {
@@ -159,4 +159,21 @@ Template: astra
 .swiper-pagination-bullet {
     background-color: #E5007D !important;
     opacity: 1;
+}
+
+.arrow {
+    border: solid #E5007D;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
