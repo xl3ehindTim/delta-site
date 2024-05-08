@@ -1,9 +1,9 @@
 # Delta Excellence Program website
 
 ## Setup
-To setup the website a clean wordpress install should be used. Download this from [wordpress.org ](https://wordpress.org/).
+Set up the website by following these steps.
 
-1. Download clean wordpress installation from [wordpress.org ](https://wordpress.org/).
+1. Download clean wordpress installation from [wordpress.org](https://wordpress.org/).
 2. Install the setup using Xampp (Apache & MySQL).
 3. Clone this repository and replace your existing wp-content folder with the contents of this repository.
 4. Sign in to localhost/{project folder}/wp-admin.
