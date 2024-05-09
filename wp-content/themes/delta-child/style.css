@@ -41,6 +41,7 @@ Template: astra
     color: white;
 }
 
+<<<<<<< Updated upstream
 /* main {
     display: flex;
     flex-direction: column;
@@ -195,3 +196,169 @@ a:hover .left {
     transform: translateX(-5px) rotate(135deg);
     /* Move right and rotate for top-right */
 }
+=======
+
+
+/* Project cards */
+
+.card {
+    width: 28em;
+    height: 42em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+  
+.card:hover .card-image {
+    filter: brightness(50%);
+}
+  
+.card-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('http://localhost/delta-site/wp-content/uploads/2024/04/BvOF-GLOW2023_A-Futures-of-GLOW-01-2560x1707-1.jpg'); /* specify your image URL here */
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease;
+}
+  
+.card-content {
+    position: absolute;
+    bottom: -100%; /* Initially, move content out of view */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
+    color: #fff;
+}
+
+.card:hover .card-content {
+    transform: translateX(0);
+    bottom: 150px; /* Move content to the bottom */
+}
+
+.title-container {
+    position: absolute;
+    bottom: 20px; /* Initially, keep title and subtitle at the bottom */
+    left: 20px;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    transition: bottom 0.3s ease; /* Add transition for smooth animation */
+}
+
+.card:hover .title-container {
+    bottom: 85%; /* Move title and subtitle to their current location when hovered */
+}
+
+.title-container h2,
+.title-container h3 {
+margin: 0;
+}
+
+.description {
+display: none;
+}
+
+.card:hover .description {
+display: block;
+}
+/* Button */
+
+/* Button */
+
+.button-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+.button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 8px; /* Adjust positioning as needed */
+    top: calc(50% - 7.5px); /* Center the arrow vertically */
+}
+  
+.card:hover .button::after {
+transform: rotate(135deg); /* Maintain arrow rotation on hover */
+}
+
+.card:hover .button {
+transition: transform 0.3 ease;
+}
+/* Text Reveal */
+
+.button-text {
+display: none;
+}
+
+.card:hover .button-text {
+display: block;
+margin-right: 10px;
+color: #000;
+}
+
+.card:hover .button:hover .button-text {
+color: #fff;
+}
+
+/* Arrows */
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.diagonal-arrow {
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: calc(50% - 7.5px); /* Center the arrow vertically */
+    right: 8px;
+    border-top: 3px solid #E5007D;
+    border-left: 3px solid #E5007D;
+    transform-origin: center;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transform: rotate(90deg)
+}
+
+.card:hover .diagonal-arrow {
+    transform: rotate(135deg); /* Change to right arrow when hovered */
+    
+}
+
+.diagonal-arrow::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 20px;
+    background-color: #E5007D;
+    transform: rotate(-45deg) translate(6px, 0px); /* Adjust position */
+    border-radius: 2px;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.card:hover .diagonal-arrow::after {
+    transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+>>>>>>> Stashed changes
