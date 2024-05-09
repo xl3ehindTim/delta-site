@@ -38,9 +38,10 @@ $images = get_field('images', $project_id);
         <div class="hero-text">
             <h1 style="color: white;"><?php echo get_field('title') ?></h1>
         </div>
-        <div class="arrow-down">
-            <!-- TODO arrow down -->
-        </div>
+        <!-- <div class="arrow-down">
+            <p style="margin-bottom: -5px; font-weight: 600;">Explore project</p>
+            <i class="arrow down"></i>
+        </div> -->
     </div>
 
 
@@ -82,7 +83,7 @@ $images = get_field('images', $project_id);
         ?>
         <section id="images">
             <div class="container">
-                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 5%; height: 500px;">
+                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;">
                     <div class="swiper" style="height: 500px;">
                         <div class="swiper-wrapper">
                             <?php foreach ($images as $image_id):
@@ -165,8 +166,8 @@ $images = get_field('images', $project_id);
     var swiper = new Swiper(".swiper", {
         slidesPerView: "auto",
         paginationClickable: true,
-        // centeredSlides: true,
         spaceBetween: 20,
+        slidesOffsetBefore: 100, // This is px slide offset 
         pagination: {
             el: ".swiper-images-pagination",
             clickable: true,

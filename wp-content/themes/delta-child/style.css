@@ -175,6 +175,11 @@ Template: astra
     margin-left: 5px;
 }
 
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
 .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
