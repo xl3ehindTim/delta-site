@@ -22,6 +22,7 @@ $website = get_field('website');
 $logo = get_field('logo');
 $students = get_field('students', $project_id);
 $images = get_field('images', $project_id);
+$test = null;
 ?>
 
 <head>
@@ -84,8 +85,8 @@ $images = get_field('images', $project_id);
         <section id="images">
             <div class="container">
                 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;">
-                    <div class="swiper" style="height: 500px;">
-                        <div class="swiper-wrapper">
+                    <div class="swiper-images" style="height: 500px;">
+                        <div class="swiper-wrapper" style="cursor: move;">
                             <?php foreach ($images as $image_id):
                                 $url = get_permalink($image_id);
                                 ?>
@@ -96,7 +97,7 @@ $images = get_field('images', $project_id);
                         </div>
                     </div>
                     <div class="swiper-pagination swiper-images-pagination"
-                        style="position: absolute; left: -5%; margin-bottom: -5vh;">
+                        style="position: absolute; margin-bottom: -5vh;">
                     </div>
                 </div>
             </div>
@@ -107,7 +108,7 @@ $images = get_field('images', $project_id);
 
     <!-- Technical description -->
     <?php if ($technicalDescription): ?>
-        <section id="technical" class="mt-5 mb-5">
+        <section id="technical" class="mt-3 mb-3 mt-lg-5 mb-lg-5">
             <div class="container">
                 <h3 class="mb-2">
                     Going in depth
@@ -126,21 +127,22 @@ $images = get_field('images', $project_id);
                 <div class="d-flex justify-content-center mt-5">
                     <h3>Meet the team!</h3>
                 </div>
-                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 5%; height: 225px;">
-                    <div class="swiper-team" style="margin-left: 5%; height: 225px;">
+                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 225px;">
+                    <div class="swiper-team" style="height: 225px;">
                         <div class="swiper-wrapper">
                             <?php foreach ($students as $student_id):
                                 $photo = get_field('photo', $student_id);
                                 $student_name = get_the_title($student_id);
                                 ?>
-                                <div class="swiper-slide" style="height: 225px; width: auto;">
+                                <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
                                     <img src="<?php echo esc_url($photo['url']) ?>"></img>
+                                    <span class="student-name"><?php echo $student_name; ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
                     <div class="swiper-pagination swiper-team-pagination d-flex justify-content-center"
-                        style="position: absolute; left: -5%; margin-bottom: -5vh;">
+                        style="position: absolute; margin-bottom: -5vh;">
                     </div>
                 </div>
             </div>
@@ -163,25 +165,47 @@ $images = get_field('images', $project_id);
 <?php get_footer() ?>
 
 <script>
-    var swiper = new Swiper(".swiper", {
-        slidesPerView: "auto",
+    var imageSwiper = new Swiper(".swiper-images", {
         paginationClickable: true,
+        // Default settings
+        slidesPerView: 2,
         spaceBetween: 20,
-        slidesOffsetBefore: 100, // This is px slide offset 
         pagination: {
             el: ".swiper-images-pagination",
             clickable: true,
         },
+        // Breakpoints for responsiveness
+        breakpoints: {
+            // width => 320px 
+            320: {
+                slidesPerView: 'auto',
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
+            },
+            // width => 999px 
+            999: {
+                spaceBetweenSlides: 50,
+                slidesOffsetBefore: 100,
+                slidesOffsetAfter: 100,
+            }
+        }
     });
 
-    var swiper = new Swiper(".swiper-team", {
-        slidesPerView: "auto",
+    var teamSwiper = new Swiper(".swiper-team", {
+        slidesPerView: 6, // 6
+        // watchOverflow: true,
         paginationClickable: true,
         // centeredSlides: true,
         spaceBetween: 20,
+        slidesOffsetBefore: 100,
+        slidesOffsetAfter: 100,
         pagination: {
             el: ".swiper-team-pagination",
             clickable: true,
         },
     });
+
+    // teamSwiper.on('resize', function (instance) {
+    //     document.getElementsByClassName('swiper-team')[0].classList.toggle('slider-active', instance.virtualSize < instance.size);
+    // });
 </script>
