@@ -124,13 +124,13 @@ $test = null;
         ?>
         <section id="team">
             <div class="container">
-                <div class="d-flex justify-content-center mt-5">
+            <div class="d-flex justify-content-center mt-5">
                     <h3>Meet the team!</h3>
                 </div>
                 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 225px;">
                     <div class="swiper-team" style="height: 225px;">
-                        <div class="swiper-wrapper">
-                            <?php foreach ($students as $student_id):
+                        <div class="swiper-wrapper" style="cursor: move;">
+                        <?php foreach ($students as $student_id):
                                 $photo = get_field('photo', $student_id);
                                 $student_name = get_the_title($student_id);
                                 ?>
@@ -141,7 +141,7 @@ $test = null;
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="swiper-pagination swiper-team-pagination d-flex justify-content-center"
+                    <div class="swiper-pagination swiper-team-pagination"
                         style="position: absolute; margin-bottom: -5vh;">
                     </div>
                 </div>
@@ -153,11 +153,11 @@ $test = null;
 
     <!-- Previous and next -->
     <div class="d-flex justify-content-between mt-5">
-        <div>
-            <?php echo previous_post_link('%link', '<button><i class="arrow left"></i>' . get_the_title(get_previous_post()) . '</button>'); ?>
+    <div>
+            <?php echo next_post_link('%link', '<button><i class="arrow left"></i>' . get_the_title(get_next_post()) . '</button>'); ?>
         </div>
-        <div>
-            <?php echo next_post_link('%link', '<button>' . get_the_title(get_next_post()) . '<i class="arrow right"></i></button>'); ?>
+    <div>
+            <?php echo previous_post_link('%link', '<button>' . get_the_title(get_previous_post()) . '<i class="arrow right"></i></button>'); ?>
         </div>
     </div>
 </div>
@@ -166,15 +166,12 @@ $test = null;
 
 <script>
     var imageSwiper = new Swiper(".swiper-images", {
-        paginationClickable: true,
-        // Default settings
         slidesPerView: 2,
         spaceBetween: 20,
         pagination: {
             el: ".swiper-images-pagination",
             clickable: true,
         },
-        // Breakpoints for responsiveness
         breakpoints: {
             // width => 320px 
             320: {
@@ -192,20 +189,24 @@ $test = null;
     });
 
     var teamSwiper = new Swiper(".swiper-team", {
-        slidesPerView: 6, // 6
-        // watchOverflow: true,
-        paginationClickable: true,
-        // centeredSlides: true,
+        slidesPerView: 6, 
         spaceBetween: 20,
-        slidesOffsetBefore: 100,
-        slidesOffsetAfter: 100,
         pagination: {
             el: ".swiper-team-pagination",
             clickable: true,
         },
+        breakpoints: {
+            // width => 320px 
+            320: {
+                slidesPerView: 2,
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
+            },
+            // width => 999px 
+            999: {
+                slidesOffsetBefore: 100,
+                slidesOffsetAfter: 100,
+            }
+        }
     });
-
-    // teamSwiper.on('resize', function (instance) {
-    //     document.getElementsByClassName('swiper-team')[0].classList.toggle('slider-active', instance.virtualSize < instance.size);
-    // });
 </script>
