@@ -156,6 +156,14 @@ Template: astra
     object-fit: cover;
 }
 
+.swiper-wrapper {
+    cursor: grab;
+}
+
+.swiper-wrapper:active {
+    cursor: grabbing;
+}
+
 /* target all bullets */
 .swiper-pagination-bullet {
     background-color: #E5007D !important;

@@ -85,7 +85,7 @@ $images = get_field('images', $project_id);
             <div class="container">
                 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;">
                     <div class="swiper-images" style="height: 500px;">
-                        <div class="swiper-wrapper" style="cursor: move;">
+                        <div class="swiper-wrapper">
                             <?php foreach ($images as $image_id):
                                 $url = get_permalink($image_id);
                                 ?>
@@ -128,7 +128,7 @@ $images = get_field('images', $project_id);
                 </div>
                 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 225px;">
                     <div class="swiper-team" style="height: 225px;">
-                        <div class="swiper-wrapper" style="cursor: move;">
+                        <div class="swiper-wrapper">
                         <?php foreach ($students as $student_id):
                                 $photo = get_field('photo', $student_id);
                                 $student_name = get_the_title($student_id);
