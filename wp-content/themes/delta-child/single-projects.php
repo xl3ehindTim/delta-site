@@ -22,7 +22,6 @@ $website = get_field('website');
 $logo = get_field('logo');
 $students = get_field('students', $project_id);
 $images = get_field('images', $project_id);
-$test = null;
 ?>
 
 <head>
@@ -71,8 +70,8 @@ $test = null;
                 </div>
 
                 <?php if ($logo): ?>
-                    <div class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0">
-                        <img src="<?php echo esc_url($logo['url']) ?>"></img>
+                    <div class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0  justify-content-center justify-content-md-end">
+                        <img style="max-width: 300px;" src="<?php echo esc_url($logo['url']) ?>"></img>
                     </div>
                 <?php endif; ?>
             </div>
