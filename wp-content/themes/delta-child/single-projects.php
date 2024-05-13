@@ -113,7 +113,7 @@ get_header(); ?>
 
         // Loop over students and add slides
         filteredStudents?.forEach(student => {
-            let slideContent = '<div class="swiper-slide" style="height: 225px; width: auto;"><img src="' + student?.photo?.link + '"></div>';
+            let slideContent = `<div class="student-slide swiper-slide" style="height: 225px; width: auto;"><img src="${student?.photo?.link}"><span class="student-name">${student?.title}</span></div>`;
             swiper.appendSlide(slideContent);
         });
     }
