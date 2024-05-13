@@ -20,8 +20,8 @@ $heroImage = get_field('hero_image');
 $technicalDescription = get_field('technical_description');
 $website = get_field('website');
 $logo = get_field('logo');
-$students = get_field('students', $project_id);
 $images = get_field('images', $project_id);
+$projectGroups = get_field('project_groups');
 ?>
 
 <head>
@@ -70,7 +70,8 @@ $images = get_field('images', $project_id);
                 </div>
 
                 <?php if ($logo): ?>
-                    <div class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0  justify-content-center justify-content-md-end">
+                    <div
+                        class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0  justify-content-center justify-content-md-end">
                         <img style="max-width: 300px;" src="<?php echo esc_url($logo['url']) ?>"></img>
                     </div>
                 <?php endif; ?>
@@ -119,28 +120,40 @@ $images = get_field('images', $project_id);
     <?php endif; ?>
 
     <!-- Team -->
-    <?php if ($students):
-        ?>
+    <?php if ($projectGroups): ?>
         <section id="team">
             <div class="container">
-            <div class="d-flex justify-content-center mt-5">
+                <div class="d-flex justify-content-center mt-5">
                     <h3>Meet the team!</h3>
                 </div>
+
+                <?php if (count($projectGroups) > 1): ?>
+                    <div class="d-flex flex-row justify-content-center">
+                        <?php foreach ($projectGroups as $projectGroup):
+                            $projectGroupId = $projectGroup->ID;
+                            $publishedAt = new DateTime(get_post_field('post_date', $projectGroupId));
+                            $publishedYear = $publishedAt->format('Y');
+                            $publishedMonth = $publishedAt->format('m');
+
+                            // Determine semester based on published month
+                            $semester = ($publishedMonth <= 6) ? 'Spring' : 'Fall';
+                            ?>
+
+                            <div class="p-2 bd-highlight term-selection" style="cursor: pointer;" data-id="<?php echo $projectGroupId ?>">
+                                <?php echo $semester . ' ' . $publishedYear ?>
+                            </div>
+
+                        <?php endforeach ?>
+                    </div>
+                <?php endif; ?>
+
                 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 225px;">
-                    <div class="swiper-team" style="height: 225px;">
+                    <div class="swiper-container" style="height: 225px;">
                         <div class="swiper-wrapper">
-                        <?php foreach ($students as $student_id):
-                                $photo = get_field('photo', $student_id);
-                                $student_name = get_the_title($student_id);
-                                ?>
-                                <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
-                                    <img src="<?php echo esc_url($photo['url']) ?>"></img>
-                                    <span class="student-name"><?php echo $student_name; ?></span>
-                                </div>
-                            <?php endforeach; ?>
+                            <!-- Dynamic Content -->
                         </div>
                     </div>
-                    <div class="swiper-pagination swiper-team-pagination"
+                    <div class="swiper-pagination swiper-container-pagination"
                         style="position: absolute; margin-bottom: -5vh;">
                     </div>
                 </div>
@@ -152,10 +165,10 @@ $images = get_field('images', $project_id);
 
     <!-- Previous and next -->
     <div class="d-flex justify-content-between mt-5">
-    <div>
+        <div>
             <?php echo next_post_link('%link', '<button><i class="arrow left"></i>' . get_the_title(get_next_post()) . '</button>'); ?>
         </div>
-    <div>
+        <div>
             <?php echo previous_post_link('%link', '<button>' . get_the_title(get_previous_post()) . '<i class="arrow right"></i></button>'); ?>
         </div>
     </div>
@@ -186,26 +199,93 @@ $images = get_field('images', $project_id);
             }
         }
     });
+</script>
 
-    var teamSwiper = new Swiper(".swiper-team", {
-        slidesPerView: 6, 
-        spaceBetween: 20,
-        pagination: {
-            el: ".swiper-team-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            // width => 320px 
-            320: {
-                slidesPerView: 2,
-                slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
-            },
-            // width => 999px 
-            999: {
-                slidesOffsetBefore: 100,
-                slidesOffsetAfter: 100,
+<script>
+    /**
+     * This script dynamically loads the students into the swiper element based on the selected term
+     */
+    let swiper = null;
+    const projectGroups = <?php echo json_encode($projectGroups); ?>;
+
+    // Load project students for later usage
+    const students = <?php
+    $allStudents = [];
+
+    foreach ($projectGroups as $projectGroupId) {
+        $students = get_field('students', $projectGroupId);
+
+        if ($students) {
+            foreach ($students as $studentId) {
+                $title = get_the_title($studentId);
+                $photo = get_field('photo', $studentId);
+
+                $studentData = [
+                    'group' => $projectGroupId->ID,
+                    'title' => $title,
+                    'photo' => $photo,
+                ];
+
+                $allStudents[] = $studentData;
             }
         }
+    }
+
+    // Echo data into variable
+    echo json_encode($allStudents);
+    ?>;
+
+    // Get term selection elements
+    var termSelect = document.querySelectorAll('.term-selection');
+    function initSwiper(students, groupId) {
+        var filteredStudents = students?.filter((student) => student.group == groupId);
+
+        if (!swiper) {
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView: 6,
+                spaceBetween: 20,
+                pagination: {
+                    el: ".swiper-container-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    // width => 320px 
+                    320: {
+                        slidesPerView: 2,
+                        slidesOffsetBefore: 20,
+                        slidesOffsetAfter: 20,
+                    },
+                    // width => 999px 
+                    999: {
+                        slidesOffsetBefore: 100,
+                        slidesOffsetAfter: 100,
+                    }
+                }
+            })
+        }
+
+        // Clear existing slides (if any)
+        swiper.removeAllSlides();
+
+        var selectedElement = document.querySelector(`div[data-id="${groupId}"]`)
+        termSelect.forEach(element => element?.classList?.remove('active-term'));
+        selectedElement?.classList?.add('active-term');
+
+        // Loop over students and add slides
+        filteredStudents?.forEach(student => {
+            let slideContent = '<div class="swiper-slide" style="height: 225px; width: auto;"><img src="' + student?.photo?.link + '"></div>';
+            swiper.appendSlide(slideContent);
+        });
+    }
+
+    // Init swiper
+    initSwiper(students, projectGroups[0]?.ID);
+
+    // Add event listeners
+    termSelect.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            initSwiper(students, this.dataset.id)
+        });
     });
 </script>

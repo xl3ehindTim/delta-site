@@ -219,4 +219,9 @@ a:hover .left {
     font-size: 16px; 
     padding: 5px;  
     text-align: center; 
-  }
+}
+
+.active-term {
+    color: #E5007D;
+    border-bottom: 3px #E5007D solid;
+}
