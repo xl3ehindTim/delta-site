@@ -41,15 +41,29 @@ Template: astra
     color: white;
 }
 
-
 /* Project cards */
 
+.card-container {
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(100% / 50)
+}
+
 .card {
-    width: 28em;
-    height: 42em;
+    /* flex-grow: 1; */
+    width: calc(100% / 3.5);
+    height: 32em;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    margin-top: calc(100% / 50);
 }
   
 .card:hover .card-image {
@@ -59,7 +73,6 @@ Template: astra
 .card-image {
     width: 100%;
     height: 100%;
-    background-image: url('http://localhost/delta-site/wp-content/uploads/2024/04/BvOF-GLOW2023_A-Futures-of-GLOW-01-2560x1707-1.jpg'); /* specify your image URL here */
     background-size: cover;
     background-position: center;
     transition: filter 0.3s ease;
@@ -67,31 +80,31 @@ Template: astra
   
 .card-content {
     position: absolute;
-    bottom: -100%; /* Initially, move content out of view */
+    top: 100%; /* Initially, move content out of view */
     left: 0;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, bottom 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
     color: #fff;
 }
 
 .card:hover .card-content {
     transform: translateX(0);
-    bottom: 150px; /* Move content to the bottom */
+    top: 25%; /* Move content to the bottom */
 }
 
 .title-container {
     position: absolute;
-    bottom: 20px; /* Initially, keep title and subtitle at the bottom */
+    top: 70%; /* Initially, keep title and subtitle at the bottom */
     left: 20px;
     color: #fff;
     -webkit-text-fill-color: #fff;
-    transition: bottom 0.3s ease; /* Add transition for smooth animation */
+    transition: top 0.3s ease; /* Add transition for smooth animation */
 }
 
 .card:hover .title-container {
-    bottom: 85%; /* Move title and subtitle to their current location when hovered */
+    top: 1%; /* Move title and subtitle to their current location when hovered */
 }
 
 .title-container h2,
@@ -106,14 +119,13 @@ display: none;
 .card:hover .description {
 display: block;
 }
-/* Button */
 
 /* Button */
 
 .button-container {
     position: relative;
     display: inline-block;
-  }
+}
   
 .button {
     position: absolute;
@@ -121,6 +133,7 @@ display: block;
     right: 20px;
     padding: 8px 16px;
     height: 40px;
+    width: 30px;
     background-color: #fff;
     color: #000;
     border: none;
@@ -141,7 +154,8 @@ transform: rotate(135deg); /* Maintain arrow rotation on hover */
 }
 
 .card:hover .button {
-transition: transform 0.3 ease;
+width: 150px;
+transition: width 0.3 ease;
 }
 /* Text Reveal */
 

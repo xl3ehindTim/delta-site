@@ -2,6 +2,13 @@
 /*
 Template Name: Projects
 */
+
+$posts = get_posts(
+    array(
+        'posts_per_page' => 7,
+        'post_type' => 'projects'
+    )
+);
 ?>
 
 <?php get_header(); ?>
@@ -17,26 +24,47 @@ Template Name: Projects
     </div>
 
     <div style="height: 100vh;"></div>
-</div>
 
-<div class="card">
-    <div class="card-image">
-    <!-- Your image goes here -->
-    </div>
-    <div class="title-container">
-      <h2>GLOW 2023</h2>
-      <h3>Future of GLOW</h3>
-    </div>
-    <div class="card-content">
-        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius dignissim dui, eu efficitur elit faucibus ac. Sed iaculis quam et elit tristique egestas. Donec et tellus condimentum, blandit risus eget, sollicitudin nulla. Suspendisse potenti. Cras vestibulum risus quis bibendum feugiat. Vivamus sed sem justo. Vestibulum gravida ex non libero posuere sollicitudin. Nullam at iaculis dui. Cras et consequat lectus, tristique posuere leo. Sed sollicitudin, dui a efficitur mattis, justo sapien semper lorem, vitae dapibus mauris turpis in augue. Donec ultrices ex sapien, eu malesuada magna fringilla eget. In accumsan scelerisque lacus, non vestibulum urna consectetur in. </p>
-    </div>
-    <div>
-        <button class="button"><span class="button-text">Read more</span><span class="diagonal-arrow"></span></button>
-    </div>
-</div>
+    <div class="mt-3 mb-3 mt-lg-5 mb-lg-5">
+        <div style="justify-content: center;">
+            <div class="card-container">
+                <?php foreach ($posts as $post):
+                    setup_postdata($post);
+        
+                    $title = get_field('title');
+                    $subtitle = get_field('subtitle');
+                    $description = get_field('description');
+                    $heroImage = get_field('hero_image');
+                    $projectLink = get_permalink();
+                ?>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('<?php echo esc_url($heroImage['url']) ?>');"></div>
+                    <div class="title-container">
+                        <h2><?php echo $title ?></h2>
+                        <h3><?php echo $subtitle ?></h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="description">
+                            <?php
+                                // Shorten description to 300 characters and add ellipsis
+                                $shortDescription = substr($description, 0, 300);
+                                if (strlen($description) > 300) {
+                                    $shortDescription .= "...";
+                                }
+                                echo $shortDescription;
+                            ?>
+                        </p>
+                    </div>
+                    <div>
+                        <button class="button"><span class="button-text">Read more</span><span class="diagonal-arrow"></span></button>
+                    </div>
+                </div>
 
-    </div> 
+                <?php endforeach; ?>
+                 
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>
->>>>>>> Stashed changes
