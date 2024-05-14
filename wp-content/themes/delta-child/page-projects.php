@@ -7,11 +7,7 @@ Template Name: Projects
 <?php get_header(); ?>
 
 <div id="primary" <?php astra_primary_class(); ?>>
-<<<<<<< Updated upstream
-    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost/delta-site/wp-content/uploads/2024/05/feel-the-spark-hero.jpg);">
-=======
     <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost/delta-site/wp-content/uploads/2024/03/VC-Glow-03.jpeg);">
->>>>>>> Stashed changes
         <div class="hero-text">
             <h2 style="color: white;">Projects</h2>
         </div>
@@ -21,20 +17,7 @@ Template Name: Projects
     </div>
 
     <div style="height: 100vh;"></div>
-
-    <!-- Content here -->
-<<<<<<< Updated upstream
 </div>
-
-<?php get_footer(); ?>
-=======
-    <!-- <div class="container mt-5">
-        <div class="card">
-            <img src="http://localhost/delta-site/wp-content/uploads/2024/04/BvOF-GLOW2023_A-Futures-of-GLOW-01-2560x1707-1.jpg" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-        </div> -->
 
 <div class="card">
     <div class="card-image">
