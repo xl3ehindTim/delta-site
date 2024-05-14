@@ -19,11 +19,6 @@ get_header(); ?>
 ?>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <meta property="og:title" content="<?php echo get_the_title(); ?>">
     <meta property="og:description" content="<?php echo strip_tags(get_field('description')); ?>">
     <meta property="og:image" content=<?php echo esc_url(get_field('hero_image')['url']); ?>>
@@ -78,7 +73,7 @@ get_header(); ?>
     // Echo data into variable
     echo json_encode($allStudents);
     ?>;
-
+    console.log(students)
     // Get term selection elements
     var termSelect = document.querySelectorAll('.term-selection');
     function initSwiper(students, groupId) {
@@ -155,8 +150,8 @@ function include_hero_section() {
 
 	function include_project_information() {
 		$subtitle = get_field('subtitle');
-    $description = get_field('description');
-    $website = get_field('website');
+        $description = get_field('description');
+        $website = get_field('website');
 		$logo = get_field('logo');
 		?>
 			<div class="project-info container mt-3 mb-3 mt-lg-5 mb-lg-5">
