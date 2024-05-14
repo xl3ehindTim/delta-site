@@ -112,8 +112,14 @@ Template: astra
 margin: 0;
 }
 
+/* Swiper !important */
+.swiper-images,
+.swiper-team {
+    width: 100%;
+    height: 100%;
+  
 .description {
-display: none;
+  display: none;
 }
 
 .card:hover .description {
@@ -153,9 +159,22 @@ display: block;
 transform: rotate(135deg); /* Maintain arrow rotation on hover */
 }
 
+.swiper-wrapper {
+    cursor: grab;
+}
+
+.swiper-wrapper:active {
+    cursor: grabbing;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+    background-color: #E5007D !important;
+    opacity: 1;
+
 .card:hover .button {
-width: 150px;
-transition: width 0.3 ease;
+  width: 150px;
+  transition: width 0.3 ease;
 }
 /* Text Reveal */
 
@@ -214,7 +233,33 @@ color: #fff;
     transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
 
-.card:hover .diagonal-arrow::after {
+a:hover .left {
+    transform: translateX(-5px) rotate(135deg);
+    /* Move right and rotate for top-right */
+}
+
+.student-slide {
+    position: relative;
+}
+
+.student-slide .student-name {
+    position: absolute;
+    font-weight: 600;
+    bottom: 5px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    color: white;
+    font-size: 16px; 
+    padding: 5px;  
+    text-align: center; 
+}
+
+.active-term {
+    color: #E5007D;
+    border-bottom: 3px #E5007D solid;
+}
+
+  .card:hover .diagonal-arrow::after {
     transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
     transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
