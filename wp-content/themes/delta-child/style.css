@@ -448,3 +448,17 @@ a:hover .left {
     left: 0;
     right: -55.8px;
 }
+
+.image-container {
+    height: 250px; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
