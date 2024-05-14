@@ -23,6 +23,10 @@ get_header(); ?>
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <meta property="og:title" content="<?php echo get_the_title(); ?>">
+    <meta property="og:description" content="<?php echo strip_tags(get_field('description')); ?>">
+    <meta property="og:image" content=<?php echo esc_url(get_field('hero_image')['url']); ?>>
 </head>
 
 <div id="primary" <?php astra_primary_class(); ?>>
@@ -141,7 +145,7 @@ function include_hero_section() {
     <div class="hero-image"
       style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo esc_url($hero_image['url']); ?>);">
       <div class="hero-text">
-        <h1 style="color: white;"><?php echo get_field('title'); ?></h1>
+        <h1 style="color: white;"><?php echo get_the_title(); ?></h1>
       </div>
       </div>
   
