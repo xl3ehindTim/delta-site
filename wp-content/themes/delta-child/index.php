@@ -64,7 +64,7 @@ get_header(); ?>
                 </div>
 
                 <div class="col-12 col-md-6 mt-5 mt-lg-0 justify-content-center justify-content-md-end">
-                    <img style="max-width: 500px;" src="wp-content/uploads/2024/05/IMG_0741-1.jpg" alt="Team" />
+                    <img style="max-width: 100%;" src="wp-content/uploads/2024/05/IMG_0741-1.jpg" alt="Team" />
                 </div>
             </div>
         </div>
