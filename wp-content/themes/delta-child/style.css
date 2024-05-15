@@ -110,6 +110,7 @@ Template: astra
 
 .project-card:hover .title-container {
     top: 1%; /* Move title and subtitle to their current location when hovered */
+}
 
 .title-container h2,
 .title-container h3 {
@@ -215,7 +216,6 @@ color: #000;
 
 .project-card:hover .project-card-button:hover .button-text {
 color: #fff;
-.card:hover .button-text {
     display: block;
     margin-right: 10px;
     color: #000;
@@ -248,6 +248,7 @@ color: #fff;
 
 .project-card:hover .diagonal-arrow {
     transform: rotate(135deg); /* Change to right arrow when hovered */
+}
 
 .diagonal-arrow::after {
     content: "";
