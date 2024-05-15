@@ -25,46 +25,42 @@ $posts = get_posts(
 
     <div style="height: 100vh;"></div>
 
-    <div class="mt-3 mb-3 mt-lg-5 mb-lg-5">
-        <div style="justify-content: center;">
-            <div class="card-container">
-                <?php foreach ($posts as $post):
-                    setup_postdata($post);
-        
-                    $title = get_field('title');
-                    $subtitle = get_field('subtitle');
-                    $description = get_field('description');
-                    $heroImage = get_field('hero_image');
-                    $projectLink = get_permalink();
-                ?>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('<?php echo esc_url($heroImage['url']) ?>');"></div>
-                    <div class="title-container">
-                        <h2><?php echo $title ?></h2>
-                        <h3><?php echo $subtitle ?></h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="description">
-                            <?php
-                                // Shorten description to 300 characters and add ellipsis
-                                $shortDescription = substr($description, 0, 300);
-                                if (strlen($description) > 300) {
-                                    $shortDescription .= "...";
-                                }
-                                echo $shortDescription;
-                            ?>
-                        </p>
-                    </div>
-                    <div>
-                        <button class="button"><span class="button-text">Read more</span><span class="diagonal-arrow"></span></button>
-                    </div>
-                </div>
+    <section class="wrapper mt-5">
+        <div class="container">
+            <div class="row">
+                <?php foreach ($posts as $post): ?>
+                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="card text-dark card-has-bg click-col">
+                                <img style="height: 550px; object-fit: cover; filter: brightness(85%);" class="card-img"
+                                    src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
+                                <div class="card-img-overlay d-flex flex-column">
+                                    <div class="card-body">
+                                        <!-- Needed to make the other content go to the bottom -->
+                                    </div>
+                                    <div id="card-footer" class="justify-content-between" style="display: flex;">
+                                        <div>
+                                            <h6 class="my-0 text-white d-block"><?php echo get_the_title(); ?></h6>
+                                            <small class="text-white">
+                                                <?php echo get_field('subtitle') ?>
+                                            </small>
+                                        </div>
+                                        <div class="d-flex align-items-end">
+                                            <button class="project-card-button">
+                                                <span class="button-text">Read more</span>
+                                                <span class="diagonal-arrow"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
 
+                    </div>
                 <?php endforeach; ?>
-                 
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
 <?php get_footer(); ?>

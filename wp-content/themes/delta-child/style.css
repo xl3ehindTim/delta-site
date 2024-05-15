@@ -43,7 +43,7 @@ Template: astra
 
 /* Project cards */
 
-.card-container {
+.project-card-container {
     justify-content: start;
     position: relative;
     width: 100%;
@@ -56,7 +56,7 @@ Template: astra
     gap: calc(100% / 50)
 }
 
-.card {
+.project-card {
     /* flex-grow: 1; */
     width: calc(100% / 3.5);
     height: 32em;
@@ -66,11 +66,11 @@ Template: astra
     margin-top: calc(100% / 50);
 }
   
-.card:hover .card-image {
+.project-card:hover .project-card-image {
     filter: brightness(50%);
 }
   
-.card-image {
+.project-card-image {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -78,7 +78,7 @@ Template: astra
     transition: filter 0.3s ease;
 }
   
-.card-content {
+.project-card-content {
     position: absolute;
     top: 100%; /* Initially, move content out of view */
     left: 0;
@@ -89,7 +89,7 @@ Template: astra
     color: #fff;
 }
 
-.card:hover .card-content {
+.project-card:hover .project-card-content {
     transform: translateX(0);
     top: 25%; /* Move content to the bottom */
 }
@@ -103,7 +103,7 @@ Template: astra
     transition: top 0.3s ease; /* Add transition for smooth animation */
 }
 
-.card:hover .title-container {
+.project-card:hover .title-container {
     top: 1%; /* Move title and subtitle to their current location when hovered */
 }
 
@@ -117,12 +117,13 @@ margin: 0;
 .swiper-team {
     width: 100%;
     height: 100%;
-  
+}
+
 .description {
   display: none;
 }
 
-.card:hover .description {
+.project-card:hover .description {
 display: block;
 }
 
@@ -133,13 +134,13 @@ display: block;
     display: inline-block;
 }
   
-.button {
+.project-card-button {
     position: absolute;
     bottom: 20px;
     right: 20px;
     padding: 8px 16px;
-    height: 40px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     background-color: #fff;
     color: #000;
     border: none;
@@ -147,7 +148,7 @@ display: block;
     cursor: pointer;
 }
   
-.button::after {
+.project-card-button::after {
     content: "";
     display: block;
     position: absolute;
@@ -155,7 +156,7 @@ display: block;
     top: calc(50% - 7.5px); /* Center the arrow vertically */
 }
   
-.card:hover .button::after {
+.project-card:hover .project-card-button::after {
 transform: rotate(135deg); /* Maintain arrow rotation on hover */
 }
 
@@ -171,8 +172,9 @@ transform: rotate(135deg); /* Maintain arrow rotation on hover */
 .swiper-pagination-bullet {
     background-color: #E5007D !important;
     opacity: 1;
+} 
 
-.card:hover .button {
+.project-card:hover .project-card-button {
   width: 150px;
   transition: width 0.3 ease;
 }
@@ -182,13 +184,13 @@ transform: rotate(135deg); /* Maintain arrow rotation on hover */
 display: none;
 }
 
-.card:hover .button-text {
+.project-card:hover .button-text {
 display: block;
 margin-right: 10px;
 color: #000;
 }
 
-.card:hover .button:hover .button-text {
+.project-card:hover .project-card-button:hover .button-text {
 color: #fff;
 }
 
@@ -199,7 +201,6 @@ color: #fff;
     align-items: center;
     
 }
-
 
 .diagonal-arrow {
     display: inline-block;
@@ -217,7 +218,7 @@ color: #fff;
     transform: rotate(90deg)
 }
 
-.card:hover .diagonal-arrow {
+.project-card:hover .diagonal-arrow {
     transform: rotate(135deg); /* Change to right arrow when hovered */
     
 }
@@ -259,7 +260,7 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-  .card:hover .diagonal-arrow::after {
+  .project-card:hover .diagonal-arrow::after {
     transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
     transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
