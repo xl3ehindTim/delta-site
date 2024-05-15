@@ -65,11 +65,11 @@ Template: astra
     border-radius: 10px;
     margin-top: calc(100% / 50);
 }
-  
+
 .card:hover .card-image {
     filter: brightness(50%);
 }
-  
+
 .card-image {
     width: 100%;
     height: 100%;
@@ -77,39 +77,45 @@ Template: astra
     background-position: center;
     transition: filter 0.3s ease;
 }
-  
+
 .card-content {
     position: absolute;
-    top: 100%; /* Initially, move content out of view */
+    top: 100%;
+    /* Initially, move content out of view */
     left: 0;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease, top 0.3s ease;
+    /* Add transition for smooth animation */
     color: #fff;
 }
 
 .card:hover .card-content {
     transform: translateX(0);
-    top: 25%; /* Move content to the bottom */
+    top: 25%;
+    /* Move content to the bottom */
 }
 
 .title-container {
     position: absolute;
-    top: 70%; /* Initially, keep title and subtitle at the bottom */
+    top: 70%;
+    /* Initially, keep title and subtitle at the bottom */
     left: 20px;
     color: #fff;
     -webkit-text-fill-color: #fff;
-    transition: top 0.3s ease; /* Add transition for smooth animation */
+    transition: top 0.3s ease;
+    /* Add transition for smooth animation */
 }
 
 .card:hover .title-container {
-    top: 1%; /* Move title and subtitle to their current location when hovered */
+    top: 1%;
+    /* Move title and subtitle to their current location when hovered */
 }
 
 .title-container h2,
 .title-container h3 {
-margin: 0;
+    margin: 0;
 }
 
 /* Swiper !important */
@@ -117,13 +123,30 @@ margin: 0;
 .swiper-team {
     width: 100%;
     height: 100%;
-  
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .description {
-  display: none;
+    display: none;
 }
 
 .card:hover .description {
-display: block;
+    display: block;
 }
 
 /* Button */
@@ -132,7 +155,7 @@ display: block;
     position: relative;
     display: inline-block;
 }
-  
+
 .button {
     position: absolute;
     bottom: 20px;
@@ -146,17 +169,20 @@ display: block;
     border-radius: 5px;
     cursor: pointer;
 }
-  
+
 .button::after {
     content: "";
     display: block;
     position: absolute;
-    right: 8px; /* Adjust positioning as needed */
-    top: calc(50% - 7.5px); /* Center the arrow vertically */
+    right: 8px;
+    /* Adjust positioning as needed */
+    top: calc(50% - 7.5px);
+    /* Center the arrow vertically */
 }
-  
+
 .card:hover .button::after {
-transform: rotate(135deg); /* Maintain arrow rotation on hover */
+    transform: rotate(135deg);
+    /* Maintain arrow rotation on hover */
 }
 
 .swiper-wrapper {
@@ -171,25 +197,27 @@ transform: rotate(135deg); /* Maintain arrow rotation on hover */
 .swiper-pagination-bullet {
     background-color: #E5007D !important;
     opacity: 1;
+}
 
 .card:hover .button {
-  width: 150px;
-  transition: width 0.3 ease;
+    width: 150px;
+    transition: width 0.3 ease;
 }
+
 /* Text Reveal */
 
 .button-text {
-display: none;
+    display: none;
 }
 
 .card:hover .button-text {
-display: block;
-margin-right: 10px;
-color: #000;
+    display: block;
+    margin-right: 10px;
+    color: #000;
 }
 
 .card:hover .button:hover .button-text {
-color: #fff;
+    color: #fff;
 }
 
 /* Arrows */
@@ -197,29 +225,31 @@ color: #fff;
 .arrow-container {
     display: flex;
     align-items: center;
-    
-}
 
+}
 
 .diagonal-arrow {
     display: inline-block;
     position: absolute;
     width: 15px;
     height: 15px;
-    top: calc(50% - 7.5px); /* Center the arrow vertically */
+    top: calc(50% - 7.5px);
+    /* Center the arrow vertically */
     right: 8px;
     border-top: 3px solid #E5007D;
     border-left: 3px solid #E5007D;
     transform-origin: center;
     border-radius: 2px;
     -webkit-border-radius: 2px;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease;
+    /* Add transition for smooth animation */
     transform: rotate(90deg)
 }
 
 .card:hover .diagonal-arrow {
-    transform: rotate(135deg); /* Change to right arrow when hovered */
-    
+    transform: rotate(135deg);
+    /* Change to right arrow when hovered */
+
 }
 
 .diagonal-arrow::after {
@@ -228,9 +258,11 @@ color: #fff;
     width: 3px;
     height: 20px;
     background-color: #E5007D;
-    transform: rotate(-45deg) translate(6px, 0px); /* Adjust position */
+    transform: rotate(-45deg) translate(6px, 0px);
+    /* Adjust position */
     border-radius: 2px;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease;
+    /* Add transition for smooth animation */
 }
 
 a:hover .left {
@@ -245,13 +277,13 @@ a:hover .left {
 .student-slide .student-name {
     position: absolute;
     font-weight: 600;
-    bottom: 5px; 
+    bottom: 5px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     color: white;
-    font-size: 16px; 
-    padding: 5px;  
-    text-align: center; 
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
 }
 
 .active-term {
@@ -259,7 +291,38 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-  .card:hover .diagonal-arrow::after {
-    transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+.card:hover .diagonal-arrow::after {
+    transform: rotate(-45deg) translate(6px, 0px) scaleY(0);
+    /* Adjust position for smooth transition */
+    transition: transform 0.3s ease;
+    /* Add transition for smooth animation */
+}
+
+.arrow {
+    border: solid #E5007D;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: 5px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-right: 5px;
+}
+
+a:hover .right {
+    transform: translateX(5px) rotate(-45deg);
 }
