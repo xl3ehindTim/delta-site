@@ -5,7 +5,7 @@ Template Name: Projects
 
 $posts = get_posts(
     array(
-        'posts_per_page' => 7,
+        'posts_per_page' => 12,
         'post_type' => 'projects'
     )
 );
@@ -27,7 +27,7 @@ $posts = get_posts(
 
     <div class="mt-3 mb-3 mt-lg-5 mb-lg-5">
         <div style="justify-content: center;">
-            <div class="card-container">
+            <div class="delta-card-container">
                 <?php foreach ($posts as $post):
                     setup_postdata($post);
         
@@ -37,14 +37,15 @@ $posts = get_posts(
                     $heroImage = get_field('hero_image');
                     $projectLink = get_permalink();
                 ?>
-                <div class="card">
-                    <div class="card-image" style="background-image: url('<?php echo esc_url($heroImage['url']) ?>');"></div>
-                    <div class="title-container">
+                <div class="delta-card">
+                    <div class="delta-card-image" style="background-image: url('<?php echo esc_url($heroImage['url']) ?>');"></div>
+                    
+                    <div class="delta-title-container">
                         <h2><?php echo $title ?></h2>
                         <h3><?php echo $subtitle ?></h3>
                     </div>
-                    <div class="card-content">
-                        <p class="description">
+                    <div class="delta-card-information">
+                        <p class="delta-description">
                             <?php
                                 // Shorten description to 300 characters and add ellipsis
                                 $shortDescription = substr($description, 0, 300);
@@ -55,9 +56,11 @@ $posts = get_posts(
                             ?>
                         </p>
                     </div>
+                
                     <div>
-                        <button class="button"><span class="button-text">Read more</span><span class="diagonal-arrow"></span></button>
+                        <button class="delta-button"><span class="delta-button-text">Read more</span><span class="diagonal-arrow"></span></button>
                     </div>
+                   
                 </div>
 
                 <?php endforeach; ?>

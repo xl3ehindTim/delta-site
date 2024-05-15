@@ -41,9 +41,9 @@ Template: astra
     color: white;
 }
 
-/* Project cards */
+/* Project delta-cards */
 
-.card-container {
+.delta-card-container {
     justify-content: start;
     position: relative;
     width: 100%;
@@ -56,7 +56,7 @@ Template: astra
     gap: calc(100% / 50)
 }
 
-.card {
+.delta-card {
     /* flex-grow: 1; */
     width: calc(100% / 3.5);
     height: 32em;
@@ -66,11 +66,11 @@ Template: astra
     margin-top: calc(100% / 50);
 }
   
-.card:hover .card-image {
+.delta-card:hover .delta-card-image {
     filter: brightness(50%);
 }
   
-.card-image {
+.delta-card-image {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -78,9 +78,9 @@ Template: astra
     transition: filter 0.3s ease;
 }
   
-.card-content {
+.delta-card-information {
     position: absolute;
-    top: 100%; /* Initially, move content out of view */
+    top: 100%; 
     left: 0;
     width: 100%;
     padding: 20px;
@@ -89,27 +89,28 @@ Template: astra
     color: #fff;
 }
 
-.card:hover .card-content {
+.delta-card:hover .delta-card-information {
     transform: translateX(0);
-    top: 25%; /* Move content to the bottom */
+    top: 10%; 
 }
 
-.title-container {
+.delta-title-container {
     position: absolute;
-    top: 70%; /* Initially, keep title and subtitle at the bottom */
+    top: 80%; /* Initially, keep title and subtitle at the bottom */
     left: 20px;
     color: #fff;
     -webkit-text-fill-color: #fff;
     transition: top 0.3s ease; /* Add transition for smooth animation */
 }
 
-.card:hover .title-container {
+.delta-card:hover .delta-title-container {
     top: 1%; /* Move title and subtitle to their current location when hovered */
 }
 
-.title-container h2,
-.title-container h3 {
-margin: 0;
+.delta-title-container h2,
+.delta-title-container h3 {
+    margin: 0;
+    font-size: 24px;
 }
 
 /* Swiper !important */
@@ -117,23 +118,20 @@ margin: 0;
 .swiper-team {
     width: 100%;
     height: 100%;
-  
-.description {
-  display: none;
 }
 
-.card:hover .description {
+.delta-description {
+  display: none;
+  /* font-size: 16px; */
+}
+
+.delta-card:hover .delta-description {
 display: block;
 }
 
 /* Button */
-
-.button-container {
-    position: relative;
-    display: inline-block;
-}
   
-.button {
+.delta-button {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -147,7 +145,7 @@ display: block;
     cursor: pointer;
 }
   
-.button::after {
+.delta-button::after {
     content: "";
     display: block;
     position: absolute;
@@ -155,8 +153,10 @@ display: block;
     top: calc(50% - 7.5px); /* Center the arrow vertically */
 }
   
-.card:hover .button::after {
-transform: rotate(135deg); /* Maintain arrow rotation on hover */
+.delta-card:hover .delta-button::after {
+    transform: rotate(135deg); /* Maintain arrow rotation on hover */
+    width: 150px;
+    transition: width 0.3 ease;
 }
 
 .swiper-wrapper {
@@ -171,24 +171,25 @@ transform: rotate(135deg); /* Maintain arrow rotation on hover */
 .swiper-pagination-bullet {
     background-color: #E5007D !important;
     opacity: 1;
+}
 
-.card:hover .button {
+.delta-card:hover .delta-button {
   width: 150px;
   transition: width 0.3 ease;
 }
 /* Text Reveal */
 
-.button-text {
+.delta-button-text {
 display: none;
 }
 
-.card:hover .button-text {
+.delta-card:hover .delta-button-text {
 display: block;
 margin-right: 10px;
 color: #000;
 }
 
-.card:hover .button:hover .button-text {
+.delta-card:hover .delta-button:hover .delta-button-text {
 color: #fff;
 }
 
@@ -199,7 +200,6 @@ color: #fff;
     align-items: center;
     
 }
-
 
 .diagonal-arrow {
     display: inline-block;
@@ -217,7 +217,7 @@ color: #fff;
     transform: rotate(90deg)
 }
 
-.card:hover .diagonal-arrow {
+.delta-card:hover .diagonal-arrow {
     transform: rotate(135deg); /* Change to right arrow when hovered */
     
 }
@@ -259,7 +259,7 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-  .card:hover .diagonal-arrow::after {
+.delta-card:hover .diagonal-arrow::after {
     transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
     transition: transform 0.3s ease; /* Add transition for smooth animation */
 }
