@@ -103,19 +103,19 @@ $heroImage = get_field('hero_image');
         <div class="row text-center">
             <div class="col-4">
                 <div class="p-4 bg-light rounded">
-                    <h3 class="text-primary mb-0">40+</h3>
+                    <h3 class="mb-0" style="color: #E5007D;">40+</h3>
                     <p class="text-secondary">Real world projects</p>
                 </div>
             </div>
             <div class="col-4">
                 <div class="p-4 bg-light rounded">
-                    <h3 class="text-primary mb-0">21</h3>
+                    <h3 class="mb-0" style="color: #E5007D;">21</h3>
                     <p class="text-secondary">Years of experience</p>
                 </div>
             </div>
             <div class="col-4">
                 <div class="p-4 bg-light rounded">
-                    <h3 class="text-primary mb-0">200+</h3>
+                    <h3 class="mb-0" style="color: #E5007D;">200+</h3>
                     <p class="text-secondary">Students followed the Delta program</p>
                 </div>
             </div>
@@ -123,11 +123,11 @@ $heroImage = get_field('hero_image');
     </section>
 
     <!-- Activities -->
-    <section id="delta-activities" class="container">
-        <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;"></div>
-        <h2>Our Activities</h2>
-        <p>Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed praesentium voluptates est totam quasi et cumque facere aut aperiam esse ut unde consequatur sit ipsa facilis.</p>
-        <div style="width: 1240px;">
+    <section id="delta-activities" class="container pb-3 pb-lg-3">
+        <!-- <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;"></div> -->
+        <h2 class="justify-content-center d-flex">Our Activities</h2>
+        <p class="justify-content-center d-flex">Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed praesentium voluptates est totam quasi et cumque facere aut aperiam esse ut unde consequatur sit ipsa facilis.</p>
+        <div style="width: 100%;">
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100">
@@ -168,8 +168,8 @@ $heroImage = get_field('hero_image');
 
     <!-- Current Team -->
     <section id="delta-team" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
-        <h2>Current Team</h2>
-        <p>Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed praesentium voluptates est totam quasi et cumque facere aut operiam esse ut unde consequatur sit ipsa facilis.</p>
+        <h2 class="justify-content-center d-flex">Current Team</h2>
+        <p class="justify-content-center d-flex">Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed praesentium voluptates est totam quasi et cumque facere aut operiam esse ut unde consequatur sit ipsa facilis.</p>
         <img src="" alt="The Current Delta Team" />
     </section>
 
