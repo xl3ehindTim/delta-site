@@ -125,12 +125,12 @@ get_header(); ?>
         style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/2024/05/strijp-tq-fontys.jpg);">
         <div class="hero-text">
             <h2 style="color: white;">Our workplace</h2>
-            <p class="mt-3 mb-3">Are you interested in the Delta program, or perhaps you want to know more about it?
+            <p class="mt-4 mb-4">Are you interested in the Delta program, or perhaps you want to know more about it?
                 Come visit us
                 at Achtseweg Zuid
                 151C 5651 GW Eindhoven on TQ4.2</p>
 
-            <a class="mt-5" target="_blank" href="https://portal.fhict.nl/Studentenplein/SitePages/Delta.aspx">
+            <a target="_blank" href="https://portal.fhict.nl/Studentenplein/SitePages/Delta.aspx">
                 <button class="button-white">
                     More for students
                     <i class="arrow right"></i>
@@ -144,7 +144,7 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php
-get_footer();
+// get_footer();
 ?>
 
 <script>
