@@ -15,9 +15,9 @@ Template Name: About
         <div class="hero-text">
             <h1 style="color: white;">A Journey for the Ambitious</h1>
         </div>
-        <div class="arrow-down mt-4">
+        <!-- <div class="arrow-down mt-4">
             <i class="arrow down"></i>
-        </div>
+        </div> -->
     </div>
 
     <div style="height: 110vh;"></div>
@@ -69,24 +69,24 @@ Template Name: About
         </section>
     </div>
 
-    <div style="height: 75vh;"></div>
-
+    <div class="height-placeholder"></div>
+    
     <!-- Statistics -->
-    <section id="delta-statistics" class="container mt-3 mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
+    <section id="delta-statistics" class="container mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
         <div class="row d-flex justify-content-center text-center">
-            <div class="col-3">
+        <div class="col-12 col-md-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
                     <h3 class="mb-0 pb-2" style="color: #E5007D;">40+</h3>
                     <p class="font-weight-bold">Real world projects</p>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
                     <h3 class="mb-0 pb-2" style="color: #E5007D;">21</h3>
                     <p class="font-weight-bold">Years of experience</p>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
                     <h3 class="mb-0 pb-2" style="color: #E5007D;">200+</h3>
                     <p class="font-weight-bold">Students followed the Delta program</p>
@@ -95,7 +95,7 @@ Template Name: About
         </div>
     </section>
 
-    <div style="height: 10vh;"></div>
+    <!-- <div style="height: 10vh;"></div> -->
 
     <!-- Activities -->
     <section id="delta-activities" class="container pb-3 pb-lg-3">
@@ -143,11 +143,11 @@ Template Name: About
         </div>
     </section>
 
-    <div style="height: 10vh;"></div>
+    <!-- <div style="height: 10vh;"></div> -->
 
     <!-- Current Team -->
     <section id="delta-team" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
-        <h2 class="justify-content-center d-flex pb-2">Current Team</h2>
+        <h2 class="justify-content-center d-flex pb-2">Meet the Delta's!</h2>
         <p class="justify-content-center text-center d-flex pb-4 mb-4">Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit
             illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed
             praesentium voluptates est totam quasi et cumque facere aut operiam esse ut unde consequatur sit ipsa
