@@ -47,13 +47,13 @@ get_header();
                                                     <?php echo get_field('subtitle') ?>
                                                 </p>
                                             </div>
-                                            <a href="<?php the_permalink(); ?>">
+                                            <!-- <a href="<?php the_permalink(); ?>"> -->
                                             <div class="card-footer-placeholder"></div>
                                             <div class="card-button">
                                                 <span class="card-button-text"><h6>Read more</h6></span>
                                                 <span class="diagonal-arrow"></span>
                                             </div>
-                                            </a>
+                                            <!-- </a> -->
                                         </div>
                                         <div class="card-description">
                                             <?php
