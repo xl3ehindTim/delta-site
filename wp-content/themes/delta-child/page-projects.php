@@ -25,7 +25,7 @@ get_header();
                 <?php
                 $query_args = array(
                     'post_type' => 'projects',
-                    'posts_per_page' => 3,
+                    'posts_per_page' => 9,
                     'paged' => 1
                 );
 
@@ -40,24 +40,30 @@ get_header();
                                          class="card-img"
                                          src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
                                     <div class="card-img-overlay d-flex flex-column">
-                                        <div class="card-body">
-                                            <!-- Needed to make the other content go to the bottom -->
-                                        </div>
                                         <div id="card-footer" class="justify-content-between" style="display: flex;">
                                             <div class="card-footer-text">
-                                                <h6 class="my-0 text-white d-block"><?php echo get_the_title(); ?></h6>
-                                                <small class="text-white">
+                                                <h6 class="my-0 text-white d-block" style="font-size:22px;"><?php echo get_the_title(); ?></h6>
+                                                <p class="text-white" style="font-size:16px;">
                                                     <?php echo get_field('subtitle') ?>
-                                                </small>
+                                                </p>
                                             </div>
+                                            <a href="<?php the_permalink(); ?>">
                                             <div class="card-footer-placeholder"></div>
                                             <div class="card-button">
-                                                <span class="card-button-text">Read more</span>
+                                                <span class="card-button-text"><h6>Read more</h6></span>
                                                 <span class="diagonal-arrow"></span>
                                             </div>
+                                            </a>
                                         </div>
                                         <div class="card-description">
-                                            <?php echo get_field('description') ?>
+                                            <?php
+                                            // Shorten description to 300 characters and add ellipsis
+                                            $shortDescription = substr(get_field('description'), 0, 500);
+                                            if (strlen(get_field('description')) > 500) {
+                                                $shortDescription .= "...";
+                                            }
+                                            echo $shortDescription;
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -86,4 +92,47 @@ get_header();
 
 <?php get_footer(); ?>
 
+<!-- Show project description on phone -->
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    var cards = document.querySelectorAll('.card');
+
+    cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            card.classList.toggle('show-description');
+        });
+    });
+});
+
+</script>
+
+<!-- Pagination -->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    function loadProjects(page) {
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            type: 'POST',
+            data: {
+                action: 'ajax_projects_pagination',
+                page: page
+            },
+            success: function(response) {
+                $('.projects-container').html(response);
+                $('.pagination a').removeClass('active');
+                $('.pagination a[data-page="' + page + '"]').addClass('active');
+            }
+        });
+    }
+
+    $(document).on('click', '.pagination a', function(e) {
+        e.preventDefault();
+        var page = $(this).attr('data-page');
+        loadProjects(page);
+    });
+});
+</script>
+
 <?php wp_reset_postdata(); ?>
+
+

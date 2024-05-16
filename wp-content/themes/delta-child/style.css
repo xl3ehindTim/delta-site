@@ -217,6 +217,10 @@ a:hover .right {
 
 /* Project Cards */
 
+.card {
+    overflow: hidden;
+}
+
 .card img {
     filter: brightness(85%);
 }
@@ -231,11 +235,13 @@ a:hover .right {
     color: #fff;
     -webkit-text-fill-color: #fff;
     transition: top 0.3s ease; /* Add transition for smooth animation */
+    font-size: 24px;
 }
 
 .card:hover .card-footer-text {
-    top: 1%; /* Move title and subtitle to their current location when hovered */
+    top: 3%; /* Move title and subtitle to their current location when hovered */
     position: absolute;
+    
 }
 .card:hover .card-footer-text:after {
     position: relative;
@@ -247,16 +253,19 @@ a:hover .right {
 
 .card-description {
     position: absolute;
+    /* display: none; */
     top: 100%;
-    left: 0;
+    left: -0.5%;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
     transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
     color: #fff;
+    font-size:14px
 }
 
 .card:hover .card-description {
+    /* display: inline-block; */
     transform: translateX(0);
     top: 10%;
 }
@@ -277,19 +286,22 @@ a:hover .right {
     cursor: pointer;
     transition: width 0.3s ease;
     justify-content: flex-start;
+    overflow: hidden;
 }
 
 .card:hover .card-button {
     width: 150px;
-    background-color: black;
 }
 
 .card-button-text {
     display: inline-block;
     opacity: 0;
-    transition: opacity 0.1s ease;  /* Transition for opacity */
+    transition: opacity 0.2s ease;  /* Transition for opacity */
     transition-delay: 0.1s;  /* Delay the transition until the button expands */
     color: white;
+}
+.card-button-text h6 {
+    color: black;
 }
 
 .card:hover .card-button-text {
@@ -304,5 +316,107 @@ a:hover .right {
 
 
 
+/* Phone interaction */
+@media (max-width: 768px) {
 
+    .card-description {
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, top 0.3s ease;
+        color: #fff;
+        position: absolute;
+    }
 
+    .card.show-description .card-description {
+        top: 10%;
+    }
+
+    .card-footer-text {
+        top: 88%;
+        transition: top 0.3s ease;
+    }
+
+    .card.show-description .card-footer-text {
+        top: 2%;
+    }
+
+    .card-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 16px;
+        height: 40px;
+        width: 30px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: width 0.3s ease;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    
+    .card.show-description .card-button {
+        width: 150px;
+    }
+    
+    .card-button-text {
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.2s ease;  /* Transition for opacity */
+        transition-delay: 0.1s;  /* Delay the transition until the button expands */
+        color: white;
+    }
+    .card-button-text h6 {
+        color: black;
+    }
+    
+    .card.show-description .card-button-text {
+        opacity: 1;
+    }
+    
+    .card-button-text {
+        text-align: start;
+        margin: auto;
+        width: 100%;
+    }
+
+    .diagonal-arrow {
+        display: inline-block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: calc(50% - 7.5px);
+        /* Center the arrow vertically */
+        right: 8px;
+        border-top: 3px solid #E5007D;
+        border-left: 3px solid #E5007D;
+        transform-origin: center;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        transition: transform 0.3s ease;
+        /* Add transition for smooth animation */
+        transform: rotate(90deg)
+    }
+    
+    .card.show-description .diagonal-arrow {
+        transform: rotate(135deg); /* Change to right arrow when hovered */
+    }
+    
+    .diagonal-arrow::after {
+        content: "";
+        display: block;
+        width: 3px;
+        height: 20px;
+        background-color: #E5007D;
+        transform: rotate(-45deg) translate(6px, 0px);
+        /* Adjust position */
+        border-radius: 2px;
+        transition: transform 0.3s ease;
+        /* Add transition for smooth animation */
+    }
+}
