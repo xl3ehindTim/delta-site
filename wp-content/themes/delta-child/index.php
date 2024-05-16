@@ -75,16 +75,16 @@ get_header(); ?>
             <h4 class="justify-content-center d-flex" style="color: #E5007D;">Portfolio</h4>
             <h2 class="justify-content-center d-flex">Dive into our projects</h2>
 
-            <div class="row mt-5">
+            <div class="row mt-4 mt-lg-5">
                 <?php foreach ($posts as $post): ?>
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
                         <a href="<?php the_permalink(); ?>">
                             <div class="card text-dark card-has-bg click-col">
-                                <img style="height: 550px; object-fit: cover; filter: brightness(85%);" class="card-img"
+                                <img style="height: 500px; object-fit: cover; filter: brightness(85%);" class="card-img"
                                     src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
                                 <div class="card-img-overlay d-flex flex-column">
                                     <div class="card-body">
-                                        <!-- Needed to make the other content go to the bottom -->
+                                        <!-- Necessary to make the other content go to the bottom -->
                                     </div>
                                     <div id="card-footer" class="justify-content-between" style="display: flex;">
                                         <div>
@@ -108,7 +108,7 @@ get_header(); ?>
                 <?php endforeach; ?>
             </div>
 
-            <div class="justify-content-center d-flex mt-3 mb-3 mb-lg-5">
+            <div class="justify-content-center d-flex mt-1 mb-3 mb-lg-5">
                 <a href="projects">
                     <button>
                         Explore portfolio
@@ -116,28 +116,39 @@ get_header(); ?>
                     </button>
                 </a>
             </div>
-
-            <div
-                style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/2024/05/strijp-tq-fontys.jpg);">
-                <div class="hero-text">
-                    <h2 style="color: white;">Our workplace</h2>
-                    <p class="mt-3">Are you interested in the Delta program, or perhaps you want to know more about it? Come visit us
-                        at Achtseweg Zuid
-                        151C 5651 GW Eindhoven on TQ4.2</p>
-
-                    <a class="mt-3" target="_blank" href="https://portal.fhict.nl/Studentenplein/SitePages/Delta.aspx">
-                        <button>
-                            More for students
-                            <i class="arrow right"></i>
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div style="height: 85vh;"></div>
         </div>
     </section>
+
+    <div class="mt-5 pb-5"></div>
+
+    <div class="workplace"
+        style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/2024/05/strijp-tq-fontys.jpg);">
+        <div class="hero-text">
+            <h2 style="color: white;">Our workplace</h2>
+            <p class="mt-3 mb-3">Are you interested in the Delta program, or perhaps you want to know more about it?
+                Come visit us
+                at Achtseweg Zuid
+                151C 5651 GW Eindhoven on TQ4.2</p>
+
+            <a class="mt-5" target="_blank" href="https://portal.fhict.nl/Studentenplein/SitePages/Delta.aspx">
+                <button class="button-white">
+                    More for students
+                    <i class="arrow right"></i>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="placeholder"></div>
+</div>
 </div><!-- #primary -->
 
 <?php
 get_footer();
+?>
+
+<script>
+    const { clientHeight } = document.getElementsByClassName('workplace')[0]
+    const el = document.getElementsByClassName('placeholder')[0]
+    el.setAttribute('style', `height: ${clientHeight}px`);
+</script>

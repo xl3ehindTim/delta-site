@@ -23,6 +23,17 @@ Template: astra
     /* relative */
 }
 
+.site-below-footer-wrap {
+    background-color: black !important;
+}
+.site-below-footer-wrap a {
+    text-decoration: none;
+}
+
+.site-below-footer-wrap p {
+    color: white;
+}
+
 .hero-text {
     text-align: center;
     position: absolute;
@@ -167,6 +178,11 @@ display: block;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.project-card-button:hover {
+    color: black;
+    background-color: white;
 }
   
 .project-card-button::after {
@@ -321,4 +337,14 @@ a:hover .left {
 
 a:hover .right {
     transform: translateX(5px) rotate(-45deg);
+}
+
+.button-white {
+    color: black;
+    background-color: white;
+}
+
+.button-white:hover {
+    color: black;
+    background-color: white;
 }
