@@ -41,78 +41,6 @@ Template: astra
     color: white;
 }
 
-/* Project delta-cards */
-
-.delta-card-container {
-    justify-content: start;
-    position: relative;
-    width: 100%;
-    margin-inline: auto;
-    margin-top: 50px;
-    margin-left: 5%;
-    margin-bottom: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(100% / 50)
-}
-
-.delta-card {
-    /* flex-grow: 1; */
-    width: calc(100% / 3.5);
-    height: 32em;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: calc(100% / 50);
-}
-  
-.delta-card:hover .delta-card-image {
-    filter: brightness(50%);
-}
-  
-.delta-card-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: filter 0.3s ease;
-}
-  
-.delta-card-information {
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
-    color: #fff;
-}
-
-.delta-card:hover .delta-card-information {
-    transform: translateX(0);
-    top: 10%; 
-}
-
-.delta-title-container {
-    position: absolute;
-    top: 80%; /* Initially, keep title and subtitle at the bottom */
-    left: 20px;
-    color: #fff;
-    -webkit-text-fill-color: #fff;
-    transition: top 0.3s ease; /* Add transition for smooth animation */
-}
-
-.delta-card:hover .delta-title-container {
-    top: 1%; /* Move title and subtitle to their current location when hovered */
-}
-
-.delta-title-container h2,
-.delta-title-container h3 {
-    margin: 0;
-    font-size: 24px;
-}
-
 /* Swiper !important */
 .swiper-images,
 .swiper-team {
@@ -120,44 +48,23 @@ Template: astra
     height: 100%;
 }
 
-.delta-description {
-  display: none;
-  /* font-size: 16px; */
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease;
 }
 
-.delta-card:hover .delta-description {
-display: block;
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Button */
-  
-.delta-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 16px;
-    height: 40px;
-    width: 30px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-  
-.delta-button::after {
-    content: "";
-    display: block;
-    position: absolute;
-    right: 8px; /* Adjust positioning as needed */
-    top: calc(50% - 7.5px); /* Center the arrow vertically */
-}
-  
-.delta-card:hover .delta-button::after {
-    transform: rotate(135deg); /* Maintain arrow rotation on hover */
-    width: 150px;
-    transition: width 0.3 ease;
-}
+
 
 .swiper-wrapper {
     cursor: grab;
@@ -173,32 +80,12 @@ display: block;
     opacity: 1;
 }
 
-.delta-card:hover .delta-button {
-  width: 150px;
-  transition: width 0.3 ease;
-}
-/* Text Reveal */
-
-.delta-button-text {
-display: none;
-}
-
-.delta-card:hover .delta-button-text {
-display: block;
-margin-right: 10px;
-color: #000;
-}
-
-.delta-card:hover .delta-button:hover .delta-button-text {
-color: #fff;
-}
 
 /* Arrows */
 
 .arrow-container {
     display: flex;
     align-items: center;
-    
 }
 
 .diagonal-arrow {
@@ -206,20 +93,21 @@ color: #fff;
     position: absolute;
     width: 15px;
     height: 15px;
-    top: calc(50% - 7.5px); /* Center the arrow vertically */
+    top: calc(50% - 7.5px);
+    /* Center the arrow vertically */
     right: 8px;
     border-top: 3px solid #E5007D;
     border-left: 3px solid #E5007D;
     transform-origin: center;
     border-radius: 2px;
     -webkit-border-radius: 2px;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease;
+    /* Add transition for smooth animation */
     transform: rotate(90deg)
 }
 
-.delta-card:hover .diagonal-arrow {
+.card:hover .diagonal-arrow {
     transform: rotate(135deg); /* Change to right arrow when hovered */
-    
 }
 
 .diagonal-arrow::after {
@@ -228,9 +116,11 @@ color: #fff;
     width: 3px;
     height: 20px;
     background-color: #E5007D;
-    transform: rotate(-45deg) translate(6px, 0px); /* Adjust position */
+    transform: rotate(-45deg) translate(6px, 0px);
+    /* Adjust position */
     border-radius: 2px;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease;
+    /* Add transition for smooth animation */
 }
 
 a:hover .left {
@@ -245,13 +135,13 @@ a:hover .left {
 .student-slide .student-name {
     position: absolute;
     font-weight: 600;
-    bottom: 5px; 
+    bottom: 5px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     color: white;
-    font-size: 16px; 
-    padding: 5px;  
-    text-align: center; 
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
 }
 
 .active-term {
@@ -259,7 +149,160 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-.delta-card:hover .diagonal-arrow::after {
-    transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+
+.arrow {
+    border: solid #E5007D;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform 0.2s ease-in-out;
 }
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: 5px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-right: 5px;
+}
+
+a:hover .right {
+    transform: translateX(5px) rotate(-45deg);
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #EB3397;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background-color: #EB3397;
+    color: #fff;
+    border-color: #EB3397;
+}
+
+.pagination a.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: #ddd;
+}
+
+.pagination a span {
+    display: none;
+}
+
+/* Project Cards */
+
+.card img {
+    filter: brightness(85%);
+}
+
+.card:hover img {
+    filter: brightness(50%);
+}
+
+.card-footer-text {
+    position: absolute;
+    top: 88%; /* Initially, keep title and subtitle at the bottom */
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    transition: top 0.3s ease; /* Add transition for smooth animation */
+}
+
+.card:hover .card-footer-text {
+    top: 1%; /* Move title and subtitle to their current location when hovered */
+    position: absolute;
+}
+.card:hover .card-footer-text:after {
+    position: relative;
+}
+
+.card-footer-placeholder {
+    display: block;
+}
+
+.card-description {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
+    color: #fff;
+}
+
+.card:hover .card-description {
+    transform: translateX(0);
+    top: 10%;
+}
+
+/* Project Card Button */
+
+.card-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    height: 40px;
+    width: 30px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: width 0.3s ease;
+    justify-content: flex-start;
+}
+
+.card:hover .card-button {
+    width: 150px;
+    background-color: black;
+}
+
+.card-button-text {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.1s ease;  /* Transition for opacity */
+    transition-delay: 0.1s;  /* Delay the transition until the button expands */
+    color: white;
+}
+
+.card:hover .card-button-text {
+    opacity: 1;
+}
+
+.card-button-text {
+    text-align: start;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+
+
