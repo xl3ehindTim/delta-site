@@ -41,6 +41,82 @@ Template: astra
     color: white;
 }
 
+/* Project cards */
+
+.project-card-container {
+    justify-content: start;
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(100% / 50)
+}
+
+.project-card {
+    /* flex-grow: 1; */
+    width: calc(100% / 3.5);
+    height: 32em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: calc(100% / 50);
+}
+
+.project-card-image {
+    filter: brightness(50%);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease;
+}
+  
+.project-card-content {
+    position: absolute;
+    top: 100%;
+    /* Initially, move content out of view */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, top 0.3s ease;
+    /* Add transition for smooth animation */
+    color: #fff;
+}
+
+.project-card:hover .project-card-content {
+    transform: translateX(0);
+    top: 25%;
+    /* Move content to the bottom */
+}
+
+.title-container {
+    position: absolute;
+    top: 70%;
+    /* Initially, keep title and subtitle at the bottom */
+    left: 20px;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    transition: top 0.3s ease;
+    /* Add transition for smooth animation */
+}
+
+.project-card:hover .title-container {
+    top: 1%; /* Move title and subtitle to their current location when hovered */
+}
+
+.title-container h2,
+.title-container h3 {
+    margin: 0;
+}
+
 /* Swiper !important */
 .swiper-images,
 .swiper-team {
@@ -79,7 +155,6 @@ Template: astra
     background-color: #E5007D !important;
     opacity: 1;
 }
-
 
 /* Arrows */
 
