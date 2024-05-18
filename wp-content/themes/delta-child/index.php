@@ -78,33 +78,41 @@ get_header(); ?>
             <div class="row mt-4 mt-lg-5">
                 <?php foreach ($posts as $post): ?>
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="card text-dark card-has-bg click-col">
-                                <img style="height: 500px; object-fit: cover; filter: brightness(85%);" class="card-img"
-                                    src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
-                                <div class="card-img-overlay d-flex flex-column">
-                                    <div class="card-body">
-                                        <!-- Necessary to make the other content go to the bottom -->
-                                    </div>
-                                    <div id="card-footer" class="justify-content-between" style="display: flex;">
-                                        <div>
-                                            <h6 class="my-0 text-white d-block"><?php echo get_the_title(); ?></h6>
-                                            <small class="text-white">
-                                                <?php echo get_field('subtitle') ?>
-                                            </small>
-                                        </div>
-                                        <div class="d-flex align-items-end">
-                                            <button class="project-card-button">
-                                                <span class="button-text">Read more</span>
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="card text-dark card-has-bg click-col">
+                                    <img style="height: 550px; object-fit: cover;"
+                                         class="card-img"
+                                         src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
+                                    <div class="card-img-overlay d-flex flex-column">
+                                        <div id="card-footer" class="justify-content-between" style="display: flex;">
+                                            <div class="card-footer-text">
+                                                <h6 class="my-0 text-white d-block" style="font-size:22px;"><?php echo get_the_title(); ?></h6>
+                                                <p class="text-white" style="font-size:16px;">
+                                                    <?php echo get_field('subtitle') ?>
+                                                </p>
+                                            </div>
+                                            <!-- <a href="<?php the_permalink(); ?>"> -->
+                                            <div class="card-footer-placeholder"></div>
+                                            <div class="card-button">
+                                                <span class="card-button-text"><h6>Read more</h6></span>
                                                 <span class="diagonal-arrow"></span>
-                                            </button>
+                                            </div>
+                                            <!-- </a> -->
+                                        </div>
+                                        <div class="card-description">
+                                            <?php
+                                            // Shorten description to 800 characters and add ellipsis
+                                            $shortDescription = substr(get_field('description'), 0, 800);
+                                            if (strlen(get_field('description')) > 800) {
+                                                $shortDescription .= "...";
+                                            }
+                                            echo $shortDescription;
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-
-                    </div>
+                            </a>
+                        </div>
                 <?php endforeach; ?>
             </div>
 
@@ -144,7 +152,7 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php
-// get_footer();
+get_footer();
 ?>
 
 <script>
