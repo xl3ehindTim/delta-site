@@ -150,53 +150,6 @@ Template: astra
     object-fit: cover;
 }
 
-.description {
-    display: none;
-}
-
-.project-card:hover .description {
-display: block;
-}
-
-/* Button */
-
-.button-container {
-    position: relative;
-    display: inline-block;
-}
-  
-.project-card-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 16px;
-    height: 35px;
-    width: 35px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.project-card-button:hover {
-    color: black;
-    background-color: white;
-}
-  
-.project-card-button::after {
-    content: "";
-    display: block;
-    position: absolute;
-    right: 8px;
-    /* Adjust positioning as needed */
-    top: calc(50% - 7.5px);
-    /* Center the arrow vertically */
-}
-  
-.project-card:hover .project-card-button::after {
-transform: rotate(135deg); /* Maintain arrow rotation on hover */
-}
 
 .swiper-wrapper {
     cursor: grab;
@@ -210,30 +163,6 @@ transform: rotate(135deg); /* Maintain arrow rotation on hover */
 .swiper-pagination-bullet {
     background-color: #E5007D !important;
     opacity: 1;
-} 
-
-.project-card:hover .project-card-button {
-  width: 150px;
-  transition: width 0.3 ease;
-}
-
-/* Text Reveal */
-
-.button-text {
-    display: none;
-}
-
-.project-card:hover .button-text {
-display: block;
-margin-right: 10px;
-color: #000;
-}
-
-.project-card:hover .project-card-button:hover .button-text {
-color: #fff;
-    display: block;
-    margin-right: 10px;
-    color: #000;
 }
 
 /* Arrows */
@@ -261,7 +190,7 @@ color: #fff;
     transform: rotate(90deg)
 }
 
-.project-card:hover .diagonal-arrow {
+.card:hover .diagonal-arrow {
     transform: rotate(135deg); /* Change to right arrow when hovered */
 }
 
@@ -304,10 +233,6 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-  .project-card:hover .diagonal-arrow::after {
-    transform:  rotate(-45deg) translate(6px, 0px) scaleY(0); /* Adjust position for smooth transition */
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
-}
 
 .arrow {
     border: solid #E5007D;
@@ -338,7 +263,249 @@ a:hover .right {
     transform: translateX(5px) rotate(-45deg);
 }
 
-.button-white {
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #EB3397;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background-color: #EB3397;
+    color: #fff;
+    border-color: #EB3397;
+}
+
+.pagination a.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: #ddd;
+}
+
+.pagination a span {
+    display: none;
+}
+
+/* Project Cards */
+
+.card {
+    overflow: hidden;
+}
+
+.card img {
+    filter: brightness(85%);
+}
+
+.card:hover img {
+    filter: brightness(50%);
+}
+
+.card-footer-text {
+    position: absolute;
+    top: 88%; /* Initially, keep title and subtitle at the bottom */
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    transition: top 0.3s ease; /* Add transition for smooth animation */
+    font-size: 24px;
+}
+
+.card:hover .card-footer-text {
+    top: 3%; /* Move title and subtitle to their current location when hovered */
+    position: absolute;
+    
+}
+.card:hover .card-footer-text:after {
+    position: relative;
+}
+
+.card-footer-placeholder {
+    display: block;
+}
+
+.card-description {
+    position: absolute;
+    /* display: none; */
+    top: 100%;
+    left: -0.5%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
+    color: #fff;
+    font-size:14px
+}
+
+.card:hover .card-description {
+    /* display: inline-block; */
+    transform: translateX(0);
+    top: 10%;
+}
+
+/* Project Card Button */
+
+.card-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    height: 40px;
+    width: 30px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: width 0.3s ease;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.card:hover .card-button {
+    width: 150px;
+}
+
+.card-button-text {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.2s ease;  /* Transition for opacity */
+    transition-delay: 0.1s;  /* Delay the transition until the button expands */
+    color: white;
+}
+.card-button-text h6 {
+    color: black;
+}
+
+.card:hover .card-button-text {
+    opacity: 1;
+}
+
+.card-button-text {
+    text-align: start;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+/* Phone interaction */
+@media (max-width: 768px) {
+
+    .card-description {
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease, top 0.3s ease;
+        color: #fff;
+        position: absolute;
+    }
+
+    .card.show-description .card-description {
+        top: 10%;
+    }
+
+    .card-footer-text {
+        top: 88%;
+        transition: top 0.3s ease;
+    }
+
+    .card.show-description .card-footer-text {
+        top: 2%;
+    }
+
+    .card-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 16px;
+        height: 40px;
+        width: 30px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: width 0.3s ease;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    
+    .card.show-description .card-button {
+        width: 150px;
+    }
+    
+    .card-button-text {
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.2s ease;  /* Transition for opacity */
+        transition-delay: 0.1s;  /* Delay the transition until the button expands */
+        color: white;
+    }
+    .card-button-text h6 {
+        color: black;
+    }
+    
+    .card.show-description .card-button-text {
+        opacity: 1;
+    }
+    
+    .card-button-text {
+        text-align: start;
+        margin: auto;
+        width: 100%;
+    }
+
+    .diagonal-arrow {
+        display: inline-block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: calc(50% - 7.5px);
+        /* Center the arrow vertically */
+        right: 8px;
+        border-top: 3px solid #E5007D;
+        border-left: 3px solid #E5007D;
+        transform-origin: center;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        transition: transform 0.3s ease;
+        /* Add transition for smooth animation */
+        transform: rotate(90deg)
+    }
+    
+    .card.show-description .diagonal-arrow {
+        transform: rotate(135deg); /* Change to right arrow when hovered */
+    }
+    
+    .diagonal-arrow::after {
+        content: "";
+        display: block;
+        width: 3px;
+        height: 20px;
+        background-color: #E5007D;
+        transform: rotate(-45deg) translate(6px, 0px);
+        /* Adjust position */
+        border-radius: 2px;
+        transition: transform 0.3s ease;
+        /* Add transition for smooth animation */
+    }
+
+  .button-white {
     color: black;
     background-color: white;
 }
