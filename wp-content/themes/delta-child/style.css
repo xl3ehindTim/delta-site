@@ -51,34 +51,6 @@ Template: astra
     color: white;
 }
 
-/* Project cards */
-
-.project-card-container {
-    justify-content: start;
-    position: relative;
-    width: 100%;
-    margin-inline: auto;
-    margin-top: 50px;
-    margin-left: 5%;
-    margin-bottom: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(100% / 50)
-}
-
-.project-card {
-    /* flex-grow: 1; */
-    width: calc(100% / 3.5);
-    height: 32em;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: calc(100% / 50);
-}
-
-.project-card-image {
-    filter: brightness(50%);
-}
 
 .card-image {
     width: 100%;
@@ -88,25 +60,6 @@ Template: astra
     transition: filter 0.3s ease;
 }
   
-.project-card-content {
-    position: absolute;
-    top: 100%;
-    /* Initially, move content out of view */
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, top 0.3s ease;
-    /* Add transition for smooth animation */
-    color: #fff;
-}
-
-.project-card:hover .project-card-content {
-    transform: translateX(0);
-    top: 25%;
-    /* Move content to the bottom */
-}
-
 .title-container {
     position: absolute;
     top: 70%;
@@ -116,10 +69,6 @@ Template: astra
     -webkit-text-fill-color: #fff;
     transition: top 0.3s ease;
     /* Add transition for smooth animation */
-}
-
-.project-card:hover .title-container {
-    top: 1%; /* Move title and subtitle to their current location when hovered */
 }
 
 .title-container h2,
@@ -233,7 +182,6 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-
 .arrow {
     border: solid #E5007D;
     border-width: 0 4px 4px 0;
@@ -261,6 +209,155 @@ a:hover .left {
 
 a:hover .right {
     transform: translateX(5px) rotate(-45deg);
+    /* Move right and rotate for top-right */
+}
+
+a:hover .left {
+    transform: translateX(-5px) rotate(135deg);
+    /* Move right and rotate for top-right */
+}
+
+.student-slide {
+    position: relative;
+}
+
+.student-slide .student-name {
+    position: absolute;
+    font-weight: 600;
+    bottom: 5px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    color: white;
+    font-size: 16px; 
+    padding: 5px;  
+    text-align: center; 
+  }
+
+.timeline {
+    border-left: 3px solid #E5007D;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    margin: 0 auto;
+    letter-spacing: 0.2px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    padding: 50px;
+    list-style: none;
+    text-align: left;
+    max-width: 60%;
+}
+
+@media (max-width: 767px) {
+    .timeline {
+        max-width: 98%;
+        padding: 25px;
+    }
+}
+
+.timeline h1 {
+    font-weight: 300;
+    font-size: 1.4em;
+}
+
+.timeline h2,
+.timeline h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.timeline .event {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .timeline .event {
+        padding-top: 30px;
+    }
+}
+
+.timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .event:before {
+    left: -207px;
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: 120px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:before {
+        left: 0px;
+        text-align: left;
+    }
+}
+
+.timeline .event:after {
+    -webkit-box-shadow: 0 0 0 3px #E5007D;
+    box-shadow: 0 0 0 3px #E5007D;
+    left: -55.8px;
+    background: #fff;
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    content: "";
+    top: 5px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:after {
+        left: -31.8px;
+    }
+}
+
+.rtl .timeline {
+    border-left: 0;
+    text-align: right;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-right: 3px solid #E5007D;
+}
+
+.rtl .timeline .event::before {
+    left: 0;
+    right: -170px;
+}
+
+.rtl .timeline .event::after {
+    left: 0;
+    right: -55.8px;
+}
+
+.image-container {
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -504,8 +601,9 @@ a:hover .right {
         transition: transform 0.3s ease;
         /* Add transition for smooth animation */
     }
+}
 
-  .button-white {
+.button-white {
     color: black;
     background-color: white;
 }
