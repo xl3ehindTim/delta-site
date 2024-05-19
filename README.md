@@ -27,3 +27,9 @@ Set up the website by following these steps.
 5. Activate the child-theme under 'Appearence' -> 'Delta'.
 6. Import the database for the remainder of the data.
 7. Flush the permalinks by opening 'Settings' -> 'Permalinks' -> 'Save changes'.
+
+## Contributors
+
+<a href = "https://github.com/xl3ehindTim/delta-site/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=xl3ehindTim/delta-site"/>
+</a>
