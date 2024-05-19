@@ -51,34 +51,6 @@ Template: astra
     color: white;
 }
 
-/* Project cards */
-
-.project-card-container {
-    justify-content: start;
-    position: relative;
-    width: 100%;
-    margin-inline: auto;
-    margin-top: 50px;
-    margin-left: 5%;
-    margin-bottom: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(100% / 50)
-}
-
-.project-card {
-    /* flex-grow: 1; */
-    width: calc(100% / 3.5);
-    height: 32em;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: calc(100% / 50);
-}
-
-.project-card-image {
-    filter: brightness(50%);
-}
 
 .card-image {
     width: 100%;
@@ -88,25 +60,6 @@ Template: astra
     transition: filter 0.3s ease;
 }
   
-.project-card-content {
-    position: absolute;
-    top: 100%;
-    /* Initially, move content out of view */
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, top 0.3s ease;
-    /* Add transition for smooth animation */
-    color: #fff;
-}
-
-.project-card:hover .project-card-content {
-    transform: translateX(0);
-    top: 25%;
-    /* Move content to the bottom */
-}
-
 .title-container {
     position: absolute;
     top: 70%;
@@ -116,10 +69,6 @@ Template: astra
     -webkit-text-fill-color: #fff;
     transition: top 0.3s ease;
     /* Add transition for smooth animation */
-}
-
-.project-card:hover .title-container {
-    top: 1%; /* Move title and subtitle to their current location when hovered */
 }
 
 .title-container h2,
@@ -233,15 +182,12 @@ a:hover .left {
     border-bottom: 3px #E5007D solid;
 }
 
-
 .arrow {
-    height: 40px;
-    width: 40px;
     border: solid #E5007D;
-    border-width: 0 3px 3px 0;
+    border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 3px;
-    /* transition: transform 0.2s ease-in-out; */
+    transition: transform 0.2s ease-in-out;
 }
 
 .right {
@@ -655,8 +601,9 @@ a:hover .left {
         transition: transform 0.3s ease;
         /* Add transition for smooth animation */
     }
+}
 
-  .button-white {
+.button-white {
     color: black;
     background-color: white;
 }
