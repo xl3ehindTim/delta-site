@@ -74,21 +74,21 @@ Template Name: About
     <!-- Statistics -->
     <section id="delta-statistics" class="container mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
         <div class="row d-flex justify-content-center text-center">
-        <div class="col-12 col-md-3 mt-md-0 d-flex justify-content-center">
+            <div class="col-12 col-md-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
-                    <h3 class="mb-0 pb-2" style="color: #E5007D;">40+</h3>
+                    <h3 class="mb-0 pb-2 counter" data-target="40" data-plus="true" style="color: #E5007D;">0</h3>
                     <p class="font-weight-bold">Real world projects</p>
                 </div>
             </div>
             <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
-                    <h3 class="mb-0 pb-2" style="color: #E5007D;">21</h3>
+                    <h3 class="mb-0 pb-2 counter" data-target="21" style="color: #E5007D;">0</h3>
                     <p class="font-weight-bold">Years of experience</p>
                 </div>
             </div>
             <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
-                    <h3 class="mb-0 pb-2" style="color: #E5007D;">200+</h3>
+                    <h3 class="mb-0 pb-2 counter" data-target="200" data-plus="true" style="color: #E5007D;">0</h3>
                     <p class="font-weight-bold">Students followed the Delta program</p>
                 </div>
             </div>
@@ -165,4 +165,29 @@ Template Name: About
     const timelineElement = document.getElementsByClassName('timeline')[0];
     const placeholderElement = document.getElementsByClassName('height-placeholder')[0];
     placeholderElement.setAttribute('style', `height: ${timelineElement.clientHeight + 150}px`)
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const speed = 200; // Adjust speed here
+            const increment = target / speed;
+            
+            if(count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 10);
+            } else {
+                counter.innerText = target;
+                if (counter.getAttribute('data-plus') === "true") {
+                    counter.innerText += '+';
+                }
+            }
+        };
+        
+        updateCount();
+    });
+    });
 </script>
