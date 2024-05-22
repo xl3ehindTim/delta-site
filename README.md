@@ -1,9 +1,9 @@
 # Delta Program website
 Delta is the Fontys ICT excellence program where students get to explore technologies and learn while participating in real-world projects with external stakeholders. Therefore this website aims to show what Delta is about and what projects we built.
 
-![delta](https://github.com/xl3ehindTim/delta-site/assets/32740573/e8915f03-29b2-49d5-baf7-85b833ce46e2)
-
 To make upkeep as easy as possible the website is built in WordPress for the built-in content management system combined with [ACF](https://www.advancedcustomfields.com/) for custom post types.
+
+https://github.com/xl3ehindTim/delta-site/assets/32740573/ab330427-2769-49e3-89a6-0666a082bb08
 
 ## Media file naming
 WordPress provides file storage under the name of ‘Media’. To be able to efficiently add new post types the media files should follow these name patterns:
