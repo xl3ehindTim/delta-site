@@ -32,7 +32,7 @@ get_header(); ?>
 <?php endif ?>
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/2024/04/BvOF-GLOW2023_A-Futures-of-GLOW-01-2560x1707-1.jpg);">
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/static/home-hero.jpg);">
         <div class="hero-text">
             <h2 style="color: white;">Challenge yourself,<br />push boundaries</h2>
         </div>
@@ -64,7 +64,7 @@ get_header(); ?>
                 </div>
 
                 <div class="col-12 col-md-6 mt-5 mt-lg-0 justify-content-center justify-content-md-end">
-                    <img style="max-width: 100%;" src="wp-content/uploads/2024/05/IMG_0741-1.jpg" alt="Team" />
+                    <img style="max-width: 100%;" src="wp-content/uploads/static/home-team.jpg" alt="Team" />
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@ get_header(); ?>
     <div class="mt-5 pb-5"></div>
 
     <div class="workplace"
-        style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/2024/05/strijp-tq-fontys.jpg);">
+        style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/static/workplace.jpg);">
         <div class="hero-text">
             <h2 style="color: white;">Our workplace</h2>
             <p class="mt-4 mb-4">Are you interested in the Delta program, or perhaps you want to know more about it?
