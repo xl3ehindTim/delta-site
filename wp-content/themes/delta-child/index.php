@@ -30,7 +30,7 @@ get_header(); ?>
     <?php get_sidebar(); ?>
 
 <?php endif ?>
-<div id="primary" <?php astra_primary_class(); ?>>
+<div id="primary" <?php astra_primary_class(); ?> style="margin-bottom: 0;">
     <div class="hero-image"
         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/static/home-hero.jpg);">
         <div class="hero-text">
@@ -148,7 +148,6 @@ get_header(); ?>
     </div>
 
     <div class="placeholder"></div>
-</div>
 </div><!-- #primary -->
 
 <?php
