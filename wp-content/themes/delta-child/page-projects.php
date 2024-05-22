@@ -57,9 +57,9 @@ get_header();
                                         </div>
                                         <div class="card-description">
                                             <?php
-                                            // Shorten description to 800 characters and add ellipsis
-                                            $shortDescription = substr(get_field('description'), 0, 800);
-                                            if (strlen(get_field('description')) > 800) {
+                                            // Shorten description to 700 characters and add ellipsis
+                                            $shortDescription = substr(get_field('description'), 0, 700);
+                                            if (strlen(get_field('description')) > 700) {
                                                 $shortDescription .= "...";
                                             }
                                             echo $shortDescription;

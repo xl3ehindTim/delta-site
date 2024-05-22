@@ -91,19 +91,17 @@ get_header(); ?>
                                                     <?php echo get_field('subtitle') ?>
                                                 </p>
                                             </div>
-                                            <!-- <a href="<?php the_permalink(); ?>"> -->
                                             <div class="card-footer-placeholder"></div>
                                             <div class="card-button">
                                                 <span class="card-button-text"><h6>Read more</h6></span>
                                                 <span class="diagonal-arrow"></span>
                                             </div>
-                                            <!-- </a> -->
                                         </div>
                                         <div class="card-description">
                                             <?php
-                                            // Shorten description to 800 characters and add ellipsis
-                                            $shortDescription = substr(get_field('description'), 0, 800);
-                                            if (strlen(get_field('description')) > 800) {
+                                            // Shorten description to 700 characters and add ellipsis
+                                            $shortDescription = substr(get_field('description'), 0, 700);
+                                            if (strlen(get_field('description')) > 700) {
                                                 $shortDescription .= "...";
                                             }
                                             echo $shortDescription;
