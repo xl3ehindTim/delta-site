@@ -612,3 +612,14 @@ a:hover .left {
     color: black;
     background-color: white;
 }
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.counter {
+    animation: counter 5s infinite alternate ease-in-out;
+    counter-reset: num var(--num);
+}
