@@ -167,27 +167,40 @@ Template Name: About
     placeholderElement.setAttribute('style', `height: ${timelineElement.clientHeight + 150}px`)
 
     document.addEventListener("DOMContentLoaded", function() {
-    const counters = document.querySelectorAll('.counter');
-    
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const speed = 200; // Adjust speed here
-            const increment = target / speed;
-            
-            if(count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 10);
-            } else {
-                counter.innerText = target;
-                if (counter.getAttribute('data-plus') === "true") {
-                    counter.innerText += '+';
+        const counters = document.querySelectorAll('.counter');
+
+        const animateCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        const speed = 1000; // Change speed here
+                        const increment = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 10);
+                        } else {
+                            counter.innerText = target;
+                            if (counter.getAttribute('data-plus') === "true") {
+                                counter.innerText += '+';
+                            }
+                            observer.unobserve(counter); // Stop observing after animation is complete
+                        }
+                    };
+                    updateCount();
                 }
-            }
+            });
         };
-        
-        updateCount();
-    });
+
+        const observer = new IntersectionObserver(animateCounters, {
+            threshold: 1 // Trigger when the element is visible
+        });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
     });
 </script>
