@@ -15,9 +15,6 @@ Template Name: About
         <div class="hero-text">
             <h1 style="color: white;">A Journey for the Ambitious</h1>
         </div>
-        <!-- <div class="arrow-down mt-4">
-            <i class="arrow down"></i>
-        </div> -->
     </div>
 
     <div style="height: 110vh;"></div>
@@ -28,41 +25,35 @@ Template Name: About
                 <div id="delta-timeline" class="col-4">
                     <ul class="timeline">
                         <li class="event" data-date="2005">
-                            <h3 style="color: #E5007D;">The beginning of Delta</h3>
-                            <!-- <p>Lorem ipsum dolor sit amet. Aut voluptate odit sed veritatis repellendus rem
-                                        pariatur vero.</p> -->
+                            <h3 style="color: #E5007D;">Delta Program launched</h3>
                         </li>
-                        <li class="event" data-date="0000">
-                            <h3>Lorem Ipsum</h3>
-                            <!-- <p>Lorem ipsum dolor sit amet. Aut voluptate odit sed veritatis repellendus rem
-                                        pariatur vero.</p> -->
+                        <li class="event" data-date="2012">
+                            <h3>Expansion to include students from other ICT profiles</h3>
                         </li>
-                        <li class="event" data-date="0000">
-                            <h3>Lorem Ipsum</h3>
-                            <!-- <p>Lorem ipsum dolor sit amet. Aut voluptate odit sed veritatis repellendus rem
-                                        pariatur vero.</p> -->
+                        <li class="event" data-date="2015">
+                            <h3>First successful startup from Delta</h3>
                         </li>
-                        <li class="event" data-date="0000">
-                            <h3>Lorem Ipsum</h3>
-                            <!-- <p>Lorem ipsum dolor sit amet. Aut voluptate odit sed veritatis repellendus rem
-                                        pariatur vero.</p> -->
+                        <li class="event" data-date="2016">
+                            <h3>First semester of Open Learning</h3>
                         </li>
                         <li class="event" data-date="2024">
-                            <h3>Where we stand today</h3>
-                            <!-- <p>Lorem ipsum dolor sit amet. Aut voluptate odit sed veritatis repellendus rem
-                                        pariatur vero.</p> -->
+                            <h3>Ongoing development</h3>
                         </li>
                 </div>
                 <div id="delta-story" class="col-7 ms-4 mt-2">
                     <h4 style="color: #E5007D;" class="mt-4">What is Delta?</h4>
                     <h2 class="pb-4">Our Story</h2>
-                    <p>Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit illum a sunt illo a minus
-                        rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed praesentium
-                        voluptates est totam quasi et cumque facere aut aperiam esse ut unde consequatur sit ipsa
-                        facilis.</p>
-                    <p>Rem earum suscipit quo sint cumque sit dolorum voluptas quo eaque perspiciatis qui nostrum
-                        dolores qui molestias cumque. Est culpa provident non vitae deserunt qui voluptatem suscipit non
-                        blanditiis repellat a dolores ducimus. Qui animi quia a impedit accusamus in explicabo dolor?
+                    <p>
+                        Delta at Fontys University of Applied Sciences is a unique excellence program designed to support ambitious and high-performing students. Established in 2005, it was created to 
+                        address the lack of advanced opportunities for talented students within the regular curriculum. Delta students receive exemptions from the standard program to engage in multidisciplinary 
+                        projects, gaining real-world experience and developing an impressive portfolio. This innovative approach ensures they utilize their time efficiently, fostering their skills, knowledge, 
+                        and talents to their fullest potential.
+                    </p>
+                    <p>
+                        The primary purpose of the Delta Program is to optimize the available study time for students, enabling them to undertake numerous long-term and short-term projects, often in 
+                        collaboration with industry partners and startups. By doing so, the program not only enhances students' technical and professional capabilities but also prepares them for future 
+                        challenges in their careers. The Delta program promotes self-directed learning, creativity, and a proactive mindset, ultimately aiming to produce graduates who excel in their 
+                        fields and stand out in the competitive job market.
                     </p>
                 </div>
             </div>
@@ -70,7 +61,7 @@ Template Name: About
     </div>
 
     <div class="height-placeholder"></div>
-    
+
     <!-- Statistics -->
     <section id="delta-statistics" class="container mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
         <div class="row d-flex justify-content-center text-center">
@@ -101,10 +92,10 @@ Template Name: About
     <section id="delta-activities" class="container pb-3 pb-lg-3">
         <!-- <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;"></div> -->
         <h2 class="justify-content-center d-flex pb-2">Our Activities</h2>
-        <p class="justify-content-center text-center d-flex pb-4 mb-4">Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit
-            illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed
-            praesentium voluptates est totam quasi et cumque facere aut aperiam esse ut unde consequatur sit ipsa
-            facilis.</p>
+        <p class="justify-content-center text-center d-flex pb-4 mb-4 px-5 mx-5">
+            Delta is not only an excellence program, it’s also a vibrant community. In addition to studying and working hard, Delta students enjoy spending time together and having fun!
+            Each semester, students organize regular activities such as bi-weekly lunches, games, sports events, and social gatherings.
+        </p>
         <div style="width: 100%;">
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
@@ -147,12 +138,12 @@ Template Name: About
 
     <!-- Current Team -->
     <section id="delta-team" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
-        <h2 class="justify-content-center d-flex pb-2">Meet the Delta's!</h2>
-        <p class="justify-content-center text-center d-flex pb-4 mb-4">Lorem ipsum dolor sit amet. Ex dicta dolor sit sint labore id velit
-            illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed
-            praesentium voluptates est totam quasi et cumque facere aut operiam esse ut unde consequatur sit ipsa
-            facilis.</p>
-        <img src="../wp-content/uploads/about/delta-group-photo.png" alt="The Current Delta Team" class="rounded"/>
+        <h2 class="d-flex justify-content-center pb-2">Current Team</h2>
+        <p class="d-flex justify-content-center text-center d-flex pb-4 mb-4 px-5 mx-5">
+            Meet the current Delta students. Each member brings unique skills and perspectives, contributing to the diverse and vibrant community that defines Delta.
+            Together, they tackle various challenges and push the boundaries of their potential.
+        </p>
+        <img src="../wp-content/uploads/about/delta-group-photo.png" alt="The Current Delta Team" class="rounded" />
     </section>
 
     <div style="height: 10vh;"></div>
