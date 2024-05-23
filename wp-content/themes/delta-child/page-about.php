@@ -19,6 +19,7 @@ Template Name: About
 
     <div style="height: 110vh;"></div>
 
+    <!-- Timeline & Story -->
     <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%;">
         <section id="delta-about" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
             <div class="row d-flex justify-content-between">
@@ -86,11 +87,8 @@ Template Name: About
         </div>
     </section>
 
-    <!-- <div style="height: 10vh;"></div> -->
-
     <!-- Activities -->
     <section id="delta-activities" class="container pb-3 pb-lg-3">
-        <!-- <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;"></div> -->
         <h2 class="justify-content-center d-flex pb-2">Our Activities</h2>
         <p class="justify-content-center text-center d-flex pb-4 mb-4 px-5 mx-5">
             Delta is not only an excellence program, it’s also a vibrant community. In addition to studying and working hard, Delta students enjoy spending time together and having fun!
@@ -134,8 +132,6 @@ Template Name: About
         </div>
     </section>
 
-    <!-- <div style="height: 10vh;"></div> -->
-
     <!-- Current Team -->
     <section id="delta-team" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
         <h2 class="d-flex justify-content-center pb-2">Current Team</h2>
@@ -145,8 +141,6 @@ Template Name: About
         </p>
         <img src="../wp-content/uploads/about/delta-group-photo.png" alt="The Current Delta Team" class="rounded" />
     </section>
-
-    <div style="height: 10vh;"></div>
 
 </div>
 
