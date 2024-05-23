@@ -13,7 +13,7 @@ Template Name: About
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/about-hero.png);">
         <div class="hero-text">
-            <h1 style="color: white;">A Journey for the Ambitious</h1>
+            <h1 style="color: white;">A journey for the ambitious</h1>
         </div>
     </div>
 
@@ -38,7 +38,7 @@ Template Name: About
                             <h3>First semester of Open Learning</h3>
                         </li>
                         <li class="event" data-date="2024">
-                            <h3>Ongoing development</h3>
+                            <h3 style="color: #E5007D;">Ongoing development</h3>
                         </li>
                 </div>
                 <div id="delta-story" class="col-7 ms-4 mt-2">
