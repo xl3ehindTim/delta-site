@@ -3,6 +3,8 @@ Delta is the Fontys ICT excellence program where students get to explore technol
 
 To make upkeep as easy as possible the website is built in WordPress for the built-in content management system combined with [ACF](https://www.advancedcustomfields.com/) for custom post types.
 
+https://github.com/xl3ehindTim/delta-site/assets/32740573/ab330427-2769-49e3-89a6-0666a082bb08
+
 ## Media file naming
 WordPress provides file storage under the name of ‘Media’. To be able to efficiently add new post types the media files should follow these name patterns:
 

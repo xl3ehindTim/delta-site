@@ -30,9 +30,9 @@ get_header(); ?>
     <?php get_sidebar(); ?>
 
 <?php endif ?>
-<div id="primary" <?php astra_primary_class(); ?>>
+<div id="primary" <?php astra_primary_class(); ?> style="margin-bottom: 0;">
     <div class="hero-image"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/2024/04/BvOF-GLOW2023_A-Futures-of-GLOW-01-2560x1707-1.jpg);">
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/static/home-hero.jpg);">
         <div class="hero-text">
             <h2 style="color: white;">Challenge yourself,<br />push boundaries</h2>
         </div>
@@ -64,7 +64,7 @@ get_header(); ?>
                 </div>
 
                 <div class="col-12 col-md-6 mt-5 mt-lg-0 justify-content-center justify-content-md-end">
-                    <img style="max-width: 100%;" src="wp-content/uploads/2024/05/IMG_0741-1.jpg" alt="Team" />
+                    <img style="max-width: 100%;" src="wp-content/uploads/static/home-team.jpg" alt="Team" />
                 </div>
             </div>
         </div>
@@ -91,19 +91,17 @@ get_header(); ?>
                                                     <?php echo get_field('subtitle') ?>
                                                 </p>
                                             </div>
-                                            <!-- <a href="<?php the_permalink(); ?>"> -->
                                             <div class="card-footer-placeholder"></div>
                                             <div class="card-button">
                                                 <span class="card-button-text"><h6>Read more</h6></span>
                                                 <span class="diagonal-arrow"></span>
                                             </div>
-                                            <!-- </a> -->
                                         </div>
                                         <div class="card-description">
                                             <?php
-                                            // Shorten description to 800 characters and add ellipsis
-                                            $shortDescription = substr(get_field('description'), 0, 800);
-                                            if (strlen(get_field('description')) > 800) {
+                                            // Shorten description to 700 characters and add ellipsis
+                                            $shortDescription = substr(get_field('description'), 0, 700);
+                                            if (strlen(get_field('description')) > 700) {
                                                 $shortDescription .= "...";
                                             }
                                             echo $shortDescription;
@@ -130,7 +128,7 @@ get_header(); ?>
     <div class="mt-5 pb-5"></div>
 
     <div class="workplace"
-        style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/2024/05/strijp-tq-fontys.jpg);">
+        style="width: 100%; position: absolute; left: 0%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(wp-content/uploads/static/workplace.jpg);">
         <div class="hero-text">
             <h2 style="color: white;">Our workplace</h2>
             <p class="mt-4 mb-4">Are you interested in the Delta program, or perhaps you want to know more about it?
@@ -148,7 +146,6 @@ get_header(); ?>
     </div>
 
     <div class="placeholder"></div>
-</div>
 </div><!-- #primary -->
 
 <?php

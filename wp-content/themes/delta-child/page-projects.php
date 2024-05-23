@@ -8,7 +8,7 @@ get_header();
 
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image"
-         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/wp-content/uploads/2024/04/BvOF-GLOW2023_A-Futures-of-GLOW-01-2560x1707-1.jpg);">
+         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/projects-hero.jpg);">
         <div class="hero-text">
             <h2 style="color: white;">Projects</h2>
         </div>
@@ -57,9 +57,9 @@ get_header();
                                         </div>
                                         <div class="card-description">
                                             <?php
-                                            // Shorten description to 800 characters and add ellipsis
-                                            $shortDescription = substr(get_field('description'), 0, 800);
-                                            if (strlen(get_field('description')) > 800) {
+                                            // Shorten description to 700 characters and add ellipsis
+                                            $shortDescription = substr(get_field('description'), 0, 700);
+                                            if (strlen(get_field('description')) > 700) {
                                                 $shortDescription .= "...";
                                             }
                                             echo $shortDescription;

@@ -11,7 +11,7 @@ Template Name: About
 </head>
 
 <div id="primary" <?php astra_primary_class(); ?>>
-    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/about/about-hero.png);">
+    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/about-hero.png);">
         <div class="hero-text">
             <h1 style="color: white;">A Journey for the Ambitious</h1>
         </div>
@@ -109,34 +109,34 @@ Template Name: About
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/about/activity-image-1.png" alt="Activity Description" class="img-cover">
+                        <img src="../wp-content/uploads/static/about/activity-image-1.png" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/about/activity-image-2.png" alt="Activity Description" class="img-cover">
+                        <img src="../wp-content/uploads/static/about/activity-image-2.png" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/about/activity-image-3.png" alt="Activity Description" class="img-cover">
+                        <img src="../wp-content/uploads/static/about/activity-image-3.png" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
             </div>
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/about/activity-image-4.png" alt="Activity Description" class="img-cover">
+                        <img src="../wp-content/uploads/static/about/activity-image-4.png" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/about/activity-image-5.png" alt="Activity Description" class="img-cover">
+                        <img src="../wp-content/uploads/static/about/activity-image-5.png" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/about/activity-image-6.png" alt="Activity Description" class="img-cover">
+                        <img src="../wp-content/uploads/static/about/activity-image-6.png" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ Template Name: About
             illum a sunt illo a minus rerum 33 illum laborum est praesentium corporis. Est possimus distinctio sed
             praesentium voluptates est totam quasi et cumque facere aut operiam esse ut unde consequatur sit ipsa
             facilis.</p>
-        <img src="../wp-content/uploads/about/delta-group-photo.png" alt="The Current Delta Team" class="rounded"/>
+        <img src="../wp-content/uploads/static/about/delta-group-photo.png" alt="The Current Delta Team" class="rounded"/>
     </section>
 
     <div style="height: 10vh;"></div>
