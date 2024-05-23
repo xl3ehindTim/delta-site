@@ -11,7 +11,7 @@ Template Name: About
 </head>
 
 <div id="primary" <?php astra_primary_class(); ?>>
-    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost/delta-site/wp-content/uploads/static/about-hero.png);">
+    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/about-hero.png);">
         <div class="hero-text">
             <h1 style="color: white;">A Journey for the Ambitious</h1>
         </div>
