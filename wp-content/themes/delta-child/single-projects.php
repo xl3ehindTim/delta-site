@@ -253,11 +253,11 @@ function include_technical_information() {
 		<section id="technical" class="mt-3 mb-3 mt-lg-5 mb-lg-5">
 			<div class="container">
 				<h3 class="mb-2">
-					Going in depth
+					Dive deeper
 				</h3>
 
 				<?php echo $technical_description ?>
-			</div>
+            </div>
 		</section>
 	<?php
 }
