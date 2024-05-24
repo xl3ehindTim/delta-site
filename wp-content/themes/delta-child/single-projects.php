@@ -173,11 +173,11 @@ function include_hero_section() {
 							</a>
 						<?php endif; ?>
 					</div>
-		
+                        
 						<?php if ($logo): ?>
 							<div class="col-12 col-md-5 d-flex align-items-center mt-5 mt-lg-0 justify-content-center justify-content-md-end">
-							<img style="max-width: 300px;" src="<?php echo esc_url($logo['url']) ?>" alt="Project Logo" />
-						</div>
+                                <img style="max-width: 300px; max-height: 250px;" src="<?php echo esc_url($logo['url']) ?>" alt="Project Logo" />
+                            </div>
 					<?php endif; ?>
 				</div>
 			</div>
