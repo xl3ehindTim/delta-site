@@ -29,7 +29,7 @@ get_header(); ?>
 
 		<?php include_project_information(); ?>
 
-		<?php include_image_slider(); ?>
+		<?php include_media_slider(); ?>
 
 		<?php include_technical_information(); ?>
 
@@ -184,27 +184,39 @@ function include_hero_section() {
 		<?php
 	}
 
-	function include_image_slider() {
-		$images = get_field('images');
-		if (!$images) {
+	function include_media_slider() {
+		$media = get_field('media');
+		if (!$media) {
 			return; 
 		}
 		?>
-			<section id="images">
+			<section id="media">
             <div class="container">
                 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;">
-                    <div class="swiper-images" style="height: 500px;">
+                    <div class="swiper-media" style="height: 500px;">
                         <div class="swiper-wrapper">
-                            <?php foreach ($images as $image_id):
-                                $url = get_permalink($image_id);
+                            <?php foreach ($media as $media_id):
+                                $url = get_permalink($media_id);
                                 ?>
                                 <div class="swiper-slide" style="height: 500px; width: auto;">
-                                    <img src="<?php echo $url ?>"></img>
+                                <?php 
+                                    if (wp_attachment_is( 'image', $media_id)) {
+                                        ?> 
+                                         <img src="<?php echo $url ?>"></img>
+                                        <?php
+                                    }
+
+                                    if (wp_attachment_is( 'video', $media_id)) {
+                                        ?>
+                                            <video style="height: 500px; width: auto;" controls muted src="<?php echo $url ?>"></video>
+                                        <?php
+                                    }
+                                ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="swiper-pagination swiper-images-pagination"
+                    <div class="swiper-pagination swiper-media-pagination"
                         style="position: absolute; margin-bottom: -5vh;">
                     </div>
                 </div>
@@ -217,11 +229,11 @@ function include_hero_section() {
     /**
      * Image swiper
      */
-    var imageSwiper = new Swiper(".swiper-images", {
+    var imageSwiper = new Swiper(".swiper-media", {
         slidesPerView: 2,
         spaceBetween: 20,
         pagination: {
-            el: ".swiper-images-pagination",
+            el: ".swiper-media-pagination",
             clickable: true,
         },
         breakpoints: {
