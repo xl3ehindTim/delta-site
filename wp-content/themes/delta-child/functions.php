@@ -44,6 +44,7 @@ function ajax_projects_pagination()
     $query_args = array(
         'post_type' => 'projects',
         'posts_per_page' => 9,
+        'post_status' => 'publish',
         'paged' => $paged
     );
 
