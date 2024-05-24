@@ -20,7 +20,8 @@ if (!defined('ABSPATH')) {
 $posts = get_posts(
     array(
         'posts_per_page' => 3,
-        'post_type' => 'projects'
+        'post_type' => 'projects',
+        'post_status' => 'publish',
     )
 );
 
