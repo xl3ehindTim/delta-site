@@ -57,7 +57,7 @@ Template: astra
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: filter 0.3s ease;
+    transition: filter 0.35s ease;
 }
 
 .title-container {
@@ -67,7 +67,7 @@ Template: astra
     left: 20px;
     color: #fff;
     -webkit-text-fill-color: #fff;
-    transition: top 0.3s ease;
+    transition: top 0.35s ease;
     /* Add transition for smooth animation */
 }
 
@@ -134,7 +134,7 @@ Template: astra
     transform-origin: center;
     border-radius: 2px;
     -webkit-border-radius: 2px;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
     /* Add transition for smooth animation */
     transform: rotate(90deg)
 }
@@ -152,7 +152,7 @@ Template: astra
     transform: rotate(-45deg) translate(6px, 0px);
     /* Adjust position */
     border-radius: 2px;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
     /* Add transition for smooth animation */
 }
 
@@ -377,7 +377,7 @@ a:hover .left {
     border-radius: 5px;
     text-decoration: none;
     color: #EB3397;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.35s, color 0.35s;
 }
 
 .pagination a:hover,
@@ -416,7 +416,7 @@ a:hover .left {
     top: 88%; /* Initially, keep title and subtitle at the bottom */
     color: #fff;
     -webkit-text-fill-color: #fff;
-    transition: top 0.3s ease; /* Add transition for smooth animation */
+    transition: top 0.35s ease; /* Add transition for smooth animation */
     font-size: 24px;
 }
 
@@ -441,7 +441,7 @@ a:hover .left {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    transition: transform 0.3s ease, top 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.35s ease, top 0.35s ease; /* Add transition for smooth animation */
     color: #fff;
     font-size:14px
 }
@@ -466,7 +466,7 @@ a:hover .left {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: width 0.3s ease;
+    transition: width 0.35s ease;
     justify-content: flex-start;
     overflow: hidden;
 }
@@ -507,7 +507,7 @@ a:hover .left {
         width: 100%;
         padding: 20px;
         box-sizing: border-box;
-        transition: transform 0.3s ease, top 0.3s ease;
+        transition: transform 0.35s ease, top 0.35s ease;
         color: #fff;
         position: absolute;
     }
@@ -518,7 +518,7 @@ a:hover .left {
 
     .card-footer-text {
         top: 88%;
-        transition: top 0.3s ease;
+        transition: top 0.35s ease;
     }
 
     .card.show-description .card-footer-text {
@@ -537,7 +537,7 @@ a:hover .left {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: width 0.3s ease;
+        transition: width 0.35s ease;
         justify-content: flex-start;
         overflow: hidden;
     }
