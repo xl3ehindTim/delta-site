@@ -17,12 +17,20 @@ $project_groups = new WP_Query($args);
 <?php get_header(); ?>
 
 <div id="primary" <?php astra_primary_class(); ?>>
-    <div class="-navigation"></div>
+<div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../wp-content/uploads/static/home-team.jpg);">
+        <div class="hero-text">
+            <h1 style="color: white;">
+                <?php echo get_the_title(); ?>
+            </h1>
+        </div>
+    </div>
+
+    <div style="height: 100vh;"></div>
 
     <section class="wrapper">
         <div class="container">
             <h2>
-                <?php echo get_the_title(); ?>
+                Participated projects
             </h2>
             <div class="row projects-container mt-5">
 
@@ -102,10 +110,3 @@ $project_groups = new WP_Query($args);
 </div><!-- #primary -->
 
 <?php get_footer(); ?>
-
-<script>
-    let placeholder = document.body.getElementsByClassName('-navigation')
-    const el = document.body.getElementsByClassName('site-header');
-    el[0].setAttribute('style', 'background-color: black;')
-    placeholder[0]?.setAttribute("style", "height:" + el[0].clientHeight + 'px')
-</script>
