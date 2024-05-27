@@ -38,6 +38,10 @@ get_header(); ?>
         <div class="hero-text">
             <h1 style="color: white;"><?php echo get_the_title(); ?></h1>
         </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse-scroll"></div>
+        </div>
     </div>
 
     <div style="height: 100vh;"></div>

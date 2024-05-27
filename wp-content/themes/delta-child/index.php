@@ -37,6 +37,10 @@ get_header(); ?>
         <div class="hero-text">
             <h2 style="color: white;">Challenge yourself,<br />push boundaries</h2>
         </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse-scroll"></div>
+        </div>
     </div>
 
     <div style="height: 100vh;"></div>

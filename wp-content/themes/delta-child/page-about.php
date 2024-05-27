@@ -15,6 +15,10 @@ Template Name: About
         <div class="hero-text">
             <h1 style="color: white;">A journey for the ambitious</h1>
         </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse-scroll"></div>
+        </div>
     </div>
 
     <div style="height: 110vh;"></div>

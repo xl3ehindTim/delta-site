@@ -115,12 +115,14 @@ get_header(); ?>
         // Loop over students and add slides
         filteredStudents?.forEach(student => {
             let slideContent = `
-                <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
+            <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
                 <a href="${student?.permalink}">
                     <img src="${student?.photo?.link}">
-                    <span class="student-name">${student?.title}</span>
-                    </a>
-                </div>
+                    <span class="student-name">
+                        ${student?.title}
+                    </span>
+                </a>
+            </div>
             `;
             swiper.appendSlide(slideContent);
         });
@@ -151,6 +153,9 @@ function include_hero_section() {
       <div class="hero-text">
         <h1 style="color: white;"><?php echo get_the_title(); ?></h1>
       </div>
+      <div class="scroll-indicator">
+            <div class="mouse-scroll"></div>
+        </div>
       </div>
   
     <div style="height: 100vh;"></div>

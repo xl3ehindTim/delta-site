@@ -29,6 +29,10 @@ $project_groups = new WP_Query($args);
                 <?php echo get_the_title(); ?>
             </h1>
         </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse-scroll"></div>
+        </div>
     </div>
 
     <div style="height: 100vh;"></div>

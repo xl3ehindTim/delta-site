@@ -42,13 +42,45 @@ Template: astra
     min-width: 300px;
 }
 
-.arrow-down {
+.scroll-indicator {
     text-align: center;
     position: absolute;
-    top: 85%;
+    top: 87.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+.mouse-scroll {
+    width: 2.1em;
+    height: 4em;
+    border: solid 2px #EB3397;
+    border-radius: 30px;
+    position: relative;
+}
+
+.mouse-scroll::before {
+    content: '';
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+    background: #99AAB5;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2.1s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        bottom: 80%;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 5%;
+        opacity: 0;
+    }
 }
 
 
