@@ -58,11 +58,13 @@ get_header(); ?>
             foreach ($students as $studentId) {
                 $title = get_the_title($studentId);
                 $photo = get_field('photo', $studentId);
+                $perma_link = get_permalink($studentId);
 
                 $studentData = [
                     'group' => $projectGroupId->ID,
                     'title' => $title,
                     'photo' => $photo,
+                    'permalink' => $perma_link,
                 ];
 
                 $allStudents[] = $studentData;
@@ -112,7 +114,14 @@ get_header(); ?>
 
         // Loop over students and add slides
         filteredStudents?.forEach(student => {
-            let slideContent = `<div class="student-slide swiper-slide" style="height: 225px; width: auto;"><img src="${student?.photo?.link}"><span class="student-name">${student?.title}</span></div>`;
+            let slideContent = `
+                <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
+                <a href="${student?.permalink}">
+                    <img src="${student?.photo?.link}">
+                    <span class="student-name">${student?.title}</span>
+                    </a>
+                </div>
+            `;
             swiper.appendSlide(slideContent);
         });
     }
