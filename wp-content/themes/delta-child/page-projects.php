@@ -12,9 +12,6 @@ get_header();
         <div class="hero-text">
             <h2 style="color: white;">Projects</h2>
         </div>
-        <div class="arrow-down">
-            <!-- TODO arrow down -->
-        </div>
     </div>
 
     <div style="height: 100vh;"></div>

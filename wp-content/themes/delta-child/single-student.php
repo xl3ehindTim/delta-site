@@ -16,6 +16,12 @@ $project_groups = new WP_Query($args);
 
 <?php get_header(); ?>
 
+<head>
+    <meta property="og:title" content="<?php echo get_the_title(); ?>">
+    <meta property="og:image" content=<?php echo esc_url(get_field('photo')['url']); ?>>
+</head>
+
+
 <div id="primary" <?php astra_primary_class(); ?>>
 <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../wp-content/uploads/static/home-team.jpg);">
         <div class="hero-text">
