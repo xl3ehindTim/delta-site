@@ -78,12 +78,9 @@ function ajax_projects_pagination()
                             </div>
                             <div class="card-description">
                                 <?php
-                                // Shorten description to 700 characters and add ellipsis
-                                $shortDescription = substr(get_field('description'), 0, 350);
-                                if (strlen(get_field('description')) > 350) {
-                                    $shortDescription .= "...";
-                                }
-                                echo $shortDescription;
+                                $description = get_field('description');
+                                $firstParagraph = getFirstParagraph($description);
+                                echo $firstParagraph;
                                 ?>
                             </div>
                         </div>
@@ -103,4 +100,19 @@ add_action('wp_ajax_nopriv_ajax_projects_pagination', 'ajax_projects_pagination'
 add_action('wp_ajax_ajax_projects_pagination', 'ajax_projects_pagination');
 // end
 
-// project description on phone
+function getFirstParagraph($text) {
+    // Use a regular expression to split the text into paragraphs
+    $paragraphs = preg_split('/\r\n|\r|\n/', $text);
+
+    // Remove empty paragraphs that may have been caused by extra line breaks
+    $paragraphs = array_filter($paragraphs, function($para) {
+        return trim($para) !== '';
+    });
+
+    // Get the first non-empty paragraph
+    $firstParagraph = reset($paragraphs);
+
+    // Return the first paragraph trimmed of any extra whitespace
+    return trim($firstParagraph);
+}
+add_action('getFirstParagraph','getFirstParagraph');
