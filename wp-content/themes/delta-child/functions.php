@@ -78,9 +78,11 @@ function ajax_projects_pagination()
                             </div>
                             <div class="card-description">
                                 <?php
-                                $description = get_field('description');
-                                $firstParagraph = getFirstParagraph($description);
-                                echo $firstParagraph;
+                                $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
+                                if (strlen(getFirstParagraph(get_field('description'))) > 350) {
+                                    $shortDescription .= "...";
+                                }
+                                echo $shortDescription;
                                 ?>
                             </div>
                         </div>
