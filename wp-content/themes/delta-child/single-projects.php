@@ -222,7 +222,7 @@ function include_hero_section() {
 
                                     if (wp_attachment_is( 'video', $media_id)) {
                                         ?>
-                                            <video style="height: 500px; width: auto;" controls src="<?php echo $url ?>"></video>
+                                            <video controls src="<?php echo $url ?>"></video>
                                         <?php
                                     }
                                 ?>
