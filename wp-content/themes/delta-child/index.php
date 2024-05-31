@@ -83,38 +83,41 @@ get_header(); ?>
             <div class="row mt-4 mt-lg-5">
                 <?php foreach ($posts as $post): ?>
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="card text-dark card-has-bg click-col">
-                                    <img style="height: 550px; object-fit: cover;"
-                                         class="card-img"
-                                         src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
-                                    <div class="card-img-overlay d-flex flex-column">
-                                        <div id="card-footer" class="justify-content-between" style="display: flex;">
-                                            <div class="card-footer-text">
-                                                <h6 class="my-0 text-white d-block" style="font-size:22px;"><?php echo get_the_title(); ?></h6>
-                                                <p class="text-white" style="font-size:16px;">
-                                                    <?php echo get_field('subtitle') ?>
-                                                </p>
-                                            </div>
-                                            <div class="card-footer-placeholder"></div>
-                                            <div class="card-button">
-                                                <span class="card-button-text"><h6>Read more</h6></span>
-                                                <span class="diagonal-arrow"></span>
-                                            </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="card text-dark card-has-bg click-col">
+                                <img style="height: 550px; object-fit: cover;" class="card-img"
+                                    src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
+                                <div class="card-img-overlay d-flex flex-column">
+                                    <div id="card-footer" class="justify-content-between" style="display: flex;">
+                                        <div class="card-footer-text">
+                                            <h6 class="my-0 text-white d-block" style="font-size:22px;">
+                                                <?php echo get_the_title(); ?>
+                                            </h6>
+                                            <p class="text-white" style="font-size:16px;">
+                                                <?php echo get_field('subtitle') ?>
+                                            </p>
                                         </div>
-                                        <div class="card-description">
-                                            <?php
-                                            $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
-                                            if (strlen(getFirstParagraph(get_field('description'))) > 350) {
-                                                $shortDescription .= "...";
-                                            }
-                                            echo $shortDescription;
-                                            ?>
+                                        <div class="card-footer-placeholder"></div>
+                                        <div class="card-button">
+                                            <span class="card-button-text">
+                                                <h6>Read more</h6>
+                                            </span>
+                                            <span class="diagonal-arrow"></span>
                                         </div>
                                     </div>
+                                    <div class="card-description">
+                                        <?php
+                                        $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
+                                        if (strlen(getFirstParagraph(get_field('description'))) > 350) {
+                                            $shortDescription .= "...";
+                                        }
+                                        echo $shortDescription;
+                                        ?>
+                                    </div>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -150,6 +153,42 @@ get_header(); ?>
     </div>
 
     <div class="placeholder"></div>
+
+    <section id="stakeholders">
+        <div class="container">
+            <div class="d-flex justify-content-center mt-5">
+                <h3>Partners</h3>
+            </div>
+
+            <p class="d-flex justify-content-center">
+                Fontys works together with various partners to give Deltas the opportunity to get a taste of the
+                business world.
+            </p>
+            <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 150px;">
+                <div class="swiper" style="height: 150px;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="height: 150px; width: auto;">
+                            <img src="wp-content/uploads/2023/11/glow-logo.jpg" alt="GLOW Eindhoven"></img>
+                        </div>
+                        <div class="swiper-slide" style="height: 150px; width: auto;">
+                            <img src="wp-content/uploads/2024/05/ddw-logo.png" alt="Dutch Design Week"></img>
+                        </div>
+                        <div class="swiper-slide" style="height: 150px; width: auto;">
+                            <img src="wp-content/uploads/2024/05/strijp-s-logo.png" alt="Strijp-S"></img>
+                        </div>
+                        <div class="swiper-slide" style="height: 150px; width: auto;">
+                            <img src="wp-content/uploads/2024/05/paaspop.png" alt="Paaspop"></img>
+                        </div>
+                        <div class="swiper-slide" style="height: 150px; width: auto;">
+                            <img src="wp-content/uploads/2024/05/fontys.jpg" alt="Fontys"></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p>
+    </section>
+
+    <div style="height: 300px;"></div>
 </div><!-- #primary -->
 
 <?php
@@ -160,4 +199,14 @@ get_footer();
     const { clientHeight } = document.getElementsByClassName('workplace')[0]
     const el = document.getElementsByClassName('placeholder')[0]
     el.setAttribute('style', `height: ${clientHeight}px`);
+
+    swiper = new Swiper('.swiper', {
+        slidesPerView: "auto",
+        spaceBetween: 100,
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20,
+        autoplay: {
+            disableOnInteraction: false,
+        },
+    })
 </script>
