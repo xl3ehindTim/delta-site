@@ -53,7 +53,7 @@ $yearsOfExperience = $currentYear - 2005;
                     <h2 class="pb-4">Our Story</h2>
                     <p>
                         Delta at Fontys University of Applied Sciences is a unique excellence program designed to support ambitious and high-performing students. Established in 2005, it was created to 
-                        address the lack of advanced opportunities for talented students within the regular curriculum. Delta students receive exemptions from the standard program to engage in multidisciplinary 
+                        address the lack of advanced opportunities for talented ICT & Media students within the regular curriculum. Delta students receive exemptions from the standard program to engage in multidisciplinary 
                         projects, gaining real-world experience and developing an impressive portfolio. This innovative approach ensures they utilize their time efficiently, fostering their skills, knowledge, 
                         and talents to their fullest potential.
                     </p>
