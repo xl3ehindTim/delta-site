@@ -2,6 +2,9 @@
 /*
 Template Name: About
 */
+
+$currentYear = date('Y');
+$yearsOfExperience = $currentYear - 2005;
 ?>
 
 <?php get_header(); ?>
@@ -72,13 +75,13 @@ Template Name: About
         <div class="row d-flex justify-content-center text-center">
             <div class="col-12 col-md-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
-                    <h3 class="mb-0 pb-2 counter" data-target="40" data-plus="true" style="color: #E5007D;">0</h3>
+                    <h3 class="mb-0 pb-2 counter" data-target="150" data-plus="true" style="color: #E5007D;">0</h3>
                     <p class="font-weight-bold">Real world projects</p>
                 </div>
             </div>
             <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center">
                 <div class="p-4 rounded w-75 shadow">
-                    <h3 class="mb-0 pb-2 counter" data-target="21" style="color: #E5007D;">0</h3>
+                    <h3 class="mb-0 pb-2 counter" data-target="<?php echo $yearsOfExperience; ?>" style="color: #E5007D;">0</h3>
                     <p class="font-weight-bold">Years of experience</p>
                 </div>
             </div>
