@@ -14,41 +14,13 @@ $args = array(
 
 $project_groups = new WP_Query($args);
 
-// $allProjects = array(); // Empty array to store all projects
-// foreach ($project_groups->posts as $post) {
-//     $projectsQuery = new WP_Query(
-//         array(
-//             'post_type' => 'projects',
-//             'posts_per_page' => 100,
-//             'post_status' => 'publish',
-//             'meta_query' => array(
-//                 array(
-//                     'key' => 'project_groups',
-//                     'value' => get_the_ID(),
-//                     'compare' => 'LIKE',
-//                 ),
-//             ),
-//         )
-//     );
-
-//   // Loop through projects in this group
-//   foreach ($projectsQuery->posts as $project) {
-//     $projectId = $project->ID; // Get the project ID
-
-//     // Check if project ID exists in the allProjects array
-//     if (!in_array($projectId, $allProjects)) {
-//       $allProjects[] = $projectId; // Add unique project ID
-//     }
-//   }
-// }
-
 ?>
 
 <?php get_header(); ?>
 
 <head>
     <meta property="og:title" content="<?php echo get_the_title(); ?>">
-    <meta property="og:image" content=<?php echo esc_url(get_field('photo')['url']); ?>>
+    <!-- <meta property="og:image" content=<?php echo esc_url(get_field('photo')['url']); ?>> -->
 </head>
 
 
