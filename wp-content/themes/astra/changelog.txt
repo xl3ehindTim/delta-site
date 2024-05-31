@@ -1,3 +1,100 @@
+v4.6.16
+- Fix: If dashboard gets white labelled from addon, screen turns blank.
+- Fix: PHP uncaught type error with in_array() due to astra_add_aria_expanded_submenu_items_attr() function.
+- Fix: Transparent Header - Bottom border logic refined for consideration of last header row as bottom border.
+
+v4.6.15
+- New: Introduced color palette for background image overlay option to sync overlay-color with Global Color Palette.
+- New: Introduced separate overlay opacity setting for background image overlay option to control opacity when overlay-color synced with Global Color Palette.
+- New: Header Builder - Account Element - Introducing a new option to show Text along with Icon / Avatar.
+- Improvement: Added aria-expanded attribute for menu items to improve accessibility.
+- Improvement: Responsive device logo support added to the Site Logo block.
+- Improvement: Off-Canvas section in Flyout/Full-Screen affecting the source code even with custom header.
+- Improvement: Replaced default Whats New section with the Whats New Library for better consistency and performance.
+- Improvement: Added object-fit cover styling to the single post featured image while the Image ratio is set to custom.
+- Fix: Changing the logo width increase the logo height inside the customizer settings.
+- Fix: Blog/Archive - Column layouts break the sizes of post structures which are built by Beaver Themer column modal.
+- Fix: The plus icons are not displaying in customizer when using Spectra's grid builder under widget area.
+- Fix: Resolved an issue where theme activation caused infinite loop on BuddyPress member login page loading login form.
+- Fix: The Post Filter design tab styling options not showing.
+- Fix: Asterisk(*) symbol visible on comment form even after disabling the settings.
+- Fix: Submenu divider adding unintended bottom border to last menu item.
+- Fix: Customizer's few controls are misaligned with the Russian language setup.
+
+v4.6.14
+- Improvement: Improved accessibility for navigational menus.
+- Improvement: Header Builder - Menu - Navigation creates duplicated identical links.
+- Improvement: Code optimization for improved performance under DRY principle. (Props [justintadlock](https://github.com/justintadlock))
+- Improvement: Typography - Clicking on active Line Height Unit, Text Decoration, Text Transform sub options can revert to default.
+- Improvement: Body line-height unit set to empty so unitless line-height can be used on fresh setup.
+- Improvement: Separate option to disable Transparent Header on 404, Search & Archives pages.
+- Improvement: Corrected Dashboard link navigation from Site Builder's UI breadcrumb.
+- Fix: Legacy Header: Search widget is not visible on mobile device as last item menu with "Full Screen" and "Header Cover" options.
+- Fix: The Blog/Archive title banner layout type 2 overrides the Search page's title banner of layout type 1.
+- Fix: Related Posts - Appearance issue with featured image aspect ratio.
+- Fix: "astra_after_archive_title" hooks is not working with the "Layout 2" option for Blog Banner Layout.
+- Fix: While using site navigation block in flyout or full screen off-canvas header type, submenu items not visible properly.
+- Fix: For mobile menu 1px top border added which not looking proper on the frontend when background color is set.
+- Fix: REM font size not working on responsive devices for headings.
+- Fix: Heading 5 and 6 having same font size typography.
+- Fix: Embed block width issue on the frontend for external embeds like Pinterest.
+
+v4.6.13
+- New: Footer Builder - Introducing a new height option for the primary footer row.
+- Improved codebase for improved security.
+- Improvement: Related Posts - Improved accessibility by adding aria-labels.
+- Improvement: Improved accessibility by adding aria-label dynamically for navigational menus.
+- Improvement: Rearranged SureCart dynamic CPT sections added in one panel in the customizer.
+- Fix: Pinterest embed block is displaying half and blurry images.
+- Fix: Header menu gets duplicates when screen resolution set to 150%.
+- Fix: Some strings in astra.pot are not available on translate.wordpress.org
+- Fix: Inconsistency in Audio-Video shortcodes block bottom spacing.
+- Fix: Submenu dropdown arrow not aligned properly when flyout is set and content alignment is set to right.
+
+v4.6.12
+- Improvement: Header Builder - Account - Login popup form rendering multiple times.
+- Improvement: Added gap between the Transparent Header and the Login Password Form.
+- Improvement: Added new tooltip to single product title area's featured image option for better clarity.
+- Improvement: Fixed a performance issue caused by theme's add-to-cart-quantity-btn.min.js file.
+- Fix: WooCommerce - Resolved issue with the Store Notice's "Hang on Top" option causing a gap at the top.
+- Fix: WooCommerce - "Sticky Add To Cart" feature not working for a responsive device when Addon's WooCommerce module is enabled.
+- Fix: WooCommerce - Getting duplicate ID error for 'ast-site-header-cart'.
+- Fix: Search input bar is not properly working with old header setup.
+- Fix: Single post navigation design break on responsive devices.
+- Fix: Design issue with images and headings alignments in single posts and pages.
+- Fix: Theme's global button styling overriding Elementor's global buttons styling.
+- Fix: Post navigation alignment does not sync with container width.
+
+v4.6.11
+- Improvement: Added object-fit cover styling to the featured image while the Image ratio is custom.
+- Fix: Starter Content - Handled backward compatibility for Line height UI issue with Starter Template's block patterns.
+
+v4.6.10
+- Compatibility with WordPress 6.5.
+- Improvement: Updated elegant dashboard admin notice for Starter Template Plugin installation.
+
+v4.6.9
+- Improved codebase for improved security.
+- Fix: Editor - Block's inline toolbar elements like Bold, Italic creates jerk on focus.
+
+v4.6.8
+- Fix: Duplicate sub-menu dropdown arrows visible when Menu gets created using a page builder widget.
+- Fix: Single - Blog - Post title styles not working on the frontend after parsing dynamic CSS.
+- Fix: Cart - Table UI breaks due to missing of parsed dynamic CSS.
+
+v4.6.7
+- Fix: Responsive CSS gets break after last version with caching plugins enabled.
+- Fix: Dynamic CSS get break after the last version.
+
+v4.6.6
+- New: Introducing "Optimize Inline CSS" option in "Astra Dashboard > Settings > Performance tab".
+- New: Introducing a new border color option for transparent header buttons.
+- Fix: Menu dropdown arrow icon is missing if Astra Pro is enabled & nav menu addon is disabled.
+- Fix: Elementor Archive template & Loop builder extra padding issue coming from the theme side.
+- Fix: Submenu dropdown arrow not visible for menu-3 to menu-10 when nav menu pro addon is activated.
+- Fix: Block editor - List block text color does not work in the editor.
+- Fix: Post Navigation - Next post navigation link not properly aligned to right when the previous post navigation link is absent.
+
 v4.6.5
 - Improved codebase for improved security.
 - Improvement: Live Search - Results dropdown UI improved for better user experience.

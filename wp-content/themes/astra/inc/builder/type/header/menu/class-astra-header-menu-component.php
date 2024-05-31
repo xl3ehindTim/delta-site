@@ -44,6 +44,7 @@ class Astra_Header_Menu_Component {
 	 * @param string $device device.
 	 */
 	public static function menu_markup( $index, $device = 'desktop' ) {
+		$astra_builder = astra_builder();
 
 		switch ( $index ) {
 			case 1:
@@ -86,13 +87,14 @@ class Astra_Header_Menu_Component {
 		 */
 		$menu_classes = apply_filters( 'astra_' . $theme_location . '_menu_classes', array( 'main-header-menu', 'ast-menu-shadow', 'ast-nav-menu', 'ast-flex', $submenu_class, $stack_on_mobile_class ) );
 
+		$menu_name   = wp_get_nav_menu_name( $theme_location );
 		$items_wrap  = '<nav ';
 		$items_wrap .= astra_attr(
 			'site-navigation',
 			array(
 				'id'         => apply_filters( 'astra_header_site_navigation_id', esc_attr( $theme_location ) . '-site-navigation-' . esc_attr( $device ) ),
 				'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item',
-				'aria-label' => esc_attr__( 'Site Navigation', 'astra' ),
+				'aria-label' => esc_attr__( 'Site Navigation: ', 'astra' ) . $menu_name,
 			)
 		);
 		$items_wrap .= '>';
@@ -110,6 +112,7 @@ class Astra_Header_Menu_Component {
 			'before'         => '<ul class="' . esc_attr( implode( ' ', $menu_classes ) ) . '">',
 			'after'          => '</ul>',
 			'walker'         => new Astra_Walker_Page(),
+			'echo'           => false,
 		);
 
 		// To add default alignment for navigation which can be added through any third party plugin.
@@ -121,7 +124,7 @@ class Astra_Header_Menu_Component {
 		}
 		if ( has_nav_menu( $theme_location ) ) {
 			/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			wp_nav_menu(
+			$nav_menu_markup = wp_nav_menu(
 				array(
 					'menu_id'         => apply_filters( 'astra_header_menu_ul_id', 'ast-hf-menu-' . $index ),
 					'menu_class'      => esc_attr( implode( ' ', $menu_classes ) ),
@@ -129,9 +132,14 @@ class Astra_Header_Menu_Component {
 					'container_class' => 'main-header-bar-navigation',
 					'items_wrap'      => $items_wrap,
 					'theme_location'  => $theme_location,
+					'echo'            => false,
 				)
 			);
-				/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+
+			// Adding rel="nofollow" for duplicate menu render.
+			$nav_menu_markup = $astra_builder->nofollow_markup( $theme_location, $nav_menu_markup );
+			echo $nav_menu_markup;
+			/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		} else {
 				echo '<div class="main-header-bar-navigation ast-flex-1">';
 					echo '<nav ';
@@ -142,9 +150,14 @@ class Astra_Header_Menu_Component {
 						)
 					);
 					echo ' class="ast-flex-grow-1 navigation-accessibility" aria-label="' . esc_attr__( 'Site Navigation', 'astra' ) . '">';
-						/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-						wp_page_menu( $fallback_menu_args );
-						/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+					$nav_menu_markup = wp_page_menu( $fallback_menu_args );
+
+					// Adding rel="nofollow" for duplicate menu render.
+					$nav_menu_markup = $astra_builder->nofollow_markup( $theme_location, $nav_menu_markup );
+
+					echo $nav_menu_markup;
+					/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					echo '</nav>';
 				echo '</div>';
 		}
