@@ -281,29 +281,7 @@ if ( ! function_exists( 'astra_get_css_value' ) ) {
 				break;
 
 			case 'url':
-						$css_val = $unit . '(' . esc_url( $value ) . ')';
-				break;
-
-			case 'rem':
-				if ( 'inherit' === strtolower( $value ) || 'inherit' === strtolower( $default ) ) {
-					return $value;
-				}
-				if ( is_numeric( $value ) || strpos( $value, 'px' ) ) {
-					$value          = intval( $value );
-					$body_font_size = astra_get_option( 'font-size-body' );
-					if ( is_array( $body_font_size ) ) {
-						$body_font_size_desktop = ( isset( $body_font_size['desktop'] ) && '' != $body_font_size['desktop'] ) ? $body_font_size['desktop'] : 15;
-					} else {
-						$body_font_size_desktop = ( '' != $body_font_size ) ? $body_font_size : 15;
-					}
-
-					if ( $body_font_size_desktop ) {
-						$css_val = esc_attr( $value ) . 'px;font-size:' . ( esc_attr( $value ) / esc_attr( $body_font_size_desktop ) ) . $unit;
-					}
-				} else {
-					$css_val = esc_attr( $value );
-				}
-
+				$css_val = $unit . '(' . esc_url( $value ) . ')';
 				break;
 
 			default:
@@ -348,13 +326,30 @@ if ( ! function_exists( 'astra_get_background_obj' ) ) {
 					break;
 
 				case 'image':
-					$overlay_type  = isset( $bg_obj['overlay-type'] ) ? $bg_obj['overlay-type'] : 'none';
-					$overlay_color = isset( $bg_obj['overlay-color'] ) ? $bg_obj['overlay-color'] : '';
-					$overlay_grad  = isset( $bg_obj['overlay-gradient'] ) ? $bg_obj['overlay-gradient'] : '';
+					$overlay_type    = isset( $bg_obj['overlay-type'] ) ? $bg_obj['overlay-type'] : 'none';
+					$overlay_color   = isset( $bg_obj['overlay-color'] ) ? $bg_obj['overlay-color'] : '';
+					$overlay_opacity = isset( $bg_obj['overlay-opacity'] ) ? $bg_obj['overlay-opacity'] : '';
+					$overlay_grad    = isset( $bg_obj['overlay-gradient'] ) ? $bg_obj['overlay-gradient'] : '';
 					if ( '' !== $bg_img ) {
 						if ( 'none' !== $overlay_type ) {
 							if ( 'classic' === $overlay_type && '' !== $overlay_color ) {
-								$gen_bg_css['background-image'] = 'linear-gradient(to right, ' . $overlay_color . ', ' . $overlay_color . '), url(' . $bg_img . ');';
+								$updated_overlay_color = $overlay_color;
+
+								// Compatibility of overlay color opacity to HEX & VAR colors.
+								if ( '' !== $overlay_opacity ) {
+									$is_linked_with_gcp = 'var' === substr( $overlay_color, 0, 3 );
+
+									if ( $is_linked_with_gcp ) {
+										$astra_gcp_instance    = new Astra_Global_Palette();
+										$updated_overlay_color = $astra_gcp_instance->get_color_by_palette_variable( $overlay_color );
+									}
+
+									if ( '#' === $updated_overlay_color[0] ) {
+										$updated_overlay_color = astra_hex_to_rgba( $updated_overlay_color, $overlay_opacity );
+									}
+								}
+
+								$gen_bg_css['background-image'] = 'linear-gradient(to right, ' . $updated_overlay_color . ', ' . $updated_overlay_color . '), url(' . $bg_img . ');';
 							} elseif ( 'gradient' === $overlay_type && '' !== $overlay_grad ) {
 								$gen_bg_css['background-image'] = $overlay_grad . ', url(' . $bg_img . ');';
 							} else {
@@ -1022,11 +1017,11 @@ if ( ! function_exists( 'astra_archive_page_info' ) ) {
 
 			// Author.
 			if ( is_author() ) {
-				$author_name        = get_the_author() ? get_the_author() : '';
+				$author_name        = get_the_author() ? esc_attr( strval( get_the_author() ) ) : '';
 				$author_name_html   = ( true === astra_check_is_structural_setup() && $author_name ) ? __( 'Author name: ', 'astra' ) . $author_name : $author_name;
 				$author_description = get_the_author_meta( 'description' );
 				/** @psalm-suppress RedundantConditionGivenDocblockType */
-				$author_description_html = wp_kses_post( $author_description ); 
+				$author_description_html = wp_kses_post( $author_description );
 				?>
 
 				<section class="ast-author-box ast-archive-description">
@@ -1120,8 +1115,8 @@ if ( ! function_exists( 'astra_hex_to_rgba' ) ) :
 	/**
 	 * Convert colors from HEX to RGBA
 	 *
-	 * @param  string  $color   Color code in HEX.
-	 * @param  boolean $opacity Color code opacity.
+	 * @param  string $color   Color code in HEX.
+	 * @param  mixed  $opacity Color code opacity.
 	 * @return string           Color code in RGB or RGBA.
 	 */
 	function astra_hex_to_rgba( $color, $opacity = false ) {
@@ -1501,11 +1496,29 @@ function astra_get_responsive_background_obj( $bg_obj_res, $device ) {
 				/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				$overlay_grad = isset( $bg_obj['overlay-gradient'] ) ? $bg_obj['overlay-gradient'] : '';
 				/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+				$overlay_opacity = isset( $bg_obj['overlay-opacity'] ) ? $bg_obj['overlay-opacity'] : '';
+				/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 				if ( '' !== $bg_img ) {
 					if ( 'none' !== $overlay_type ) {
 						if ( 'classic' === $overlay_type && '' !== $overlay_color ) {
-							$gen_bg_css['background-image'] = 'linear-gradient(to right, ' . $overlay_color . ', ' . $overlay_color . '), url(' . $bg_img . ');';
+							$updated_overlay_color = $overlay_color;
+
+							// Compatibility of overlay color opacity to HEX & VAR colors.
+							if ( '' !== $overlay_opacity ) {
+								$is_linked_with_gcp = 'var' === substr( $overlay_color, 0, 3 );
+
+								if ( $is_linked_with_gcp ) {
+									$astra_gcp_instance    = new Astra_Global_Palette();
+									$updated_overlay_color = $astra_gcp_instance->get_color_by_palette_variable( $overlay_color );
+								}
+
+								if ( '#' === $updated_overlay_color[0] ) {
+									$updated_overlay_color = astra_hex_to_rgba( $updated_overlay_color, $overlay_opacity );
+								}
+							}
+
+							$gen_bg_css['background-image'] = 'linear-gradient(to right, ' . $updated_overlay_color . ', ' . $updated_overlay_color . '), url(' . $bg_img . ');';
 						} elseif ( 'gradient' === $overlay_type && '' !== $overlay_grad ) {
 							$gen_bg_css['background-image'] = $overlay_grad . ', url(' . $bg_img . ');';
 						} else {

@@ -395,7 +395,7 @@ function astra_post_author_name() {
 			$author_name = esc_attr( ! empty( $author_data ) ? $author_data->display_name : '' );
 		}
 	} else {
-		$author_name = get_the_author();
+		$author_name = esc_attr( get_the_author() );
 	}
 
 	return $author_name;
@@ -430,7 +430,7 @@ if ( ! function_exists( 'astra_post_author' ) ) {
 			);
 		echo '>';
 			// Translators: Author Name. ?>
-			<a title="<?php printf( esc_attr__( 'View all posts by %1$s', 'astra' ), get_the_author() ); ?>"
+			<a title="<?php printf( esc_attr__( 'View all posts by %1$s', 'astra' ), esc_attr( strval( get_the_author() ) ) ); ?>"
 				href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" rel="author"
 				<?php
 					echo astra_attr(
@@ -488,7 +488,7 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 			return $output_filter;
 		}
 
-		$more_label        = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? __( 'Read Post »', 'astra' ) : __( 'Read More »', 'astra' );
+		$more_label        = Astra_Dynamic_CSS::astra_4_6_0_compatibility() ? esc_html__( 'Read Post »', 'astra' ) : esc_html__( 'Read More »', 'astra' );
 		$read_more_text    = apply_filters( 'astra_post_read_more', $more_label );
 		$read_more_classes = apply_filters( 'astra_post_read_more_class', array() );
 
