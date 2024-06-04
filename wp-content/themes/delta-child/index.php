@@ -91,7 +91,7 @@ get_header(); ?>
                                     <div class="card-img-overlay d-flex flex-column">
                                         <div id="card-footer" class="justify-content-between" style="display: flex;">
                                             <div class="card-footer-text">
-                                                <h6 style="font-size:22px;"><?php echo get_the_title(); ?></h6>
+                                                <h6 class="my-0 d-block" style="font-size:22px;"><?php echo get_the_title(); ?></h6>
                                                 <p style="font-size:16px;">
                                                     <?php echo get_field('subtitle') ?>
                                                 </p>
