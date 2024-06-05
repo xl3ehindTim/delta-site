@@ -75,7 +75,7 @@ get_header(); ?>
     // Echo data into variable
     echo json_encode($allStudents);
     ?>;
-    console.log(students)
+
     // Get term selection elements
     var termSelect = document.querySelectorAll('.term-selection');
     function initSwiper(students, groupId) {

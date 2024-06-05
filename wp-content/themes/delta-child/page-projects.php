@@ -8,7 +8,7 @@ get_header();
 
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/projects-hero.jpg);">
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_attachment_url_by_slug('projects-hero'); ?>);">
         <div class="hero-text">
             <h2 style="color: white;">Projects</h2>
         </div>
