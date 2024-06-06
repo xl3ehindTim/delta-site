@@ -103,8 +103,8 @@ $project_groups = new WP_Query($args);
                                     </div>
                                     <div class="card-description">
                                         <?php
-                                        $shortDescription = substr(getFirstParagraph(get_field('description', $project->ID)), 0, 350);
-                                        if (strlen(getFirstParagraph(get_field('description', $project->ID))) > 350) {
+                                        $shortDescription = substr(get_short_description(get_field('description')), 0, 350);
+                                        if (strlen(get_short_description(get_field('description'))) > 350) {
                                             $shortDescription .= "...";
                                         }
                                         echo $shortDescription;

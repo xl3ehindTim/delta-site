@@ -8,7 +8,7 @@ get_header();
 
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/projects-hero.jpg);">
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_attachment_url_by_slug('projects-hero'); ?>);">
         <div class="hero-text">
             <h2 style="color: white;">Projects</h2>
         </div>
@@ -45,7 +45,8 @@ get_header();
                                         <div id="card-footer" class="justify-content-between" style="display: flex;">
                                             <div class="card-footer-text">
                                                 <h6 class="my-0 d-block" style="font-size:22px;">
-                                                    <?php echo get_the_title(); ?></h6>
+                                                    <?php echo get_the_title(); ?>
+                                                </h6>
                                                 <p style="font-size:16px;">
                                                     <?php echo get_field('subtitle') ?>
                                                 </p>
@@ -62,8 +63,8 @@ get_header();
                                         </div>
                                         <div class="card-description">
                                             <?php
-                                            $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
-                                            if (strlen(getFirstParagraph(get_field('description'))) > 350) {
+                                            $shortDescription = substr(get_short_description(get_field('description')), 0, 350);
+                                            if (strlen(get_short_description(get_field('description'))) > 350) {
                                                 $shortDescription .= "...";
                                             }
                                             echo $shortDescription;
