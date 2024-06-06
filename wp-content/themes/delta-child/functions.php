@@ -78,8 +78,8 @@ function ajax_projects_pagination()
                             </div>
                             <div class="card-description">
                                 <?php
-                                $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
-                                if (strlen(getFirstParagraph(get_field('description'))) > 350) {
+                                $shortDescription = substr(get_short_description(get_field('description')), 0, 350);
+                                if (strlen(get_short_description(get_field('description'))) > 350) {
                                     $shortDescription .= "...";
                                 }
                                 echo $shortDescription;
@@ -102,7 +102,7 @@ add_action('wp_ajax_nopriv_ajax_projects_pagination', 'ajax_projects_pagination'
 add_action('wp_ajax_ajax_projects_pagination', 'ajax_projects_pagination');
 // end
 
-function getFirstParagraph($text)
+function get_short_description($text)
 {
     // Use a regular expression to split the text into paragraphs
     $paragraphs = preg_split('/\r\n|\r|\n/', $text);
@@ -118,7 +118,6 @@ function getFirstParagraph($text)
     // Return the first paragraph trimmed of any extra whitespace
     return trim($firstParagraph);
 }
-add_action('getFirstParagraph', 'getFirstParagraph');
 
 function get_attachment_url_by_slug($slug)
 {

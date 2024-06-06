@@ -69,7 +69,8 @@ get_header(); ?>
                 </div>
 
                 <div class="col-12 col-md-6 mt-5 mt-lg-0 justify-content-center justify-content-md-end">
-                    <img style="max-width: 100%;" src="<?php echo get_attachment_url_by_slug('delta-team-photo'); ?>" alt="Team" />
+                    <img style="max-width: 100%;" src="<?php echo get_attachment_url_by_slug('delta-team-photo'); ?>"
+                        alt="Team" />
                 </div>
             </div>
         </div>
@@ -83,38 +84,40 @@ get_header(); ?>
             <div class="row mt-4 mt-lg-5">
                 <?php foreach ($posts as $post): ?>
                     <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="card text-dark card-has-bg click-col">
-                                    <img style="height: 550px; object-fit: cover;"
-                                         class="card-img"
-                                         src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
-                                    <div class="card-img-overlay d-flex flex-column">
-                                        <div id="card-footer" class="justify-content-between" style="display: flex;">
-                                            <div class="card-footer-text">
-                                                <h6 class="my-0 d-block" style="font-size:22px;"><?php echo get_the_title(); ?></h6>
-                                                <p style="font-size:16px;">
-                                                    <?php echo get_field('subtitle') ?>
-                                                </p>
-                                            </div>
-                                            <div class="card-footer-placeholder"></div>
-                                            <div class="card-button">
-                                                <span class="card-button-text"><h6>Read more</h6></span>
-                                                <span class="diagonal-arrow"></span>
-                                            </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="card text-dark card-has-bg click-col">
+                                <img style="height: 550px; object-fit: cover;" class="card-img"
+                                    src="<?php echo esc_url(get_field('hero_image')['url']) ?>">
+                                <div class="card-img-overlay d-flex flex-column">
+                                    <div id="card-footer" class="justify-content-between" style="display: flex;">
+                                        <div class="card-footer-text">
+                                            <h6 class="my-0 d-block" style="font-size:22px;"><?php echo get_the_title(); ?>
+                                            </h6>
+                                            <p style="font-size:16px;">
+                                                <?php echo get_field('subtitle') ?>
+                                            </p>
                                         </div>
-                                        <div class="card-description">
-                                            <?php
-                                            $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
-                                            if (strlen(getFirstParagraph(get_field('description'))) > 350) {
-                                                $shortDescription .= "...";
-                                            }
-                                            echo $shortDescription;
-                                            ?>
+                                        <div class="card-footer-placeholder"></div>
+                                        <div class="card-button">
+                                            <span class="card-button-text">
+                                                <h6>Read more</h6>
+                                            </span>
+                                            <span class="diagonal-arrow"></span>
                                         </div>
                                     </div>
+                                    <div class="card-description">
+                                        <?php
+                                        $shortDescription = substr(get_short_description(get_field('description')), 0, 350);
+                                        if (strlen(get_short_description(get_field('description'))) > 350) {
+                                            $shortDescription .= "...";
+                                        }
+                                        echo $shortDescription;
+                                        ?>
+                                    </div>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
+                    </div>
                 <?php endforeach; ?>
             </div>
 

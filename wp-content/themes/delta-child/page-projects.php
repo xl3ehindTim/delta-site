@@ -45,7 +45,8 @@ get_header();
                                         <div id="card-footer" class="justify-content-between" style="display: flex;">
                                             <div class="card-footer-text">
                                                 <h6 class="my-0 d-block" style="font-size:22px;">
-                                                    <?php echo get_the_title(); ?></h6>
+                                                    <?php echo get_the_title(); ?>
+                                                </h6>
                                                 <p style="font-size:16px;">
                                                     <?php echo get_field('subtitle') ?>
                                                 </p>
@@ -62,8 +63,8 @@ get_header();
                                         </div>
                                         <div class="card-description">
                                             <?php
-                                            $shortDescription = substr(getFirstParagraph(get_field('description')), 0, 350);
-                                            if (strlen(getFirstParagraph(get_field('description'))) > 350) {
+                                            $shortDescription = substr(get_short_description(get_field('description')), 0, 350);
+                                            if (strlen(get_short_description(get_field('description'))) > 350) {
                                                 $shortDescription .= "...";
                                             }
                                             echo $shortDescription;
