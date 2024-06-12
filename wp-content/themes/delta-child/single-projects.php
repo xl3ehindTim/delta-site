@@ -213,16 +213,31 @@ function include_hero_section() {
                                 $url = get_permalink($media_id);
                                 ?>
                                 <div class="swiper-slide" style="height: 500px; width: auto;">
-                                <?php 
+                                <?php
                                     if (wp_attachment_is( 'image', $media_id)) {
-                                        ?> 
+                                        ?>
                                          <img src="<?php echo $url ?>"></img>
                                         <?php
                                     }
 
-                                    if (wp_attachment_is( 'video', $media_id)) {
+                                    if (wp_attachment_is('video', $media_id)) {
                                         ?>
-                                            <video controls src="<?php echo $url ?>"></video>
+                                        <div class="video-container" style="position: relative;">
+                                            <video class="video-element" src="<?php echo $url ?>" style="width: 100%; height: 100%; pointer-events: none;""></video>
+                                            <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
+                                                    <path d="M8 5v14l11-7z"/>
+                                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                                </svg>
+                                            </div>
+                                            <div class="pause-button" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
+                                                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                                </svg>
+                                            </div>
+
+                                        </div>
                                         <?php
                                     }
                                 ?>
@@ -237,37 +252,74 @@ function include_hero_section() {
             </div>
         </section>
 
-				<div style="height: 600px;"></div>
+        <div style="height: 600px;"></div>
 
-				<script>
-    /**
-     * Image swiper
-     */
-    var imageSwiper = new Swiper(".swiper-media", {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        pagination: {
-            el: ".swiper-media-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            // width => 320px 
-            320: {
-                slidesPerView: 'auto',
-                slidesOffsetBefore: 20,
-                slidesOffsetAfter: 20,
+        <script>
+        /**
+         * Image swiper
+         */
+        var imageSwiper = new Swiper(".swiper-media", {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-media-pagination",
+                clickable: true,
             },
-            // width => 999px 
-            999: {
-                spaceBetweenSlides: 50,
-                slidesOffsetBefore: 100,
-                slidesOffsetAfter: 100,
+            breakpoints: {
+                // width => 320px
+                320: {
+                    slidesPerView: 'auto',
+                    slidesOffsetBefore: 20,
+                    slidesOffsetAfter: 20,
+                },
+                // width => 999px
+                999: {
+                    spaceBetweenSlides: 50,
+                    slidesOffsetBefore: 100,
+                    slidesOffsetAfter: 100,
+                }
             }
-        }
-    });
-</script>
-		<?php
-	}
+        });
+        </script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var videoContainers = document.querySelectorAll(".video-container");
+
+            videoContainers.forEach(function (container) {
+                var playButton = container.querySelector(".play-button");
+                var pauseButton = container.querySelector(".pause-button");
+                var video = container.querySelector(".video-element");
+
+                container.addEventListener("mouseenter", function () {
+                    playButton.style.display = video.paused ? 'block' : 'none';
+                    pauseButton.style.display = video.paused ? 'none' : 'block';
+                });
+
+                container.addEventListener("mouseleave", function () {
+                    playButton.style.display = 'none';
+                    pauseButton.style.display = 'none';
+                });
+
+                playButton.addEventListener("click", function () {
+                    video.play();
+                    playButton.style.display = 'none';
+                    pauseButton.style.display = 'block';
+                });
+
+                pauseButton.addEventListener("click", function () {
+                    video.pause();
+                    playButton.style.display = 'block';
+                    pauseButton.style.display = 'none';
+                });
+
+                container.addEventListener("touchstart", function (e) {
+                    e.stopPropagation();
+                });
+            });
+        });
+        </script>
+    <?php
+}
 
 function include_technical_information() {
 	$technical_description = get_field('technical_description');
