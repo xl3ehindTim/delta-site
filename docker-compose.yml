@@ -1,18 +1,17 @@
 services:
-  # Database
   db:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     networks:
       - wpsite
-  # phpmyadmin
+
   phpmyadmin:
     depends_on:
       - db
@@ -22,11 +21,10 @@ services:
       - '1337:80'
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: password 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} 
     networks:
       - wpsite
       
-  # Wordpress
   wordpress:
     depends_on:
       - db
@@ -36,12 +34,14 @@ services:
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
     volumes:
       - ./wp-content:/var/www/html/wp-content
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
       - wpsite
+
 networks:
   wpsite:
 volumes:

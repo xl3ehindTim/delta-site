@@ -14,7 +14,7 @@ $yearsOfExperience = $currentYear - 2005;
 </head>
 
 <div id="primary" <?php astra_primary_class(); ?>>
-    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../wp-content/uploads/static/about-hero.png);">
+    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_attachment_url_by_slug('about-hero'); ?>);">
         <div class="hero-text">
             <h1 style="color: white;">A journey for the ambitious</h1>
         </div>
@@ -105,34 +105,34 @@ $yearsOfExperience = $currentYear - 2005;
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/static/about/activity-image-1.png" alt="Activity Description" class="img-cover">
+                        <img src="<?php echo get_attachment_url_by_slug('activity-image-1'); ?>" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/static/about/activity-image-2.png" alt="Activity Description" class="img-cover">
+                        <img src="<?php echo get_attachment_url_by_slug('activity-image-2'); ?>" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/static/about/activity-image-3.png" alt="Activity Description" class="img-cover">
+                        <img src="<?php echo get_attachment_url_by_slug('activity-image-3'); ?>" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
             </div>
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/static/about/activity-image-4.png" alt="Activity Description" class="img-cover">
+                        <img src="<?php echo get_attachment_url_by_slug('activity-image-4'); ?>" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/static/about/activity-image-5.png" alt="Activity Description" class="img-cover">
+                        <img src="<?php echo get_attachment_url_by_slug('activity-image-5'); ?>" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                     <div class="image-container w-100 rounded">
-                        <img src="../wp-content/uploads/static/about/activity-image-6.png" alt="Activity Description" class="img-cover">
+                        <img src="<?php echo get_attachment_url_by_slug('activity-image-6'); ?>" alt="Activity Description" class="img-cover">
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@ $yearsOfExperience = $currentYear - 2005;
             Meet the current Delta students. Each member brings unique skills and perspectives, contributing to the diverse and vibrant community that defines Delta.
             Together, they tackle various challenges and push the boundaries of their potential.
         </p>
-        <img src="../wp-content/uploads/static/about/delta-group-photo.png" alt="The Current Delta Team" class="rounded" />
+        <img src="<?php echo get_attachment_url_by_slug('delta-team-photo'); ?>" alt="The Current Delta Team" class="rounded" />
     </section>
 
 </div>

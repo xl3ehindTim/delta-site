@@ -91,15 +91,19 @@ function include_team_section()
                             $name = get_the_title($student->ID);
                             $photo = get_field('photo', $student->ID);
                             $permalink = get_permalink($student->ID);
-                            ?>
-                            <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
-                                <a href="<?php echo $permalink ?>">
-                                    <img src=<?php echo esc_url($photo['url']); ?>>
-                                    <span class="student-name">
-                                        <?php echo $name ?>
-                                    </span>
-                            </div>
-                            </a>
+
+                            if ($photo) {
+                                ?>
+                                <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
+                                    <a href="<?php echo $permalink ?>">
+                                        <img src=<?php echo esc_url($photo['url']); ?>>
+                                        <span class="student-name">
+                                            <?php echo $name ?>
+                                        </span>
+                                </div>
+                                </a>
+                            <?php }
+                            ; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

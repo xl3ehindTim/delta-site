@@ -92,6 +92,10 @@ Template: astra
     transition: filter 0.35s ease;
 }
 
+.card-img-overlay {
+    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 10%, rgba(0,0,0,0) 20%);
+}
+
 .title-container {
     position: absolute;
     top: 70%;
@@ -450,12 +454,15 @@ a:hover .left {
     -webkit-text-fill-color: #fff;
     transition: top 0.35s ease; /* Add transition for smooth animation */
     font-size: 24px;
+
+    width: 100%;
+    left: 0;
+    padding: 0 5%;
 }
 
 .card:hover .card-footer-text {
     top: 3%; /* Move title and subtitle to their current location when hovered */
     position: absolute;
-    
 }
 .card:hover .card-footer-text:after {
     position: relative;

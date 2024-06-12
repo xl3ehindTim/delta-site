@@ -24,6 +24,10 @@ function astra_navigation_css( $dynamic_css ) {
 	$mobile_breakpoint = strval( astra_get_mobile_breakpoint() );
 	$link_hover_color  = astra_get_option( 'link-h-color' );
 
+	/** Backward compatibility support for left-right paddings @since 4.6.13 */
+	$remove_mobile_device_paddings = apply_filters( 'astra_remove_single_posts_navigation_mobile_device_padding', ! empty( astra_get_option( 'remove_single_posts_navigation_mobile_device_padding' ) ) );
+	$mobile_device_paddings        = ! $remove_mobile_device_paddings ? 'padding-left: 20px; padding-right: 20px;' : '';
+
 	$navigation_css = '
 		.single .post-navigation a p {
 			margin-top: 0.5em;
@@ -73,8 +77,7 @@ function astra_navigation_css( $dynamic_css ) {
 				-js-display: inline-flex;
 				display: inline-flex;
 				width: 100%;
-				padding-left: 20px;
-				padding-right: 20px;
+				' . $mobile_device_paddings . '
 			}
 			.single .post-navigation a p {
 				display: none;
@@ -94,6 +97,26 @@ function astra_navigation_css( $dynamic_css ) {
 			}
 		}
 	';
+
+	// rtl css for post navigation.
+	if ( is_rtl() ) {
+		$navigation_css .= '
+		@media( min-width: 320px ) {
+			.single .post-navigation .nav-previous a {
+					text-align: start;
+				}
+				.single .post-navigation .nav-next a {
+					text-align: end;
+				}
+			}
+			@media( max-width: ' . $mobile_breakpoint . 'px ) {
+				.single .post-navigation .nav-links {
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+			}
+		';
+	}
 
 	$dynamic_css .= Astra_Enqueue_Scripts::trim_css( $navigation_css );
 

@@ -11,4 +11,4 @@ https://github.com/xl3ehindTim/delta-site/assets/32740573/ab330427-2769-49e3-89a
   <img src = "https://contrib.rocks/image?repo=xl3ehindTim/delta-site"/>
 </a>
 
-Do you want to contribute to the project? Look at the [issues](https://github.com/xl3ehindTim/delta-site/issues) or have a look at the [Wiki](https://github.com/xl3ehindTim/delta-site/wiki) for more information.
+Do you want to contribute to the project? Please check out the [Contributing guide](https://github.com/xl3ehindTim/delta-site/blob/master/CONTRIBUTING.md) for guidelines about how to proceed or have a look at the [Wiki](https://github.com/xl3ehindTim/delta-site/wiki) for more information.

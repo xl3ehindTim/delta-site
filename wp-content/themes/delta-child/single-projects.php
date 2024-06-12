@@ -75,11 +75,11 @@ get_header(); ?>
     // Echo data into variable
     echo json_encode($allStudents);
     ?>;
-    console.log(students)
+
     // Get term selection elements
     var termSelect = document.querySelectorAll('.term-selection');
     function initSwiper(students, groupId) {
-        var filteredStudents = students?.filter((student) => student.group == groupId);
+        var filteredStudents = students?.filter((student) => student.group == groupId && student.photo);
 
         if (!swiper) {
             swiper = new Swiper('.swiper-container', {

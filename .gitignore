@@ -34,3 +34,5 @@ wp-config.php
 
 # htaccess
 /.htaccess
+
+.env
