@@ -30,7 +30,7 @@ $yearsOfExperience = $currentYear - 2005;
 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: relative; left: 0%;">
     <section id="delta-about" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
         <div class="row d-flex flex-column flex-lg-row justify-content-between" style="width: 100%">
-            <div id="delta-story" class="col-lg-7 ms-4 mt-2 order-2 order-lg-2">
+            <div class="col-lg-7 ms-4 mt-2 order-2 order-lg-2">
                 <h4 style="color: #E5007D;" class="mt-4">What is Delta?</h4>
                 <h2 class="pb-4">Our Story</h2>
                 <p>
@@ -46,7 +46,7 @@ $yearsOfExperience = $currentYear - 2005;
                     fields and stand out in the competitive job market.
                 </p>
             </div>
-            <div id="delta-timeline" class="col-lg-4 order-1 order-lg-1" style="margin-left: 1.5rem">
+            <div class="col-lg-4 order-1 order-lg-1" style="margin-left: 1.5rem">
                 <ul class="timeline">
                     <li class="event" data-date="2005">
                         <h3 style="color: #E5007D;">Delta Program launched</h3>
