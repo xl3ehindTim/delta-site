@@ -26,7 +26,7 @@ $project_groups = new WP_Query($args);
 
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../wp-content/uploads/static/home-team.jpg);">
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_attachment_url_by_slug('delta-team-photo'); ?>);">
         <div class="hero-text">
             <h1 style="color: white;">
                 <?php echo get_the_title(); ?>
