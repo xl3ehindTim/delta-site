@@ -204,55 +204,55 @@ function include_hero_section() {
 			return; 
 		}
 		?>
-			<section id="media">
-            <div class="container">
-                <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;">
-                    <div class="swiper-media" style="height: 500px;">
-                        <div class="swiper-wrapper">
-                            <?php foreach ($media as $media_id):
-                                $url = get_permalink($media_id);
-                                ?>
-                                <div class="swiper-slide" style="height: 500px; width: auto;">
-                                <?php
-                                    if (wp_attachment_is( 'image', $media_id)) {
+        <section id="media">
+                    <div class="container">
+                        <div class="media-wrapper">
+                            <div class="swiper-media">
+                                <div class="swiper-wrapper">
+                                    <?php foreach ($media as $media_id):
+                                        $url = get_permalink($media_id);
                                         ?>
-                                         <img src="<?php echo $url ?>"></img>
+                                        <div class="swiper-slide">
                                         <?php
-                                    }
+                                            if (wp_attachment_is( 'image', $media_id)) {
+                                                ?>
+                                                 <img src="<?php echo $url ?>"></img>
+                                                <?php
+                                            }
 
-                                    if (wp_attachment_is('video', $media_id)) {
+                                            if (wp_attachment_is('video', $media_id)) {
+                                                ?>
+                                                <div class="video-container">
+                                                    <video class="video-element" src="<?php echo $url ?>" style="pointer-events: none;""></video>
+                                                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
+                                                            <path d="M8 5v14l11-7z"/>
+                                                            <path d="M0 0h24v24H0z" fill="none"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="pause-button" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
+                                                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                                                            <path d="M0 0h24v24H0z" fill="none"/>
+                                                        </svg>
+                                                    </div>
+
+                                                </div>
+                                                <?php
+                                            }
                                         ?>
-                                        <div class="video-container" style="position: relative;">
-                                            <video class="video-element" src="<?php echo $url ?>" style="width: 100%; height: 100%; pointer-events: none;""></video>
-                                            <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
-                                                    <path d="M8 5v14l11-7z"/>
-                                                    <path d="M0 0h24v24H0z" fill="none"/>
-                                                </svg>
-                                            </div>
-                                            <div class="pause-button" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
-                                                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                                                    <path d="M0 0h24v24H0z" fill="none"/>
-                                                </svg>
-                                            </div>
-
                                         </div>
-                                        <?php
-                                    }
-                                ?>
+                                    <?php endforeach; ?>
                                 </div>
-                            <?php endforeach; ?>
+                            </div>
+                            <div class="swiper-pagination swiper-media-pagination"
+                                style="position: absolute; margin-bottom: -5vh;">
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination swiper-media-pagination"
-                        style="position: absolute; margin-bottom: -5vh;">
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <div style="height: 600px;"></div>
+        <div style="height: 100px;"></div>
 
         <script>
         /**
