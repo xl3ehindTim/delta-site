@@ -29,7 +29,7 @@ $yearsOfExperience = $currentYear - 2005;
     box-shadow: unset;
     }
     .event {
-        text-align: left; /* Revert text alignment of events to left */
+        text-align: left; 
         display: inline-block;
         text-align: left;
     }
@@ -61,7 +61,7 @@ $yearsOfExperience = $currentYear - 2005;
     <!-- Timeline & Story -->
 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: relative; left: 0%;">
     <section id="delta-about" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
-        <div class="row d-flex flex-column flex-lg-row justify-content-between" style="width: 100%">
+        <div class="row d-flex flex-column flex-lg-row justify-content-between">
             <div class="col-lg-7 ms-4 mt-2 order-2 order-lg-2 text-center-mobile">
                 <h4 style="color: #E5007D;" class="mt-4">What is Delta?</h4>
                 <h2 class="pb-4">Our Story</h2>
