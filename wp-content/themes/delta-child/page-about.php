@@ -24,6 +24,7 @@ $yearsOfExperience = $currentYear - 2005;
     border-top-right-radius: 0;
     display: grid;
     align-items: center;
+    display: none;
     }
     .timeline .event:after {
     box-shadow: unset;
