@@ -224,7 +224,6 @@ function include_hero_section() {
 
                                             if (wp_attachment_is('video', $media_id)) {
                                                 ?>
-                                                                                            <!-- <video controls src="<?php echo $url ?>"></video> -->
                                                 <div class="video-container">
                                                     <video class="video-element" src="<?php echo $url ?>" style="pointer-events: none;"></video>
                                                      <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
@@ -293,18 +292,15 @@ function include_hero_section() {
                 var video = container.querySelector(".video-element");
 
                 container.addEventListener("mouseenter", function () {
-                    playButton.style.display = video.paused ? 'block' : 'none';
                     pauseButton.style.display = video.paused ? 'none' : 'block';
                 });
 
                 container.addEventListener("mouseleave", function () {
-                    playButton.style.display = 'none';
                     pauseButton.style.display = 'none';
                 });
 
                 playButton.addEventListener("click", function () {
                     video.play();
-                    playButton.style.display = 'none';
                     pauseButton.style.display = 'block';
                 });
 
@@ -312,6 +308,19 @@ function include_hero_section() {
                     video.pause();
                     playButton.style.display = 'block';
                     pauseButton.style.display = 'none';
+                });
+
+                video.addEventListener("play", function () {
+                    playButton.style.display = 'none';
+                    pauseButton.style.display = 'block';
+                });
+
+                video.addEventListener("pause", function () {
+                    playButton.style.display = 'block';
+                });
+
+                video.addEventListener("ended", function () {
+                    playButton.style.display = 'block';
                 });
 
                 container.addEventListener("touchstart", function (e) {
