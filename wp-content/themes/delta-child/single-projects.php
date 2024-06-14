@@ -268,7 +268,7 @@ function include_hero_section() {
             },
             breakpoints: {
                 // width => 320px
-                320: {
+                200: {
                     slidesPerView: 'auto',
                     slidesOffsetBefore: 20,
                     slidesOffsetAfter: 20,
