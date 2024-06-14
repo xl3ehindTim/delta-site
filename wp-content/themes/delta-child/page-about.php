@@ -34,10 +34,14 @@ $yearsOfExperience = $currentYear - 2005;
         text-align: left;
     }
     .event::before {
-                transform: translateX(80%);
                 display: grid;
                 text-align: center !important;
+                min-width: none;
+                width: 100%;
             }
+    .ms-4 {
+        margin-left: 0 !important;
+    }
 }
 </style>
 
@@ -74,7 +78,7 @@ $yearsOfExperience = $currentYear - 2005;
                     fields and stand out in the competitive job market.
                 </p>
             </div>
-            <div class="col-lg-4 order-1 order-lg-1" style="margin-left: 1.5rem">
+            <div class="col-lg-4 order-1 order-lg-1">
                 <ul class="timeline">
                     <li class="event" data-date="2005">
                         <h3 style="color: #E5007D;" class="text-center-mobile">Delta Program launched</h3>
@@ -93,7 +97,6 @@ $yearsOfExperience = $currentYear - 2005;
                     </li>
                 </ul>
             </div>
-        </div>
     </section>
 </div>
 
