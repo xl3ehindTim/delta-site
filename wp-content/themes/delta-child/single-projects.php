@@ -206,8 +206,10 @@ function include_hero_section() {
 		?>
         <section id="media">
                     <div class="container">
-                        <div class="media-wrapper">
-                            <div class="swiper-media">
+                    <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 500px;">
+
+                        <!-- <div class="media-wrapper"> -->
+                            <div class="swiper-media" style="height: 500px;">
                                 <div class="swiper-wrapper">
                                     <?php foreach ($media as $media_id):
                                         $url = get_permalink($media_id);
@@ -222,9 +224,10 @@ function include_hero_section() {
 
                                             if (wp_attachment_is('video', $media_id)) {
                                                 ?>
+                                                                                            <!-- <video controls src="<?php echo $url ?>"></video> -->
                                                 <div class="video-container">
-                                                    <video class="video-element" src="<?php echo $url ?>" style="pointer-events: none;""></video>
-                                                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
+                                                    <video class="video-element" src="<?php echo $url ?>" style="pointer-events: none;"></video>
+                                                     <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; cursor: pointer;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" style="fill: #FFFFFF;">
                                                             <path d="M8 5v14l11-7z"/>
                                                             <path d="M0 0h24v24H0z" fill="none"/>
@@ -236,7 +239,6 @@ function include_hero_section() {
                                                             <path d="M0 0h24v24H0z" fill="none"/>
                                                         </svg>
                                                     </div>
-
                                                 </div>
                                                 <?php
                                             }
@@ -252,7 +254,7 @@ function include_hero_section() {
                     </div>
                 </section>
 
-        <div style="height: 100px;"></div>
+        <div style="height: 600px;"></div>
 
         <script>
         /**
