@@ -185,10 +185,6 @@ $yearsOfExperience = $currentYear - 2005;
 <?php get_footer(); ?>
 
 <script>
-    const timelineElement = document.getElementsByClassName('timeline')[0];
-    const placeholderElement = document.getElementsByClassName('height-placeholder')[0];
-    placeholderElement.setAttribute('style', `height: ${timelineElement.clientHeight + 150}px`)
-
     document.addEventListener("DOMContentLoaded", function() {
         const counters = document.querySelectorAll('.counter');
 
