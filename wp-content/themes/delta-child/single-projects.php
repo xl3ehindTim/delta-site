@@ -82,16 +82,16 @@ get_header(); ?>
         var filteredStudents = students?.filter((student) => student.group == groupId && student.photo);
 
         if (!swiper) {
-            swiper = new Swiper('.swiper-container', {
+            swiper = new Swiper('.swiper-team', {
                 slidesPerView: 6,
                 spaceBetween: 20,
                 pagination: {
-                    el: ".swiper-container-pagination",
+                    el: ".swiper-team-pagination",
                     clickable: true,
                 },
                 breakpoints: {
-                    // width => 320px 
-                    320: {
+                    // width => 200px 
+                    200: {
                         slidesPerView: 2,
                         slidesOffsetBefore: 20,
                         slidesOffsetAfter: 20,
@@ -268,7 +268,7 @@ function include_hero_section() {
             },
             breakpoints: {
                 // width => 320px
-                320: {
+                200: {
                     slidesPerView: 'auto',
                     slidesOffsetBefore: 20,
                     slidesOffsetAfter: 20,
@@ -394,12 +394,12 @@ function include_team_section() {
 				<?php endif; ?>
 
 				<div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%; height: 225px;">
-					<div class="swiper-container" style="height: 225px;">
+					<div class="swiper-team" style="height: 225px;">
 						<div class="swiper-wrapper">
 							<!-- Dynamic Content -->
 						</div>
 					</div>
-					<div class="swiper-pagination swiper-container-pagination"
+					<div class="swiper-pagination swiper-team-pagination"
 						style="position: absolute; margin-bottom: -5vh;">
 					</div>
 				</div>
