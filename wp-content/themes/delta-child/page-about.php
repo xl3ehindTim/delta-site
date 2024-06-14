@@ -95,11 +95,11 @@ $yearsOfExperience = $currentYear - 2005;
 
     <!-- Activities -->
     <section id="delta-activities" class="container pb-3 pb-lg-3">
-        <h2 class="justify-content-center d-flex pb-2">Our Activities</h2>
-        <p class="justify-content-center text-center d-flex pb-4 mb-4 px-5 mx-5">
-            Delta is not only an excellence program, it’s also a vibrant community. In addition to studying and working hard, Delta students enjoy spending time together and having fun!
-            Each semester, students organize regular activities such as bi-weekly lunches, games, sports events, and social gatherings.
-        </p>
+    <h2 class="justify-content-center d-flex pb-2">Our Activities</h2>
+    <p class="justify-content-center text-center d-flex pb-4 mb-4 px-0 px-md-5 mx-0 mx-md-5">
+        Delta is not only an excellence program, it’s also a vibrant community. In addition to studying and working hard, Delta students enjoy spending time together and having fun!
+        Each semester, students organize regular activities such as bi-weekly lunches, games, sports events, and social gatherings.
+    </p>
         <div style="width: 100%;">
             <div class="row g-3">
                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
@@ -140,11 +140,11 @@ $yearsOfExperience = $currentYear - 2005;
 
     <!-- Current Team -->
     <section id="delta-team" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
-        <h2 class="d-flex justify-content-center pb-2">Meet the Delta's!</h2>
-        <p class="d-flex justify-content-center text-center d-flex pb-4 mb-4 px-5 mx-5">
-            Meet the current Delta students. Each member brings unique skills and perspectives, contributing to the diverse and vibrant community that defines Delta.
-            Together, they tackle various challenges and push the boundaries of their potential.
-        </p>
+    <h2 class="d-flex justify-content-center pb-2">Meet the Delta's!</h2>
+    <p class="d-flex justify-content-center text-center d-flex pb-4 mb-4 px-0 px-md-5 mx-0 mx-md-5">
+        Meet the current Delta students. Each member brings unique skills and perspectives, contributing to the diverse and vibrant community that defines Delta.
+        Together, they tackle various challenges and push the boundaries of their potential.
+    </p>
         <img src="<?php echo get_attachment_url_by_slug('delta-team-photo'); ?>" alt="The Current Delta Team" class="rounded" />
     </section>
 
