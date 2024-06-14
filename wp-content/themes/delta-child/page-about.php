@@ -13,6 +13,34 @@ $yearsOfExperience = $currentYear - 2005;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
+<style>
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    .timeline {
+    border-left: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    display: grid;
+    align-items: center;
+    }
+    .timeline .event:after {
+    box-shadow: unset;
+    }
+    .event {
+        text-align: left; /* Revert text alignment of events to left */
+        display: inline-block;
+        text-align: left;
+    }
+    .event::before {
+                transform: translateX(80%);
+                display: grid;
+                text-align: center !important;
+            }
+}
+</style>
+
 <div id="primary" <?php astra_primary_class(); ?>>
     <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_attachment_url_by_slug('about-hero'); ?>);">
         <div class="hero-text">
@@ -30,7 +58,7 @@ $yearsOfExperience = $currentYear - 2005;
 <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: relative; left: 0%;">
     <section id="delta-about" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
         <div class="row d-flex flex-column flex-lg-row justify-content-between" style="width: 100%">
-            <div class="col-lg-7 ms-4 mt-2 order-2 order-lg-2">
+            <div class="col-lg-7 ms-4 mt-2 order-2 order-lg-2 text-center-mobile">
                 <h4 style="color: #E5007D;" class="mt-4">What is Delta?</h4>
                 <h2 class="pb-4">Our Story</h2>
                 <p>
@@ -49,19 +77,19 @@ $yearsOfExperience = $currentYear - 2005;
             <div class="col-lg-4 order-1 order-lg-1" style="margin-left: 1.5rem">
                 <ul class="timeline">
                     <li class="event" data-date="2005">
-                        <h3 style="color: #E5007D;">Delta Program launched</h3>
+                        <h3 style="color: #E5007D;" class="text-center-mobile">Delta Program launched</h3>
                     </li>
                     <li class="event" data-date="2012">
-                        <h3>Expansion to include students from other ICT profiles</h3>
+                        <h3 class="text-center-mobile">Expansion to include students from other ICT profiles</h3>
                     </li>
                     <li class="event" data-date="2015">
-                        <h3>First successful startup from Delta</h3>
+                        <h3 class="text-center-mobile">First successful startup from Delta</h3>
                     </li>
                     <li class="event" data-date="2016">
-                        <h3>First semester of Open Learning</h3>
+                        <h3 class="text-center-mobile">First semester of Open Learning</h3>
                     </li>
                     <li class="event" data-date="2024">
-                        <h3 style="color: #E5007D;">Ongoing development</h3>
+                        <h3 class="text-center-mobile" style="color: #E5007D;">Ongoing development</h3>
                     </li>
                 </ul>
             </div>
