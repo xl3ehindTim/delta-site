@@ -662,3 +662,13 @@ a:hover .left {
     animation: counter 5s infinite alternate ease-in-out;
     counter-reset: num var(--num);
 }
+
+@media (max-width: 992px) {
+    #delta-timeline {
+        order: 2;
+    }
+    #delta-story {
+        order: 1;
+    }
+}
+

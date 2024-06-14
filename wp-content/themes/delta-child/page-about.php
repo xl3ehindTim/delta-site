@@ -24,51 +24,50 @@ $yearsOfExperience = $currentYear - 2005;
         </div>
     </div>
 
-    <div style="height: 110vh;"></div>
+    <div style="height: 100vh;"></div>
 
     <!-- Timeline & Story -->
-    <div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: absolute; left: 0%;">
-        <section id="delta-about" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
-            <div class="row d-flex justify-content-between">
-                <div id="delta-timeline" class="col-4">
-                    <ul class="timeline">
-                        <li class="event" data-date="2005">
-                            <h3 style="color: #E5007D;">Delta Program launched</h3>
-                        </li>
-                        <li class="event" data-date="2012">
-                            <h3>Expansion to include students from other ICT profiles</h3>
-                        </li>
-                        <li class="event" data-date="2015">
-                            <h3>First successful startup from Delta</h3>
-                        </li>
-                        <li class="event" data-date="2016">
-                            <h3>First semester of Open Learning</h3>
-                        </li>
-                        <li class="event" data-date="2024">
-                            <h3 style="color: #E5007D;">Ongoing development</h3>
-                        </li>
-                </div>
-                <div id="delta-story" class="col-7 ms-4 mt-2">
-                    <h4 style="color: #E5007D;" class="mt-4">What is Delta?</h4>
-                    <h2 class="pb-4">Our Story</h2>
-                    <p>
-                        Delta at Fontys University of Applied Sciences is a unique excellence program designed to support ambitious and high-performing students. Established in 2005, it was created to 
-                        address the lack of advanced opportunities for talented ICT & Media students within the regular curriculum. Delta students receive exemptions from the standard program to engage in multidisciplinary 
-                        projects, gaining real-world experience and developing an impressive portfolio. This innovative approach ensures they utilize their time efficiently, fostering their skills, knowledge, 
-                        and talents to their fullest potential.
-                    </p>
-                    <p>
-                        The primary purpose of the Delta Program is to optimize the available study time for students, enabling them to undertake numerous long-term and short-term projects, often in 
-                        collaboration with industry partners and startups. By doing so, the program not only enhances students' technical and professional capabilities but also prepares them for future 
-                        challenges in their careers. The Delta program promotes self-directed learning, creativity, and a proactive mindset, ultimately aiming to produce graduates who excel in their 
-                        fields and stand out in the competitive job market.
-                    </p>
-                </div>
+<div class="mt-3 mb-3 mt-lg-5 mb-lg-5" style="width: 100%; position: relative; left: 0%;">
+    <section id="delta-about" class="container mt-3 mb-3 mt-lg-5 mb-lg-5">
+        <div class="row d-flex flex-column flex-lg-row justify-content-between">
+            <div id="delta-story" class="col-lg-7 ms-4 mt-2 order-2 order-lg-2">
+                <h4 style="color: #E5007D;" class="mt-4">What is Delta?</h4>
+                <h2 class="pb-4">Our Story</h2>
+                <p>
+                    Delta at Fontys University of Applied Sciences is a unique excellence program designed to support ambitious and high-performing students. Established in 2005, it was created to 
+                    address the lack of advanced opportunities for talented ICT & Media students within the regular curriculum. Delta students receive exemptions from the standard program to engage in multidisciplinary 
+                    projects, gaining real-world experience and developing an impressive portfolio. This innovative approach ensures they utilize their time efficiently, fostering their skills, knowledge, 
+                    and talents to their fullest potential.
+                </p>
+                <p>
+                    The primary purpose of the Delta Program is to optimize the available study time for students, enabling them to undertake numerous long-term and short-term projects, often in 
+                    collaboration with industry partners and startups. By doing so, the program not only enhances students' technical and professional capabilities but also prepares them for future 
+                    challenges in their careers. The Delta program promotes self-directed learning, creativity, and a proactive mindset, ultimately aiming to produce graduates who excel in their 
+                    fields and stand out in the competitive job market.
+                </p>
             </div>
-        </section>
-    </div>
-
-    <div class="height-placeholder"></div>
+            <div id="delta-timeline" class="col-lg-4 order-1 order-lg-1">
+                <ul class="timeline">
+                    <li class="event" data-date="2005">
+                        <h3 style="color: #E5007D;">Delta Program launched</h3>
+                    </li>
+                    <li class="event" data-date="2012">
+                        <h3>Expansion to include students from other ICT profiles</h3>
+                    </li>
+                    <li class="event" data-date="2015">
+                        <h3>First successful startup from Delta</h3>
+                    </li>
+                    <li class="event" data-date="2016">
+                        <h3>First semester of Open Learning</h3>
+                    </li>
+                    <li class="event" data-date="2024">
+                        <h3 style="color: #E5007D;">Ongoing development</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
 
     <!-- Statistics -->
     <section id="delta-statistics" class="container mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
