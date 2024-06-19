@@ -220,22 +220,6 @@ a:hover .left {
     /* Move right and rotate for top-right */
 }
 
-.student-slide {
-    position: relative;
-}
-
-.student-slide .student-name {
-    position: absolute;
-    font-weight: 600;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 16px;
-    padding: 5px;
-    text-align: center;
-}
-
 .active-term {
     color: #E5007D;
     border-bottom: 3px #E5007D solid;
@@ -284,11 +268,11 @@ a:hover .left {
     position: absolute;
     font-weight: 600;
     bottom: 5px;
-    left: 50%;
+    left: 50%; 
     transform: translateX(-50%);
     color: white;
-    font-size: 16px;
-    padding: 5px;
+    font-size: 14px;
+    padding-bottom: 5px;
     text-align: center;
   }
 
