@@ -118,9 +118,11 @@ get_header(); ?>
             <div class="student-slide swiper-slide" style="height: 225px; width: auto;">
                 <a href="${student?.permalink}">
                     <img src="${student?.photo?.link}">
-                    <span class="student-name">
-                        ${student?.title}
-                    </span>
+                    <div class="card-img-overlay d-flex flex-column">
+                        <span class="student-name">
+                            ${student?.title}
+                        </span>
+                    </div>
                 </a>
             </div>
             `;
