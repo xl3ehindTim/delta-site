@@ -35,10 +35,6 @@ $yearsOfExperience = $currentYear - 2005;
     }
 
     @media (max-width: 768px) {
-        .invisible-mobile{
-            display: none;
-        }
-
         .text-center-mobile {
             text-align: center !important;
         }
@@ -140,13 +136,7 @@ $yearsOfExperience = $currentYear - 2005;
 
     <!-- Introduction to Delta -->
     <section id="delta-activities" class="container pb-3 pb-lg-3">
-        <h2 class="justify-content-center d-flex pb-2 invisible-mobile">Introduction to Delta</h2>
-        <p class="justify-content-center text-center d-flex pb-4 mb-4 px-0 px-md-5 mx-0 mx-md-5 invisible-mobile">
-            The Fontys (ICT) Delta program offers students a unique opportunity, in addition to the regular study
-            program, to engage in various projects from Fontys or other external companies, resulting in an excellent
-            and diverse portfolio. With like-minded, motivated students, you acquire additional knowledge, skills and
-            experience reflecting the working environment, preparing you for work after your degree.
-        </p>
+        <h2 class="justify-content-center d-flex pb-2">Introduction to Delta</h2>
         <div class="auto-resizable-iframe">
             <div>
                 <iframe width="100%" height="100%"
