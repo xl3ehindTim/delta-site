@@ -3,6 +3,9 @@ Delta is the Fontys ICT excellence program where students get to explore technol
 
 https://github.com/xl3ehindTim/delta-site/assets/32740573/ab330427-2769-49e3-89a6-0666a082bb08
 
+## 💡 Ideas
+Ideas are always welcome, check out the [ideas](https://github.com/xl3ehindTim/delta-site/discussions/categories/ideas) tab!
+
 ## Contributors
 
 <a href = "https://github.com/xl3ehindTim/delta-site/graphs/contributors">
