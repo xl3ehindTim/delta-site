@@ -134,9 +134,9 @@ $yearsOfExperience = $currentYear - 2005;
         </section>
     </div>
 
-    <!-- Introduction to Delta -->
+    <!-- Watch this and experience Delta -->
     <section id="delta-activities" class="container pb-3 pb-lg-3">
-        <h2 class="justify-content-center d-flex pb-2">Introduction to Delta</h2>
+        <h2 class="justify-content-center d-flex pb-2">Watch this and experience Delta</h2>
         <div class="auto-resizable-iframe">
             <div>
                 <iframe width="100%" height="100%"
