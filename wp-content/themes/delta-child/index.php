@@ -47,7 +47,7 @@ get_header(); ?>
 
     <section id="about-us">
         <div class="container mt-3 mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
-            <div class="row gx-5 d-flex align-items-center">
+            <div class="row d-flex align-items-center">
                 <div class="col-12 col-md-6">
                     <h4 style="color: #E5007D;">About us</h4>
                     <h2 class="mt-1">Delta Excellence Program</h2>
