@@ -15,11 +15,30 @@ $yearsOfExperience = $currentYear - 2005;
 </head>
 
 <style>
+    .auto-resizable-iframe {
+        max-width: 100%;
+        margin: 0px auto;
     }
+
+    .auto-resizable-iframe > div {
+        position: relative;
+        padding-bottom: 56.31%;
+        height: 0px;
     }
+
+    .auto-resizable-iframe iframe {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
     }
 
     @media (max-width: 768px) {
+        .invisible-mobile{
+            display: none;
+        }
+
         .text-center-mobile {
             text-align: center !important;
         }
@@ -119,6 +138,26 @@ $yearsOfExperience = $currentYear - 2005;
         </section>
     </div>
 
+    <!-- Introduction to Delta -->
+    <section id="delta-activities" class="container pb-3 pb-lg-3">
+        <h2 class="justify-content-center d-flex pb-2 invisible-mobile">Introduction to Delta</h2>
+        <p class="justify-content-center text-center d-flex pb-4 mb-4 px-0 px-md-5 mx-0 mx-md-5 invisible-mobile">
+            The Fontys (ICT) Delta program offers students a unique opportunity, in addition to the regular study
+            program, to engage in various projects from Fontys or other external companies, resulting in an excellent
+            and diverse portfolio. With like-minded, motivated students, you acquire additional knowledge, skills and
+            experience reflecting the working environment, preparing you for work after your degree.
+        </p>
+        <div class="auto-resizable-iframe">
+            <div>
+                <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/_Kl2SxNfjA8?start=6&end=69&controls=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Statistics -->
     <section id="delta-statistics" class="container mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
         <div class="row d-flex justify-content-center text-center">
@@ -214,7 +253,7 @@ $yearsOfExperience = $currentYear - 2005;
 <?php get_footer(); ?>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const counters = document.querySelectorAll('.counter');
 
         const animateCounters = (entries, observer) => {
