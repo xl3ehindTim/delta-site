@@ -171,7 +171,7 @@ function include_hero_section() {
 		$logo = get_field('logo');
 		?>
 			<div class="project-info container mt-3 mb-3 mt-lg-5 mb-lg-5">
-				<div class="row gx-5">
+				<div class="row">
 					<div class="col-12 col-md-7">
 						<h2 class="mb-3">
 							<?php echo $subtitle; ?>
