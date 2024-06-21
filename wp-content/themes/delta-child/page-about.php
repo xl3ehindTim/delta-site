@@ -134,20 +134,6 @@ $yearsOfExperience = $currentYear - 2005;
         </section>
     </div>
 
-    <!-- Watch this and experience Delta -->
-    <section id="delta-activities" class="container pb-3 pb-lg-3">
-        <h2 class="justify-content-center d-flex pb-2">Watch this and experience Delta</h2>
-        <div class="auto-resizable-iframe">
-            <div>
-                <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/_Kl2SxNfjA8?start=6&end=69&controls=1"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- Statistics -->
     <section id="delta-statistics" class="container mb-3 mt-lg-5 mb-lg-5 pb-3 pb-lg-5">
         <div class="row d-flex justify-content-center text-center">
@@ -169,6 +155,20 @@ $yearsOfExperience = $currentYear - 2005;
                     <h3 class="mb-0 pb-2 counter" data-target="200" data-plus="true" style="color: #E5007D;">0</h3>
                     <p class="font-weight-bold">Students followed the Delta program</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch this and experience Delta -->
+    <section id="delta-activities" class="container pb-3 pb-lg-3">
+        <h2 class="justify-content-center d-flex pb-2">Watch this and experience Delta</h2>
+        <div class="auto-resizable-iframe">
+            <div>
+                <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/_Kl2SxNfjA8?start=6&end=69&controls=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>
